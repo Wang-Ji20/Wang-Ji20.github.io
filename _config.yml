@@ -68,7 +68,10 @@ index_generator:
   order_by: -date
 
 # Category & Tag
-default_category: uncategorized
+default_category:
+  - Type-Moon
+  - Book Review
+  - CS
 category_map:
 tag_map:
 
