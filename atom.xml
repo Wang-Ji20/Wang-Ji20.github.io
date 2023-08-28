@@ -6,7 +6,7 @@
   <link href="http://wang-ji20.github.io/atom.xml" rel="self"/>
   
   <link href="http://wang-ji20.github.io/"/>
-  <updated>2023-08-26T15:41:44.556Z</updated>
+  <updated>2023-08-28T12:51:46.392Z</updated>
   <id>http://wang-ji20.github.io/</id>
   
   <author>
@@ -18,10 +18,10 @@
   
   <entry>
     <title>Hello World</title>
-    <link href="http://wang-ji20.github.io/2023/08/26/hello-world/"/>
-    <id>http://wang-ji20.github.io/2023/08/26/hello-world/</id>
-    <published>2023-08-26T15:41:44.556Z</published>
-    <updated>2023-08-26T15:41:44.556Z</updated>
+    <link href="http://wang-ji20.github.io/2023/08/28/hello-world/"/>
+    <id>http://wang-ji20.github.io/2023/08/28/hello-world/</id>
+    <published>2023-08-28T12:51:46.392Z</published>
+    <updated>2023-08-28T12:51:46.392Z</updated>
     
     
       
@@ -38,11 +38,38 @@
   </entry>
   
   <entry>
+    <title>Clean Code</title>
+    <link href="http://wang-ji20.github.io/2023/08/28/clean-code/"/>
+    <id>http://wang-ji20.github.io/2023/08/28/clean-code/</id>
+    <published>2023-08-28T10:00:44.000Z</published>
+    <updated>2023-08-28T12:51:46.392Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;Clean Code 由 Robert C. Martin 在 2009 年出版。他是一个著名的软件工程师，以推广&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="CS" scheme="http://wang-ji20.github.io/categories/CS/"/>
+    
+    
+    <category term="programming" scheme="http://wang-ji20.github.io/tags/programming/"/>
+    
+    <category term="methodology" scheme="http://wang-ji20.github.io/tags/methodology/"/>
+    
+  </entry>
+  
+  <entry>
     <title>vim</title>
     <link href="http://wang-ji20.github.io/2023/08/26/vim/"/>
     <id>http://wang-ji20.github.io/2023/08/26/vim/</id>
     <published>2023-08-26T15:14:44.000Z</published>
-    <updated>2023-08-26T15:41:44.556Z</updated>
+    <updated>2023-08-28T12:51:46.392Z</updated>
     
     
       
