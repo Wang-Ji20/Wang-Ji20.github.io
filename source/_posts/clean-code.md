@@ -84,3 +84,7 @@ Clean Code 由 Robert C. Martin 在 2009 年出版。他是一个著名的软件
 应该可以一键构建，一键运行测试。
 
 不同层级的抽象不能混杂在一起。
+
+## 参考资料
+
+[1] *Clean Code: A Handbook of Agile Software Craftsmanship*, Robert C. Martin, Pearson. 2008.
