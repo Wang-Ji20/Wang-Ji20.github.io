@@ -6,7 +6,7 @@
   <link href="http://wang-ji20.github.io/atom.xml" rel="self"/>
   
   <link href="http://wang-ji20.github.io/"/>
-  <updated>2023-08-28T12:51:46.392Z</updated>
+  <updated>2023-08-29T13:48:37.731Z</updated>
   <id>http://wang-ji20.github.io/</id>
   
   <author>
@@ -17,23 +17,29 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Hello World</title>
-    <link href="http://wang-ji20.github.io/2023/08/28/hello-world/"/>
-    <id>http://wang-ji20.github.io/2023/08/28/hello-world/</id>
-    <published>2023-08-28T12:51:46.392Z</published>
-    <updated>2023-08-28T12:51:46.392Z</updated>
+    <title>C++ Test</title>
+    <link href="http://wang-ji20.github.io/2023/08/29/C-Test/"/>
+    <id>http://wang-ji20.github.io/2023/08/29/C-Test/</id>
+    <published>2023-08-29T07:18:32.000Z</published>
+    <updated>2023-08-29T13:48:37.731Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot;&gt;documentation&lt;/a&gt;</summary>
+    <summary type="html">&lt;p&gt;这篇文章记录一下我现在在 &lt;code&gt;C++&lt;/code&gt; 中使用的测试框架和测试流程(可比 &lt;code&gt;Go&lt;/code&gt;, &lt;code&gt;Rust&lt;/code&gt; 复杂多了…). 我用 &lt;code&gt;GoogleTest&lt;/code&gt; 做单元测试, 用</summary>
         
       
     
     
     
+    <category term="CS" scheme="http://wang-ji20.github.io/categories/CS/"/>
+    
+    
+    <category term="C++" scheme="http://wang-ji20.github.io/tags/C/"/>
+    
+    <category term="programming" scheme="http://wang-ji20.github.io/tags/programming/"/>
     
   </entry>
   
@@ -42,7 +48,7 @@
     <link href="http://wang-ji20.github.io/2023/08/28/clean-code/"/>
     <id>http://wang-ji20.github.io/2023/08/28/clean-code/</id>
     <published>2023-08-28T10:00:44.000Z</published>
-    <updated>2023-08-28T12:51:46.392Z</updated>
+    <updated>2023-08-29T13:48:37.731Z</updated>
     
     
       
@@ -69,7 +75,7 @@
     <link href="http://wang-ji20.github.io/2023/08/26/vim/"/>
     <id>http://wang-ji20.github.io/2023/08/26/vim/</id>
     <published>2023-08-26T15:14:44.000Z</published>
-    <updated>2023-08-28T12:51:46.392Z</updated>
+    <updated>2023-08-29T13:48:37.731Z</updated>
     
     
       
