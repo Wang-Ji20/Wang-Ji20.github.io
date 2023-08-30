@@ -3,6 +3,7 @@ title: Clean Code
 date: 2023-08-28 18:00:44
 tags:
 - programming
+- style
 - methodology
 categories: CS
 ---

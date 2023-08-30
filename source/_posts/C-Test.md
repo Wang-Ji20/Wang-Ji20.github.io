@@ -2,10 +2,13 @@
 title: C++ Test
 date: 2023-08-29 15:18:32
 tags:
-- C++
+- c++
 - programming
+- testing
+- cmake
 categories:
 - CS
+comments: true
 ---
 
 这篇文章记录一下我现在在 `C++` 中使用的测试框架和测试流程(可比 `Go`, `Rust` 复杂多了...). 我用 `GoogleTest` 做单元测试, 用 `CMake` 构建和运行单元测试, 用 `Clang` 和 `llvm-cov` 做覆盖率的报告.

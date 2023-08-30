@@ -2,8 +2,10 @@
 title: vim
 date: 2023-08-26 23:14:44
 tags:
-- text editor
-- tools
+- text
+- toolbox
+categories:
+- CS
 ---
 
 我使用 VSCode 中的 Vim 模拟器已经很久了。但是除了常用的 w 前进，b 后退，d 删除之外，许多导航用的命令都已经淡忘。特此记之。

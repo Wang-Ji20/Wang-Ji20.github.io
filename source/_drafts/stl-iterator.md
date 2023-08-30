@@ -2,8 +2,8 @@
 title: STL Iterators
 date: 2023-08-26 23:14:44
 tags:
-- STL
-- C++
+- stl
+- c++
 - programming
 catagories: CS
 ---
