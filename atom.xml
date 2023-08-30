@@ -6,7 +6,7 @@
   <link href="http://wang-ji20.github.io/atom.xml" rel="self"/>
   
   <link href="http://wang-ji20.github.io/"/>
-  <updated>2023-08-29T13:48:37.731Z</updated>
+  <updated>2023-08-30T10:32:35.526Z</updated>
   <id>http://wang-ji20.github.io/</id>
   
   <author>
@@ -17,11 +17,37 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Type Trait 类型特质</title>
+    <link href="http://wang-ji20.github.io/2023/08/30/Type-Trait/"/>
+    <id>http://wang-ji20.github.io/2023/08/30/Type-Trait/</id>
+    <published>2023-08-30T10:32:35.526Z</published>
+    <updated>2023-08-30T10:32:35.526Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;在模板元编程中, 我们常常要储存一些元信息. 例如类型 &lt;code&gt;T&lt;/code&gt; 是否是整数, 类型 &lt;code&gt;T&lt;/code&gt; 是否为指针等等. 这些信息存储在类型特质(type_trait)中.&lt;/p&gt;
+&lt;p&gt;为了方便理解, 我要用一个序列化器的例子来说明.</summary>
+        
+      
+    
+    
+    
+    
+    <category term="c++" scheme="http://wang-ji20.github.io/tags/c/"/>
+    
+    <category term="programming" scheme="http://wang-ji20.github.io/tags/programming/"/>
+    
+  </entry>
+  
+  <entry>
     <title>C++ Test</title>
     <link href="http://wang-ji20.github.io/2023/08/29/C-Test/"/>
     <id>http://wang-ji20.github.io/2023/08/29/C-Test/</id>
     <published>2023-08-29T07:18:32.000Z</published>
-    <updated>2023-08-29T13:48:37.731Z</updated>
+    <updated>2023-08-30T10:32:35.526Z</updated>
     
     
       
@@ -37,9 +63,13 @@
     <category term="CS" scheme="http://wang-ji20.github.io/categories/CS/"/>
     
     
-    <category term="C++" scheme="http://wang-ji20.github.io/tags/C/"/>
+    <category term="c++" scheme="http://wang-ji20.github.io/tags/c/"/>
     
     <category term="programming" scheme="http://wang-ji20.github.io/tags/programming/"/>
+    
+    <category term="testing" scheme="http://wang-ji20.github.io/tags/testing/"/>
+    
+    <category term="cmake" scheme="http://wang-ji20.github.io/tags/cmake/"/>
     
   </entry>
   
@@ -48,7 +78,7 @@
     <link href="http://wang-ji20.github.io/2023/08/28/clean-code/"/>
     <id>http://wang-ji20.github.io/2023/08/28/clean-code/</id>
     <published>2023-08-28T10:00:44.000Z</published>
-    <updated>2023-08-29T13:48:37.731Z</updated>
+    <updated>2023-08-30T10:32:35.526Z</updated>
     
     
       
@@ -66,6 +96,8 @@
     
     <category term="programming" scheme="http://wang-ji20.github.io/tags/programming/"/>
     
+    <category term="style" scheme="http://wang-ji20.github.io/tags/style/"/>
+    
     <category term="methodology" scheme="http://wang-ji20.github.io/tags/methodology/"/>
     
   </entry>
@@ -75,7 +107,7 @@
     <link href="http://wang-ji20.github.io/2023/08/26/vim/"/>
     <id>http://wang-ji20.github.io/2023/08/26/vim/</id>
     <published>2023-08-26T15:14:44.000Z</published>
-    <updated>2023-08-29T13:48:37.731Z</updated>
+    <updated>2023-08-30T10:32:35.526Z</updated>
     
     
       
@@ -89,10 +121,12 @@
     
     
     
+    <category term="CS" scheme="http://wang-ji20.github.io/categories/CS/"/>
     
-    <category term="text editor" scheme="http://wang-ji20.github.io/tags/text-editor/"/>
     
-    <category term="tools" scheme="http://wang-ji20.github.io/tags/tools/"/>
+    <category term="text" scheme="http://wang-ji20.github.io/tags/text/"/>
+    
+    <category term="toolbox" scheme="http://wang-ji20.github.io/tags/toolbox/"/>
     
   </entry>
   
