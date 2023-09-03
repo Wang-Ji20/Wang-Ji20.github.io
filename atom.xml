@@ -6,7 +6,7 @@
   <link href="http://wang-ji20.github.io/atom.xml" rel="self"/>
   
   <link href="http://wang-ji20.github.io/"/>
-  <updated>2023-08-30T10:32:35.526Z</updated>
+  <updated>2023-09-03T10:03:59.467Z</updated>
   <id>http://wang-ji20.github.io/</id>
   
   <author>
@@ -18,10 +18,10 @@
   
   <entry>
     <title>Type Trait 类型特质</title>
-    <link href="http://wang-ji20.github.io/2023/08/30/Type-Trait/"/>
-    <id>http://wang-ji20.github.io/2023/08/30/Type-Trait/</id>
-    <published>2023-08-30T10:32:35.526Z</published>
-    <updated>2023-08-30T10:32:35.526Z</updated>
+    <link href="http://wang-ji20.github.io/2023/09/03/Type-Trait/"/>
+    <id>http://wang-ji20.github.io/2023/09/03/Type-Trait/</id>
+    <published>2023-09-03T10:03:59.467Z</published>
+    <updated>2023-09-03T10:03:59.467Z</updated>
     
     
       
@@ -35,10 +35,39 @@
     
     
     
+    <category term="CS" scheme="http://wang-ji20.github.io/categories/CS/"/>
+    
+    
+    <category term="programming" scheme="http://wang-ji20.github.io/tags/programming/"/>
     
     <category term="c++" scheme="http://wang-ji20.github.io/tags/c/"/>
     
+  </entry>
+  
+  <entry>
+    <title>C programming language pearls C 语言的一些笔记</title>
+    <link href="http://wang-ji20.github.io/2023/09/02/C-programming-language-pearls/"/>
+    <id>http://wang-ji20.github.io/2023/09/02/C-programming-language-pearls/</id>
+    <published>2023-09-02T14:49:41.000Z</published>
+    <updated>2023-09-03T10:03:59.467Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;这里写一些 C 语言相关的小知识. 比较冷门. 有一些是 C 语言和 C++ 共享的, 一些不是. 第一条常识: C 和 C++ 之间的区别很大, 它们不是同一种语言. 最重要的区别是 ABI 上的区别, C++ 的名字修饰和 C 很不一样(似乎 C 就根本没有名字修饰,</summary>
+        
+      
+    
+    
+    
+    <category term="CS" scheme="http://wang-ji20.github.io/categories/CS/"/>
+    
+    
     <category term="programming" scheme="http://wang-ji20.github.io/tags/programming/"/>
+    
+    <category term="C" scheme="http://wang-ji20.github.io/tags/C/"/>
     
   </entry>
   
@@ -47,7 +76,7 @@
     <link href="http://wang-ji20.github.io/2023/08/29/C-Test/"/>
     <id>http://wang-ji20.github.io/2023/08/29/C-Test/</id>
     <published>2023-08-29T07:18:32.000Z</published>
-    <updated>2023-08-30T10:32:35.526Z</updated>
+    <updated>2023-09-03T10:03:59.467Z</updated>
     
     
       
@@ -63,9 +92,9 @@
     <category term="CS" scheme="http://wang-ji20.github.io/categories/CS/"/>
     
     
-    <category term="c++" scheme="http://wang-ji20.github.io/tags/c/"/>
-    
     <category term="programming" scheme="http://wang-ji20.github.io/tags/programming/"/>
+    
+    <category term="c++" scheme="http://wang-ji20.github.io/tags/c/"/>
     
     <category term="testing" scheme="http://wang-ji20.github.io/tags/testing/"/>
     
@@ -78,7 +107,7 @@
     <link href="http://wang-ji20.github.io/2023/08/28/clean-code/"/>
     <id>http://wang-ji20.github.io/2023/08/28/clean-code/</id>
     <published>2023-08-28T10:00:44.000Z</published>
-    <updated>2023-08-30T10:32:35.526Z</updated>
+    <updated>2023-09-03T10:03:59.467Z</updated>
     
     
       
@@ -107,7 +136,7 @@
     <link href="http://wang-ji20.github.io/2023/08/26/vim/"/>
     <id>http://wang-ji20.github.io/2023/08/26/vim/</id>
     <published>2023-08-26T15:14:44.000Z</published>
-    <updated>2023-08-30T10:32:35.526Z</updated>
+    <updated>2023-09-03T10:03:59.467Z</updated>
     
     
       
