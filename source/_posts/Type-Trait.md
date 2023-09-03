@@ -3,6 +3,8 @@ title: Type Trait 类型特质
 tags:
 - c++
 - programming
+categories:
+- CS
 ---
 
 在模板元编程中, 我们常常要储存一些元信息. 例如类型 `T` 是否是整数, 类型 `T` 是否为指针等等. 这些信息存储在类型特质(type_trait)中.
@@ -92,9 +94,9 @@ struct has_serialize_sfaine<
 
 这个类型特质的意思是, 如果 `T` 有一个 `serialize` 方法, 并且这个方法接受一个 `Serializer &` 类型的参数, 那么 `has_serialize<T>::value` 就为 `true`.
 
-这里用到了 `std::enable_if` 和 `std::is_same` 两个类型特质. `std::enable_if` 的作用是, 如果 `std::is_same` 的第一个参数为 `true`, 那么 `std::enable_if` 的第二个参数就是 `void`. 否则, `std::enable_if` 的第二个参数就不存在.
+这里用到了 `std::enable_if` 和 `std::is_same` 两个模板结构. `std::enable_if` 的作用是, 如果它的第一个参数为 `true`, 那么这个结构中的 `type` 就为第二个参数, 否则, 这个结构中没有 `type` 这个成员. `std::is_same` 的作用是, 如果它的两个参数类型相同, 那么它的 `value` 就为 `true`, 否则为 `false`.
 
-这样, 当 `T` 没有 `serialize` 方法的时候, 第二个模板就不存在, 所以编译器会选择第一个模板. 否则, 编译器会选择第二个模板.
+这样, 当 `T` 没有 `serialize` 方法的时候, 第二个模板就会实例化失败, 所以编译器会选择第一个模板. 否则, 编译器会选择第二个模板.
 
 为什么可以这样做? 因为 SFAINE(替换失败不是错误). 编译器在实例化模板的时候, 会从上到下依次执行所有的模板实例化可能, 在每次执行中, 遇到编译错误就停下, 换另一个可选的模板. 一次代换失败, 编译器不会报错. 报错只在两种情况下发生:
 - 所有的模板都代换失败
