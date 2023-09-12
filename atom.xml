@@ -6,7 +6,7 @@
   <link href="http://wang-ji20.github.io/atom.xml" rel="self"/>
   
   <link href="http://wang-ji20.github.io/"/>
-  <updated>2023-09-03T10:03:59.467Z</updated>
+  <updated>2023-09-12T13:33:58.123Z</updated>
   <id>http://wang-ji20.github.io/</id>
   
   <author>
@@ -18,10 +18,10 @@
   
   <entry>
     <title>Type Trait 类型特质</title>
-    <link href="http://wang-ji20.github.io/2023/09/03/Type-Trait/"/>
-    <id>http://wang-ji20.github.io/2023/09/03/Type-Trait/</id>
-    <published>2023-09-03T10:03:59.467Z</published>
-    <updated>2023-09-03T10:03:59.467Z</updated>
+    <link href="http://wang-ji20.github.io/2023/09/12/Type-Trait/"/>
+    <id>http://wang-ji20.github.io/2023/09/12/Type-Trait/</id>
+    <published>2023-09-12T13:33:58.123Z</published>
+    <updated>2023-09-12T13:33:58.123Z</updated>
     
     
       
@@ -45,18 +45,151 @@
   </entry>
   
   <entry>
+    <title>haskell notes</title>
+    <link href="http://wang-ji20.github.io/2023/09/08/haskell-notes/"/>
+    <id>http://wang-ji20.github.io/2023/09/08/haskell-notes/</id>
+    <published>2023-09-08T08:05:52.000Z</published>
+    <updated>2023-09-12T13:33:58.123Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;这里记录一些 Haskell 相关的笔记. 内容很杂, 除了最常规的 Haskell 语法语义, 标准库之外, 也可能会有一些函数式编程习语, 设计模式等内容.&lt;/p&gt;
+&lt;h2 id=&quot;运算符顺序&quot;&gt;&lt;a href=&quot;#运算符顺序&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="CS" scheme="http://wang-ji20.github.io/categories/CS/"/>
+    
+    
+    <category term="programming" scheme="http://wang-ji20.github.io/tags/programming/"/>
+    
+    <category term="haskell" scheme="http://wang-ji20.github.io/tags/haskell/"/>
+    
+    <category term="notes" scheme="http://wang-ji20.github.io/tags/notes/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>rust-notes</title>
+    <link href="http://wang-ji20.github.io/2023/09/08/rust-notes/"/>
+    <id>http://wang-ji20.github.io/2023/09/08/rust-notes/</id>
+    <published>2023-09-08T08:05:43.000Z</published>
+    <updated>2023-09-12T13:33:58.123Z</updated>
+    
+    
+    
+    
+    <category term="CS" scheme="http://wang-ji20.github.io/categories/CS/"/>
+    
+    
+    <category term="programming" scheme="http://wang-ji20.github.io/tags/programming/"/>
+    
+    <category term="rust" scheme="http://wang-ji20.github.io/tags/rust/"/>
+    
+    <category term="notes" scheme="http://wang-ji20.github.io/tags/notes/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Programming Language Theory - 1 PLs (WIP)</title>
+    <link href="http://wang-ji20.github.io/2023/09/07/plt01/"/>
+    <id>http://wang-ji20.github.io/2023/09/07/plt01/</id>
+    <published>2023-09-07T14:04:36.000Z</published>
+    <updated>2023-09-12T13:33:58.123Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;PLT concerns me less than anything in the world in the past. I hate logic and I hate compilers. They are typically too boring to me. So</summary>
+        
+      
+    
+    
+    
+    <category term="CS" scheme="http://wang-ji20.github.io/categories/CS/"/>
+    
+    
+    <category term="plt" scheme="http://wang-ji20.github.io/tags/plt/"/>
+    
+    <category term="notes" scheme="http://wang-ji20.github.io/tags/notes/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Twisted Quotes</title>
+    <link href="http://wang-ji20.github.io/2023/09/06/Twisted-Quotes/"/>
+    <id>http://wang-ji20.github.io/2023/09/06/Twisted-Quotes/</id>
+    <published>2023-09-06T10:54:59.000Z</published>
+    <updated>2023-09-12T13:33:58.123Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;引文总是扭曲的.&lt;/p&gt;
+&lt;p&gt;“一本书产生了, 这是个微小的事件, 一个任人随意把玩的小玩意儿. 从那时起, 他便进入反复的无尽游戏之中; 围绕着它的四周, 在远离它的地方, 它的化身们开始群集挤动; 每次阅读, 都为它暂时提供一个不可捉摸, 却又独一无二的驱壳;</summary>
+        
+      
+    
+    
+    
+    <category term="reading" scheme="http://wang-ji20.github.io/categories/reading/"/>
+    
+    
+    <category term="quotes" scheme="http://wang-ji20.github.io/tags/quotes/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>emacs</title>
+    <link href="http://wang-ji20.github.io/2023/09/06/emacs/"/>
+    <id>http://wang-ji20.github.io/2023/09/06/emacs/</id>
+    <published>2023-09-06T08:16:19.000Z</published>
+    <updated>2023-09-12T13:33:58.123Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;今天开始学习使用 &lt;code&gt;emacs&lt;/code&gt;.&lt;/p&gt;
+&lt;h2 id=&quot;指令&quot;&gt;&lt;a href=&quot;#指令&quot; class=&quot;headerlink&quot; title=&quot;指令&quot;&gt;&lt;/a&gt;指令&lt;/h2&gt;&lt;p&gt;&lt;code&gt;C-x C-c&lt;/code&gt; 退出</summary>
+        
+      
+    
+    
+    
+    <category term="CS" scheme="http://wang-ji20.github.io/categories/CS/"/>
+    
+    
+    <category term="text" scheme="http://wang-ji20.github.io/tags/text/"/>
+    
+    <category term="toolbox" scheme="http://wang-ji20.github.io/tags/toolbox/"/>
+    
+  </entry>
+  
+  <entry>
     <title>C programming language pearls C 语言的一些笔记</title>
     <link href="http://wang-ji20.github.io/2023/09/02/C-programming-language-pearls/"/>
     <id>http://wang-ji20.github.io/2023/09/02/C-programming-language-pearls/</id>
     <published>2023-09-02T14:49:41.000Z</published>
-    <updated>2023-09-03T10:03:59.467Z</updated>
+    <updated>2023-09-12T13:33:58.123Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;p&gt;这里写一些 C 语言相关的小知识. 比较冷门. 有一些是 C 语言和 C++ 共享的, 一些不是. 第一条常识: C 和 C++ 之间的区别很大, 它们不是同一种语言. 最重要的区别是 ABI 上的区别, C++ 的名字修饰和 C 很不一样(似乎 C 就根本没有名字修饰,</summary>
+    <summary type="html">&lt;p&gt;这里写一些 C 语言相关的小知识. 因为我已经使用 C 很久了, 所以不会有特别基础的内容. 除了基础的语法语义之外, 还有可能会提到其标准库, 工具链, 运行环境(OS 相关), 设计模式, 命令式编程习语等等.&lt;/p&gt;
+&lt;p&gt;这里的东西有一些是 C 语言和 C++</summary>
         
       
     
@@ -76,7 +209,7 @@
     <link href="http://wang-ji20.github.io/2023/08/29/C-Test/"/>
     <id>http://wang-ji20.github.io/2023/08/29/C-Test/</id>
     <published>2023-08-29T07:18:32.000Z</published>
-    <updated>2023-09-03T10:03:59.467Z</updated>
+    <updated>2023-09-12T13:33:58.123Z</updated>
     
     
       
@@ -107,7 +240,7 @@
     <link href="http://wang-ji20.github.io/2023/08/28/clean-code/"/>
     <id>http://wang-ji20.github.io/2023/08/28/clean-code/</id>
     <published>2023-08-28T10:00:44.000Z</published>
-    <updated>2023-09-03T10:03:59.467Z</updated>
+    <updated>2023-09-12T13:33:58.123Z</updated>
     
     
       
@@ -136,7 +269,7 @@
     <link href="http://wang-ji20.github.io/2023/08/26/vim/"/>
     <id>http://wang-ji20.github.io/2023/08/26/vim/</id>
     <published>2023-08-26T15:14:44.000Z</published>
-    <updated>2023-09-03T10:03:59.467Z</updated>
+    <updated>2023-09-12T13:33:58.123Z</updated>
     
     
       
@@ -156,6 +289,33 @@
     <category term="text" scheme="http://wang-ji20.github.io/tags/text/"/>
     
     <category term="toolbox" scheme="http://wang-ji20.github.io/tags/toolbox/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>geb</title>
+    <link href="http://wang-ji20.github.io/2023/07/24/geb/"/>
+    <id>http://wang-ji20.github.io/2023/07/24/geb/</id>
+    <published>2023-07-24T05:59:54.000Z</published>
+    <updated>2023-09-12T13:33:58.123Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;从人类简史之后，我总是对科普读物敬而远之。那本书广为流传，但只是一袭华美的袍，上面爬满了虱子。它的态度玩世不恭。它过度泛化（这就像自私的基因）。它为了反常识而反常识。更重要的是，这些“反常识”的话对我来说其实并没有多少新异性（我从张荫麟那里借来这个词），而这种新异性同样是</summary>
+        
+      
+    
+    
+    
+    <category term="reading" scheme="http://wang-ji20.github.io/categories/reading/"/>
+    
+    
+    <category term="maths" scheme="http://wang-ji20.github.io/tags/maths/"/>
+    
+    <category term="non-fiction" scheme="http://wang-ji20.github.io/tags/non-fiction/"/>
     
   </entry>
   
