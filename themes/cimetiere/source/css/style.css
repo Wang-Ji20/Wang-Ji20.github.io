@@ -1,0 +1,24 @@
+@import url("https://fonts.googleapis.com/css2?family=Major+Mono+Display&family=Noto+Serif+SC:wght@500&family=Noto+Serif:ital,wght@1,500&family=Noto+Sans+SC:wght@350&display=swap");
+body {
+  font-family: "Noto Serif SC", serif;
+  color: #333;
+}
+
+h1,
+h2 {
+  font: 100% "Major Mono Display", monospace, "Noto Sans SC", sans-serif;
+}
+
+h1 {
+  font-size: 3em;
+}
+
+h2 {
+  font-size: 2em;
+}
+
+.tldr {
+  font: 100% "Noto Serif", serif;
+}
+
+/*# sourceMappingURL=style.css.map */

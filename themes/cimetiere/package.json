@@ -1,0 +1,19 @@
+{
+  "name": "hexo-theme-cimetiere",
+  "version": "1.0.0",
+  "description": "A hexo theme for my personal website",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "cssgen": "sass source/scss:source/css"
+  },
+  "keywords": [
+    "hexo",
+    "theme"
+  ],
+  "author": "Ji Wang",
+  "license": "ISC",
+  "dependencies": {
+    "sass": "^1.68.0"
+  }
+}

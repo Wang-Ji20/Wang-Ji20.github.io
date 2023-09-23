@@ -1,0 +1,10 @@
+<h1>Cemetry of Innocent</h1>
+<h1>无辜者公墓</h1>
+<div class="tldr">murmurs from the underground</div>
+<ul>
+    <% for (let post of site.posts.data) { %>
+    <li>
+        <a href="<%- url_for(post.path) %>"><%- post.title %></a>
+    </li>
+    <% } %>
+</ul>

@@ -1,5 +1,5 @@
 ---
-title: C programming language pearls C 语言的一些笔记
+title: C programming language pearls
 date: 2023-09-02 22:49:41
 tags:
 - C

@@ -1,5 +1,6 @@
 ---
-title: Type Trait 类型特质
+title: Type Trait
+date: 2023-09-06 18:54:59
 tags:
 - c++
 - programming
@@ -21,7 +22,7 @@ categories:
 
 我们需要定义一个谓词 `is_pointer<T>`, 用于判断类型 `T` 是否为指针类型. 我们可以这样定义:
 
-```cpp
+```c++
 template <typename T>
 struct is_pointer {
     static constexpr bool value = false;
