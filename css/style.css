@@ -1,0 +1,71 @@
+@import url("https://fonts.googleapis.com/css2?family=Major+Mono+Display&family=Noto+Serif+SC:wght@500&family=Noto+Serif:ital,wght@1,500&family=Noto+Sans+SC:wght@350&display=swap");
+.flex {
+  display: flex;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.flex-center {
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-row-l {
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+body {
+  font-family: "Noto Serif SC", serif;
+  color: #333;
+}
+
+h1,
+h2 {
+  font: 100% "Major Mono Display", monospace, "Noto Sans SC", sans-serif;
+}
+
+h1 {
+  font-size: 3em;
+}
+
+h2 {
+  font-size: 2em;
+}
+
+#favorites a {
+  color: #ffffff;
+  text-decoration: underline;
+}
+#favorites a :hover {
+  color: black;
+}
+
+.tldr {
+  font: 100% "Noto Serif", serif;
+}
+
+.language-hljs {
+  padding: 10px;
+}
+
+#CS {
+  background-color: #ffc824;
+}
+
+#favorites {
+  background-color: #086000;
+  color: #fff;
+}
+
+.highlight {
+  background-color: #000000;
+  height: 10px;
+  max-width: 100px;
+}
+
+section {
+  padding: 30px 25px 40px 20px;
+}
