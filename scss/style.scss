@@ -6,6 +6,25 @@ $font-content: 'Noto Serif SC', serif;
 $font-tldr: 'Noto Serif', serif;
 
 $primary-color: #333;
+$secondary-color: #ffffff;
+
+.flex {
+    display: flex;
+}
+
+.flex-column {
+    flex-direction: column;
+}
+
+.flex-center {
+    justify-content: center;
+    align-items: center;
+}
+
+.flex-row-l {
+    flex-direction: row;
+    justify-content: space-between;
+}
 
 body {
     font-family: $font-content;
@@ -25,7 +44,38 @@ h2 {
     font-size: 2em;
 }
 
+#favorites a {
+    color: $secondary-color;
+    text-decoration: underline;
+    :hover {
+        color: darken($secondary-color, 100%);
+    }
+}
+
 
 .tldr {
     font: 100% $font-tldr;
+}
+
+.language-hljs {
+    padding: 10px;
+}
+
+#CS {
+    background-color: #ffc824;
+}
+
+#favorites {
+    background-color: #086000;
+    color: #fff;
+}
+
+.highlight {
+    background-color: #000000;
+    height: 10px;
+    max-width: 100px;
+}
+
+section {
+    padding: 30px 25px 40px 20px;
 }

@@ -5,22 +5,42 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.1/mdb.min.css" rel="stylesheet" />
     
+<link rel="stylesheet" href="/css/intellij-light.css">
+
+
+        <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.1/mdb.min.js"></script>
+        
 <link rel="stylesheet" href="/css/style.css">
 
+
+            <link rel="stylesheet"
+                href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+            <style>
+                .material-symbols-outlined {
+                    font-variation-settings:
+                        'FILL' 0,
+                        'wght' 400,
+                        'GRAD' 0,
+                        'opsz' 24
+                }
+            </style>
+
 <meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="无辜者公墓" type="application/atom+xml">
-<link rel="stylesheet" href="/css/prism.css" type="text/css">
-<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+</head>
 
 <body>
     <h1>
-    Programming Language Theory - Preface
+    programming language theory - preface
 </h1>
 
 <p>
     <p>PLT concerns me less than anything in the world in the past. I hate logic and I hate compilers. They are typically too boring to me. So I am very surprised to witness myself charmed by this subject. This realm is quite new and unfamiliar to me(not to the world, however; there are generally too few PLT education resources in China here). So I will start from the very beginning and try to record what I learnt in this blog series. They may miss every points and abuse every bad writing practice in English prose, but just forgive a terrible college student now.</p>
 <h2 id="Motivation"><a href="#Motivation" class="headerlink" title="Motivation"></a>Motivation</h2><h3 id="Make-Computer-Programs-Writeable-and-Readable"><a href="#Make-Computer-Programs-Writeable-and-Readable" class="headerlink" title="Make Computer Programs Writeable and Readable"></a>Make Computer Programs Writeable and Readable</h3><p>How do we write codes and how do we write comments? My first motivation to learn PLT cames from this seemingly obvious problem. why, look at some my old codes:</p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre class="line-numbers language-hljs cpp"><span class="hljs-comment">// visit the root node is the entry method</span><br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">CodegenVisitor::visit</span><span class="hljs-params">(std::shared_ptr&lt;AST&gt; ast)</span> </span>&#123;<br>  <span class="hljs-comment">// we create a new basic block here.</span><br>  BasicBlock *BB = BasicBlock::<span class="hljs-built_in">Create</span>(*TheContext, <span class="hljs-string">&quot;ee&quot;</span>);<br>  <span class="hljs-comment">// insert my item here.</span><br>  Builder-&gt;<span class="hljs-built_in">SetInsertPoint</span>(BB);<br>  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">auto</span> &amp;&amp;i : ast-&gt;children) &#123;<br>    <span class="hljs-comment">// codegen every child.</span><br>    i-&gt;<span class="hljs-built_in">codegen</span>(*<span class="hljs-keyword">this</span>);<br>  &#125;<br>  <span class="hljs-keyword"><code class="language-hljs cpp"><span class="hljs-comment">// visit the root node is the entry method</span><br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">CodegenVisitor::visit</span><span class="hljs-params">(std::shared_ptr&lt;AST&gt; ast)</span> </span>&#123;<br>  <span class="hljs-comment">// we create a new basic block here.</span><br>  BasicBlock *BB = BasicBlock::<span class="hljs-built_in">Create</span>(*TheContext, <span class="hljs-string">&quot;ee&quot;</span>);<br>  <span class="hljs-comment">// insert my item here.</span><br>  Builder-&gt;<span class="hljs-built_in">SetInsertPoint</span>(BB);<br>  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">auto</span> &amp;&amp;i : ast-&gt;children) &#123;<br>    <span class="hljs-comment">// codegen every child.</span><br>    i-&gt;<span class="hljs-built_in">codegen</span>(*<span class="hljs-keyword">this</span>);<br>  &#125;<br>  <span class="hljs-keyword">return</span>;<br>&#125;<br><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></td></tr></table></figure>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-comment">// visit the root node is the entry method</span><br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">CodegenVisitor::visit</span><span class="hljs-params">(std::shared_ptr&lt;AST&gt; ast)</span> </span>&#123;<br>  <span class="hljs-comment">// we create a new basic block here.</span><br>  BasicBlock *BB = BasicBlock::<span class="hljs-built_in">Create</span>(*TheContext, <span class="hljs-string">&quot;ee&quot;</span>);<br>  <span class="hljs-comment">// insert my item here.</span><br>  Builder-&gt;<span class="hljs-built_in">SetInsertPoint</span>(BB);<br>  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">auto</span> &amp;&amp;i : ast-&gt;children) &#123;<br>    <span class="hljs-comment">// codegen every child.</span><br>    i-&gt;<span class="hljs-built_in">codegen</span>(*<span class="hljs-keyword">this</span>);<br>  &#125;<br>  <span class="hljs-keyword">return</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
 
 <p>This code is from my first compiler project: C to LLVM IR. These domain knowledge can be ignored. We can just look at the code.</p>
 <p>Of course, the current I recognize these comment bad. They just repeats what the real C++ code does, so they are just redundency. Not only redundent, but also harmful. If I changed the code and the comment remain unchanged, then the comment obsoletes and mislead readers. I know I should delete them.</p>
@@ -30,7 +50,7 @@
 <p>I wrote test for many programs. But as a notorius <em>bad</em> programmer, even I tried so hard, there still are corner cases where my software fails and segfault(In particular, when I say segfault, I do mean I’m writing C++).<br>So I am always struggling for ways to write right programs. But how can I do this? Difficult. For a typical verification attempt, I need to calculate postconditions of procedures, and prove some theorems about the program. When the program is written by imperative languages, that’s no easy work. Because we make commands to the runtime, produces side effects, the property of our program is hard to sketch.</p>
 <p>Declarative programming paradigm is the way around. Besides simple language like SQL or UNIX shell scripts, the general purpose declarative programming languages are also called functional programming languages, for they treat functions as first-class citizens. FP is about describe what you want your program do, rather than how to do it. By this method you don’t specify about registers, memory allocation or loops. Instead, you ask questions about your system’s behavior and logic. On these realms mathmaticians have developed a great range of tools that we can utilize, from induction to the theory of categories.</p>
 <p>When I first discover functional programming, the haskell code below impressed me the most, a quicksort:</p>
-<figure class="highlight haskell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre class="line-numbers language-hljs haskell"><span class="hljs-title">quicksort</span> :: <span class="hljs-type">Ord</span> a =&gt; [a] -&gt; [a]<br><span class="hljs-title">quicksort</span> [] = []<br><span class="hljs-title"><code class="language-hljs haskell"><span class="hljs-title">quicksort</span> :: <span class="hljs-type">Ord</span> a =&gt; [a] -&gt; [a]<br><span class="hljs-title">quicksort</span> [] = []<br><span class="hljs-title">quicksort</span> (x:xs) = quicksort [y | y <- xs, y < x] ++ [x] ++ quicksort [y | y <- xs, y >= x]<br><span aria-hidden="true" class="line-numbers-rows"><span></span></span></code></pre></td></tr></table></figure>
+<figure class="highlight haskell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs haskell"><span class="hljs-title">quicksort</span> :: <span class="hljs-type">Ord</span> a =&gt; [a] -&gt; [a]<br><span class="hljs-title">quicksort</span> [] = []<br><span class="hljs-title">quicksort</span> (x:xs) = quicksort [y | y &lt;- xs, y &lt; x] ++ [x] ++ quicksort [y | y &lt;- xs, y &gt;= x]<br></code></pre></td></tr></table></figure>
 
 <p>Its implementation is simple. It’s terse and elegant. But the most importantly, its correctness is trival to see. we can use induction to prove that in little time. That’s the power of declarative programming. And with PLT we can even do more.</p>
 <h3 id="Computer-Programs-And-Languages"><a href="#Computer-Programs-And-Languages" class="headerlink" title="Computer Programs And Languages"></a>Computer Programs And Languages</h3><p>Then I want to talk about why there are so many programming languages. Why can’t there be just one giant do-everything-language and everyone just stick to it?</p>
