@@ -1,5 +1,9 @@
-hexo.on('generateBefore',
-    () => {
-        require('child_process').execSync('npm run cssgen', { cwd: __dirname })
+hexo.extend.generator.register(
+    'css',
+    locals => {
+        return {
+            path: 'css/style.css',
+            data: require('sass').compile(require('path').resolve(__dirname, '../source') + '/scss/style.scss').css,
+        }
     }
 )
