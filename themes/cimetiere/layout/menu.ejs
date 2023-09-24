@@ -1,0 +1,11 @@
+<h1>
+    menu
+</h1>
+
+<ul>
+    <% for (let post of site.posts.data) { %>
+    <li>
+        <a href="<%- url_for(post.path) %>"><%- post.title %></a>
+    </li>
+    <% } %>
+</ul>

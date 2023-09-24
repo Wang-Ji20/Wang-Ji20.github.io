@@ -1,5 +1,5 @@
 ---
-title: Programming Language Theory - Preface
+title: programming language theory - preface
 date: 2023-09-07 22:04:36
 tags:
 - plt
