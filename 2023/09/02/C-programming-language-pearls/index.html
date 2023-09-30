@@ -33,12 +33,19 @@
 </head>
 
 <body>
-    <h1>
-    C programming language pearls
-</h1>
+    <div class="flex flex-row">
 
-<p>
-    <p>这里写一些 C 语言相关的小知识. 因为我已经使用 C 很久了, 所以不会有特别基础的内容. 除了基础的语法语义之外, 还有可能会提到其标准库, 工具链, 运行环境(OS 相关), 设计模式, 命令式编程习语等等.</p>
+    <div class="sidebar flex flex-column" style="position: fixed;">
+        <h3>Table of Contents</h3>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#memmove"><span class="toc-text">memmove()</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#VLA"><span class="toc-text">VLA</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#restrict"><span class="toc-text">restrict</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#const-%E4%BF%AE%E9%A5%B0%E8%B0%81"><span class="toc-text">const 修饰谁?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9F%94%E6%80%A7%E6%95%B0%E7%BB%84"><span class="toc-text">柔性数组</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E7%BB%84%E5%92%8C%E6%8C%87%E9%92%88"><span class="toc-text">数组和指针</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%93%E6%9E%84%E4%BD%93%E8%B5%8B%E5%80%BC%E6%8C%87%E5%AE%9A%E5%9F%9F"><span class="toc-text">结构体赋值指定域</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E7%BB%84%E8%B5%8B%E5%80%BC%E7%9A%84%E6%89%A9%E5%B1%95-Designated-Initializers"><span class="toc-text">数组赋值的扩展 Designated Initializers</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99"><span class="toc-text">参考资料</span></a></li></ol>
+        <a href="/menu.html">[posts]</a>
+    </div>
+
+    <div class="post">
+        <h1>
+            C programming language pearls
+        </h1>
+        <p>这里写一些 C 语言相关的小知识. 因为我已经使用 C 很久了, 所以不会有特别基础的内容. 除了基础的语法语义之外, 还有可能会提到其标准库, 工具链, 运行环境(OS 相关), 设计模式, 命令式编程习语等等.</p>
 <p>这里的东西有一些是 C 语言和 C++ 共享的, 一些不是. 第一条常识: C 和 C++ 之间的区别很大, 它们不是同一种语言. 最重要的区别是 ABI 上的区别, C++ 的名字修饰和 C 很不一样(似乎 C 就根本没有名字修饰, 所以 ABI 就是底层操作系统&#x2F;硬件的 ABI).</p>
 <h2 id="memmove"><a href="#memmove" class="headerlink" title="memmove()"></a><code>memmove()</code></h2><p><code>ANSI</code> 定义了两个拷贝内存的函数, 分别是 <code>memcpy()</code> 和 <code>memmove()</code>. 区别是 <code>memcpy()</code> 不能处理重叠的内存区域, 而 <code>memmove()</code> 可以. 但是 <code>memmove()</code> 的实现比 <code>memcpy()</code> 要慢.</p>
 <p>只应该使用 <code>memmove()</code>. 假装只有这一个函数. [1] 这是标准库的一个失败设计, 不应该让客户程序员来考虑内存别名的事情. 正确的设计是: 只有一个拷贝内存的函数, 它应该永远是对的, 但尽可能优化, 例如在内存不重叠的时候加快速度.</p>
@@ -83,7 +90,9 @@
 <h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><p>[1] <em>The Practice of Programming. Brian W. Kernighan, Rob Pike.</em> Addison-Wesley. 1999.</p>
 <p>[2] <a target="_blank" rel="noopener" href="https://gcc.gnu.org/onlinedocs/gcc/Designated-Inits.html">gcc docs</a></p>
 
-</p>
+    </div>
+
+</div>
 
 </body>
 
