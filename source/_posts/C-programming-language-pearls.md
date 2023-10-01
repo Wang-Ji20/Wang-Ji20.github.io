@@ -1,5 +1,5 @@
 ---
-title: C programming language pearls
+title: C programming pearls
 date: 2023-09-02 22:49:41
 tags:
 - C
