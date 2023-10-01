@@ -30,9 +30,14 @@ h1 {
 #favorites a {
   color: #ffffff;
   text-decoration: underline;
+  font: 100% "Major Mono Display", monospace, "Noto Sans SC", sans-serif;
 }
 #favorites a :hover {
   color: black;
+}
+
+.decorate-font {
+  font: 100% "Major Mono Display", monospace, "Noto Sans SC", sans-serif;
 }
 
 .tldr {
@@ -70,4 +75,10 @@ section {
 img {
   max-width: 100%;
   max-height: 100%;
+}
+
+@media (max-width: 1400px) {
+  .wide-only {
+    display: none;
+  }
 }

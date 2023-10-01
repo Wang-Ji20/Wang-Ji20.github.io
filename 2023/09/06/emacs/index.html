@@ -33,18 +33,52 @@
 </head>
 
 <body>
-    <div class="flex flex-row">
-
-    <div class="sidebar flex flex-column" style="position: fixed;">
-        <h3>Table of Contents</h3>
+    <div class="flex flex-row-l">
+    <div class="sidebar flex flex-column flex-center wide-only" style="position: fixed; padding-top: 3em;">
+        <h4>Table of Contents</h4>
         <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8C%87%E4%BB%A4"><span class="toc-text">指令</span></a></li></ol>
-        <a href="/menu.html">[posts]</a>
+            <a href="/menu.html">[posts]</a>
     </div>
 
     <div class="post">
-        <h1>
-            emacs
-        </h1>
+        <nav style="padding-top: 10px; position:fixed; width: 100vw; max-width: 900px; background-color:white;">
+            <div class="flex flex-row-l">
+                <a href="/index.html" style="color: black; padding-left:20px">
+                    <span class="material-symbols-outlined" style="font-size: 20px;">
+                        home
+                    </span>
+                </a>
+                <p class="decorate-font">
+                    cemetery of innocents
+                </p>
+                <a href="" style="color: black; padding-right: 20px">
+                    <span class="material-symbols-outlined" style="font-size: 20px;">
+                        toc
+                    </span>
+                </a>
+            </div>
+            <hr style="margin: 0;">
+        </nav>
+        <div style="height: 70px;">
+        </div>
+
+        <div style="margin: 0 0 25px 5px;">
+            <h1>
+                emacs
+            </h1>
+            <p class="tldr" style="margin: 0;">
+                September 6, 2023
+            </p>
+            
+                <span class="badge rounded-pill badge-primary">
+                    <a href="/tags/text/">text</a>
+                </span>
+                
+                <span class="badge rounded-pill badge-primary">
+                    <a href="/tags/toolbox/">toolbox</a>
+                </span>
+                
+        </div>
         <p>今天开始学习使用 <code>emacs</code>.</p>
 <h2 id="指令"><a href="#指令" class="headerlink" title="指令"></a>指令</h2><p><code>C-x C-c</code> 退出 <code>emacs</code>.</p>
 <p><code>C-g</code> 取消当前操作.</p>

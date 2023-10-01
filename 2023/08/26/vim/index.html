@@ -33,18 +33,52 @@
 </head>
 
 <body>
-    <div class="flex flex-row">
-
-    <div class="sidebar flex flex-column" style="position: fixed;">
-        <h3>Table of Contents</h3>
+    <div class="flex flex-row-l">
+    <div class="sidebar flex flex-column flex-center wide-only" style="position: fixed; padding-top: 3em;">
+        <h4>Table of Contents</h4>
         <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AF%BC%E8%88%AA"><span class="toc-text">导航</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B0%B1%E5%9C%B0%E4%BF%AE%E6%94%B9"><span class="toc-text">就地修改</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BC%96%E8%BE%91"><span class="toc-text">编辑</span></a></li></ol>
-        <a href="/menu.html">[posts]</a>
+            <a href="/menu.html">[posts]</a>
     </div>
 
     <div class="post">
-        <h1>
-            vim
-        </h1>
+        <nav style="padding-top: 10px; position:fixed; width: 100vw; max-width: 900px; background-color:white;">
+            <div class="flex flex-row-l">
+                <a href="/index.html" style="color: black; padding-left:20px">
+                    <span class="material-symbols-outlined" style="font-size: 20px;">
+                        home
+                    </span>
+                </a>
+                <p class="decorate-font">
+                    cemetery of innocents
+                </p>
+                <a href="" style="color: black; padding-right: 20px">
+                    <span class="material-symbols-outlined" style="font-size: 20px;">
+                        toc
+                    </span>
+                </a>
+            </div>
+            <hr style="margin: 0;">
+        </nav>
+        <div style="height: 70px;">
+        </div>
+
+        <div style="margin: 0 0 25px 5px;">
+            <h1>
+                vim
+            </h1>
+            <p class="tldr" style="margin: 0;">
+                August 26, 2023
+            </p>
+            
+                <span class="badge rounded-pill badge-primary">
+                    <a href="/tags/text/">text</a>
+                </span>
+                
+                <span class="badge rounded-pill badge-primary">
+                    <a href="/tags/toolbox/">toolbox</a>
+                </span>
+                
+        </div>
         <p>我使用 VSCode 中的 Vim 模拟器已经很久了。但是除了常用的 w 前进，b 后退，d 删除之外，许多导航用的命令都已经淡忘。特此记之。</p>
 <h2 id="导航"><a href="#导航" class="headerlink" title="导航"></a>导航</h2><ul>
 <li><code>e</code> 到这个词的尾部。</li>

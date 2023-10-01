@@ -33,18 +33,52 @@
 </head>
 
 <body>
-    <div class="flex flex-row">
-
-    <div class="sidebar flex flex-column" style="position: fixed;">
-        <h3>Table of Contents</h3>
+    <div class="flex flex-row-l">
+    <div class="sidebar flex flex-column flex-center wide-only" style="position: fixed; padding-top: 3em;">
+        <h4>Table of Contents</h4>
         <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A8%A1%E6%9D%BF%E5%AE%9E%E4%BE%8B%E5%8C%96%E7%9A%84%E9%80%89%E6%8B%A9"><span class="toc-text">模板实例化的选择</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AE%80%E5%8D%95%E9%80%89%E6%8B%A9%E5%AE%9E%E4%BE%8B%E5%8C%96"><span class="toc-text">简单选择实例化</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#SFINAE"><span class="toc-text">SFINAE</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9B%BF%E4%BB%A3%E6%96%B9%E6%A1%88-static-assert"><span class="toc-text">替代方案: static_assert</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9B%BF%E4%BB%A3%E6%96%B9%E6%A1%88-if-constexpr"><span class="toc-text">替代方案: if constexpr</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9C%80%E7%BB%88%E6%96%B9%E6%A1%88-concept"><span class="toc-text">最终方案: concept</span></a></li></ol>
-        <a href="/menu.html">[posts]</a>
+            <a href="/menu.html">[posts]</a>
     </div>
 
     <div class="post">
-        <h1>
-            Type Trait
-        </h1>
+        <nav style="padding-top: 10px; position:fixed; width: 100vw; max-width: 900px; background-color:white;">
+            <div class="flex flex-row-l">
+                <a href="/index.html" style="color: black; padding-left:20px">
+                    <span class="material-symbols-outlined" style="font-size: 20px;">
+                        home
+                    </span>
+                </a>
+                <p class="decorate-font">
+                    cemetery of innocents
+                </p>
+                <a href="" style="color: black; padding-right: 20px">
+                    <span class="material-symbols-outlined" style="font-size: 20px;">
+                        toc
+                    </span>
+                </a>
+            </div>
+            <hr style="margin: 0;">
+        </nav>
+        <div style="height: 70px;">
+        </div>
+
+        <div style="margin: 0 0 25px 5px;">
+            <h1>
+                Type Trait
+            </h1>
+            <p class="tldr" style="margin: 0;">
+                September 6, 2023
+            </p>
+            
+                <span class="badge rounded-pill badge-primary">
+                    <a href="/tags/programming/">programming</a>
+                </span>
+                
+                <span class="badge rounded-pill badge-primary">
+                    <a href="/tags/c/">c++</a>
+                </span>
+                
+        </div>
         <p>在模板元编程中, 我们常常要储存一些元信息. 例如类型 <code>T</code> 是否是整数, 类型 <code>T</code> 是否为指针等等. 这些信息存储在类型特质(type_trait)中.</p>
 <p>为了方便理解, 我要用一个序列化器的例子来说明. 假设我们需要写一个序列化器, 它至少有以下两个功能:</p>
 <ul>

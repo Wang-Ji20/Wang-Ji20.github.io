@@ -33,18 +33,52 @@
 </head>
 
 <body>
-    <div class="flex flex-row">
-
-    <div class="sidebar flex flex-column" style="position: fixed;">
-        <h3>Table of Contents</h3>
+    <div class="flex flex-row-l">
+    <div class="sidebar flex flex-column flex-center wide-only" style="position: fixed; padding-top: 3em;">
+        <h4>Table of Contents</h4>
         <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Motivation"><span class="toc-text">Motivation</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Make-Computer-Programs-Writeable-and-Readable"><span class="toc-text">Make Computer Programs Writeable and Readable</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Make-Computer-Programs-Correct"><span class="toc-text">Make Computer Programs Correct</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Computer-Programs-And-Languages"><span class="toc-text">Computer Programs And Languages</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#About-Efficiency"><span class="toc-text">About Efficiency</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Content"><span class="toc-text">Content</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#bibliography"><span class="toc-text">bibliography</span></a></li></ol>
-        <a href="/menu.html">[posts]</a>
+            <a href="/menu.html">[posts]</a>
     </div>
 
     <div class="post">
-        <h1>
-            programming language theory - preface
-        </h1>
+        <nav style="padding-top: 10px; position:fixed; width: 100vw; max-width: 900px; background-color:white;">
+            <div class="flex flex-row-l">
+                <a href="/index.html" style="color: black; padding-left:20px">
+                    <span class="material-symbols-outlined" style="font-size: 20px;">
+                        home
+                    </span>
+                </a>
+                <p class="decorate-font">
+                    cemetery of innocents
+                </p>
+                <a href="" style="color: black; padding-right: 20px">
+                    <span class="material-symbols-outlined" style="font-size: 20px;">
+                        toc
+                    </span>
+                </a>
+            </div>
+            <hr style="margin: 0;">
+        </nav>
+        <div style="height: 70px;">
+        </div>
+
+        <div style="margin: 0 0 25px 5px;">
+            <h1>
+                programming language theory - preface
+            </h1>
+            <p class="tldr" style="margin: 0;">
+                September 7, 2023
+            </p>
+            
+                <span class="badge rounded-pill badge-primary">
+                    <a href="/tags/plt/">plt</a>
+                </span>
+                
+                <span class="badge rounded-pill badge-primary">
+                    <a href="/tags/notes/">notes</a>
+                </span>
+                
+        </div>
         <p>PLT concerns me less than anything in the world in the past. I hate logic and I hate compilers. They are typically too boring to me. So I am very surprised to witness myself charmed by this subject. This realm is quite new and unfamiliar to me(not to the world, however; there are generally too few PLT education resources in China here). So I will start from the very beginning and try to record what I learnt in this blog series. They may miss every points and abuse every bad writing practice in English prose, but just forgive a terrible college student now.</p>
 <h2 id="Motivation"><a href="#Motivation" class="headerlink" title="Motivation"></a>Motivation</h2><h3 id="Make-Computer-Programs-Writeable-and-Readable"><a href="#Make-Computer-Programs-Writeable-and-Readable" class="headerlink" title="Make Computer Programs Writeable and Readable"></a>Make Computer Programs Writeable and Readable</h3><p>How do we write codes and how do we write comments? My first motivation to learn PLT cames from this seemingly obvious problem. why, look at some my old codes:</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><span class="hljs-comment">// visit the root node is the entry method</span><br><span class="hljs-function"><span class="hljs-type">void</span> <span class="hljs-title">CodegenVisitor::visit</span><span class="hljs-params">(std::shared_ptr&lt;AST&gt; ast)</span> </span>&#123;<br>  <span class="hljs-comment">// we create a new basic block here.</span><br>  BasicBlock *BB = BasicBlock::<span class="hljs-built_in">Create</span>(*TheContext, <span class="hljs-string">&quot;ee&quot;</span>);<br>  <span class="hljs-comment">// insert my item here.</span><br>  Builder-&gt;<span class="hljs-built_in">SetInsertPoint</span>(BB);<br>  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">auto</span> &amp;&amp;i : ast-&gt;children) &#123;<br>    <span class="hljs-comment">// codegen every child.</span><br>    i-&gt;<span class="hljs-built_in">codegen</span>(*<span class="hljs-keyword">this</span>);<br>  &#125;<br>  <span class="hljs-keyword">return</span>;<br>&#125;<br></code></pre></td></tr></table></figure>

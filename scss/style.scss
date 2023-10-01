@@ -2,9 +2,9 @@
 
 // TODO: fallback fonts
 // TODO: mobile layout
-$font-title: 'Major Mono Display', monospace;
-$font-chinese-title: 'Noto Sans SC', sans-serif;
-$font-content: 'Noto Serif SC', serif;
+$font-display: 'Major Mono Display', monospace;
+$font-sans-serif: 'Noto Sans SC', sans-serif;
+$font-serif: 'Noto Serif SC', serif;
 $font-tldr: 'Noto Serif', serif;
 
 $primary-color: #333;
@@ -29,23 +29,27 @@ $secondary-color: #ffffff;
 }
 
 body {
-    font-family: $font-content;
+    font-family: $font-serif;
     color: $primary-color;
 }
 
 h1 {
-    font: 100% $font-title, $font-chinese-title;
+    font: 100% $font-display, $font-sans-serif;
     font-size: 3em;
 }
 
 #favorites a {
     color: $secondary-color;
     text-decoration: underline;
+    font: 100% $font-display, $font-sans-serif;
     :hover {
         color: darken($secondary-color, 100%);
     }
 }
 
+.decorate-font {
+    font: 100% $font-display, $font-sans-serif;
+}
 
 .tldr {
     font: 100% $font-tldr;
@@ -82,4 +86,10 @@ section {
 img {
     max-width: 100%;
     max-height: 100%;
+}
+
+.wide-only {
+    @media (max-width: 1400px) {
+        display: none;
+    }
 }
