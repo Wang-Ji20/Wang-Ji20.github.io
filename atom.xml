@@ -6,7 +6,7 @@
   <link href="http://wang-ji20.github.io/atom.xml" rel="self"/>
   
   <link href="http://wang-ji20.github.io/"/>
-  <updated>2023-10-01T15:14:32.719Z</updated>
+  <updated>2023-10-02T07:10:44.540Z</updated>
   <id>http://wang-ji20.github.io/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://wang-ji20.github.io/2023/09/23/art-and-design/"/>
     <id>http://wang-ji20.github.io/2023/09/23/art-and-design/</id>
     <published>2023-09-23T10:05:45.000Z</published>
-    <updated>2023-10-01T15:14:32.719Z</updated>
+    <updated>2023-10-02T07:10:44.540Z</updated>
     
     
       
@@ -42,7 +42,7 @@
     <link href="http://wang-ji20.github.io/2023/09/08/haskell-notes/"/>
     <id>http://wang-ji20.github.io/2023/09/08/haskell-notes/</id>
     <published>2023-09-08T08:05:52.000Z</published>
-    <updated>2023-10-01T15:14:32.719Z</updated>
+    <updated>2023-10-02T07:10:44.540Z</updated>
     
     
       
@@ -61,9 +61,9 @@
     
     <category term="programming" scheme="http://wang-ji20.github.io/tags/programming/"/>
     
-    <category term="notes" scheme="http://wang-ji20.github.io/tags/notes/"/>
-    
     <category term="haskell" scheme="http://wang-ji20.github.io/tags/haskell/"/>
+    
+    <category term="notes" scheme="http://wang-ji20.github.io/tags/notes/"/>
     
   </entry>
   
@@ -72,7 +72,7 @@
     <link href="http://wang-ji20.github.io/2023/09/08/rust-notes/"/>
     <id>http://wang-ji20.github.io/2023/09/08/rust-notes/</id>
     <published>2023-09-08T08:05:43.000Z</published>
-    <updated>2023-10-01T15:14:32.719Z</updated>
+    <updated>2023-10-02T07:10:44.540Z</updated>
     
     
     
@@ -82,9 +82,9 @@
     
     <category term="programming" scheme="http://wang-ji20.github.io/tags/programming/"/>
     
-    <category term="rust" scheme="http://wang-ji20.github.io/tags/rust/"/>
-    
     <category term="notes" scheme="http://wang-ji20.github.io/tags/notes/"/>
+    
+    <category term="rust" scheme="http://wang-ji20.github.io/tags/rust/"/>
     
   </entry>
   
@@ -93,7 +93,7 @@
     <link href="http://wang-ji20.github.io/2023/09/07/plt01/"/>
     <id>http://wang-ji20.github.io/2023/09/07/plt01/</id>
     <published>2023-09-07T14:04:36.000Z</published>
-    <updated>2023-10-01T15:14:32.719Z</updated>
+    <updated>2023-10-02T07:10:44.540Z</updated>
     
     
       
@@ -109,9 +109,9 @@
     <category term="CS" scheme="http://wang-ji20.github.io/categories/CS/"/>
     
     
-    <category term="plt" scheme="http://wang-ji20.github.io/tags/plt/"/>
-    
     <category term="notes" scheme="http://wang-ji20.github.io/tags/notes/"/>
+    
+    <category term="plt" scheme="http://wang-ji20.github.io/tags/plt/"/>
     
   </entry>
   
@@ -120,7 +120,7 @@
     <link href="http://wang-ji20.github.io/2023/09/06/Twisted-Quotes/"/>
     <id>http://wang-ji20.github.io/2023/09/06/Twisted-Quotes/</id>
     <published>2023-09-06T10:54:59.000Z</published>
-    <updated>2023-10-01T15:14:32.719Z</updated>
+    <updated>2023-10-02T07:10:44.540Z</updated>
     
     
       
@@ -146,7 +146,7 @@
     <link href="http://wang-ji20.github.io/2023/09/06/Type-Trait/"/>
     <id>http://wang-ji20.github.io/2023/09/06/Type-Trait/</id>
     <published>2023-09-06T10:54:59.000Z</published>
-    <updated>2023-10-01T15:14:32.719Z</updated>
+    <updated>2023-10-02T07:10:44.540Z</updated>
     
     
       
@@ -163,9 +163,9 @@
     <category term="CS" scheme="http://wang-ji20.github.io/categories/CS/"/>
     
     
-    <category term="programming" scheme="http://wang-ji20.github.io/tags/programming/"/>
-    
     <category term="c++" scheme="http://wang-ji20.github.io/tags/c/"/>
+    
+    <category term="programming" scheme="http://wang-ji20.github.io/tags/programming/"/>
     
   </entry>
   
@@ -174,7 +174,7 @@
     <link href="http://wang-ji20.github.io/2023/09/06/emacs/"/>
     <id>http://wang-ji20.github.io/2023/09/06/emacs/</id>
     <published>2023-09-06T08:16:19.000Z</published>
-    <updated>2023-10-01T15:14:32.719Z</updated>
+    <updated>2023-10-02T07:10:44.540Z</updated>
     
     
       
@@ -202,7 +202,7 @@
     <link href="http://wang-ji20.github.io/2023/09/02/C-programming-language-pearls/"/>
     <id>http://wang-ji20.github.io/2023/09/02/C-programming-language-pearls/</id>
     <published>2023-09-02T14:49:41.000Z</published>
-    <updated>2023-10-01T15:14:32.719Z</updated>
+    <updated>2023-10-02T07:10:44.540Z</updated>
     
     
       
@@ -230,7 +230,7 @@
     <link href="http://wang-ji20.github.io/2023/08/29/C-Test/"/>
     <id>http://wang-ji20.github.io/2023/08/29/C-Test/</id>
     <published>2023-08-29T07:18:32.000Z</published>
-    <updated>2023-10-01T15:14:32.719Z</updated>
+    <updated>2023-10-02T07:10:44.540Z</updated>
     
     
       
@@ -246,9 +246,9 @@
     <category term="CS" scheme="http://wang-ji20.github.io/categories/CS/"/>
     
     
-    <category term="programming" scheme="http://wang-ji20.github.io/tags/programming/"/>
-    
     <category term="c++" scheme="http://wang-ji20.github.io/tags/c/"/>
+    
+    <category term="programming" scheme="http://wang-ji20.github.io/tags/programming/"/>
     
     <category term="testing" scheme="http://wang-ji20.github.io/tags/testing/"/>
     
@@ -261,7 +261,7 @@
     <link href="http://wang-ji20.github.io/2023/08/28/clean-code/"/>
     <id>http://wang-ji20.github.io/2023/08/28/clean-code/</id>
     <published>2023-08-28T10:00:44.000Z</published>
-    <updated>2023-10-01T15:14:32.719Z</updated>
+    <updated>2023-10-02T07:10:44.540Z</updated>
     
     
       
@@ -290,7 +290,7 @@
     <link href="http://wang-ji20.github.io/2023/08/26/vim/"/>
     <id>http://wang-ji20.github.io/2023/08/26/vim/</id>
     <published>2023-08-26T15:14:44.000Z</published>
-    <updated>2023-10-01T15:14:32.719Z</updated>
+    <updated>2023-10-02T07:10:44.540Z</updated>
     
     
       
@@ -318,7 +318,7 @@
     <link href="http://wang-ji20.github.io/2023/07/24/geb/"/>
     <id>http://wang-ji20.github.io/2023/07/24/geb/</id>
     <published>2023-07-24T05:59:54.000Z</published>
-    <updated>2023-10-01T15:14:32.719Z</updated>
+    <updated>2023-10-02T07:10:44.540Z</updated>
     
     
       
