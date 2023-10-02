@@ -1,5 +1,5 @@
 <div class="flex flex-row-l">
-    <div class="sidebar flex flex-column flex-center wide-only" style="position: fixed; padding-top: 3em;">
+    <div class="sidebar flex flex-column flex-center wide-only" style="position: fixed; padding-top: 3em; max-width: 300px">
         <h4>Table of Contents</h4>
         <%- toc(page.content, {list_number: false}) %>
             <a href="/menu.html">[posts]</a>
@@ -34,8 +34,13 @@
             <p class="tldr" style="margin: 0;">
                 <%- page.date.format('MMMM D, YYYY'); %>
             </p>
+            <% for (let cat of page.categories.data) { %>
+                <span class="badge badge-primary badge-primary">
+                    <a href="<%- url_for(cat.path) %>"><%- cat.name %></a>
+                </span>
+                <% } %>
             <% for (let tag of page.tags.data) { %>
-                <span class="badge rounded-pill badge-primary">
+                <span class="badge rounded-pill badge-secondary">
                     <a href="<%- url_for(tag.path) %>"><%- tag.name %></a>
                 </span>
                 <% } %>

@@ -1,6 +1,7 @@
 ---
 title: geb
 date: 2023-07-24 13:59:54
+mathjax: true
 tags:
 - maths
 - non-fiction
