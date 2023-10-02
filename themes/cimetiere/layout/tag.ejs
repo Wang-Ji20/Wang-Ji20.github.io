@@ -1,15 +1,19 @@
-<h1>
-   tag: <%- page.tag %>
-</h1>
+<div class="central-nav">
 
-<ul>
-    <% page.posts.each(function(post){ %>
-    <li>
-        <a href="<%- url_for(post.path) %>">
-            <%- post.title %>
-        </a>
-    </li>
-    <% }); %>
-</ul>
+    <h1>
+        tag: <%- page.tag %>
+    </h1>
 
-<a href="/menu.html">[posts]</a>
+    <ul>
+        <% page.posts.each(function(post){ %>
+            <li>
+                <a href="<%- url_for(post.path) %>">
+                    <%- post.title %>
+                </a>
+            </li>
+            <% }); %>
+    </ul>
+
+    <a href="/menu.html">[posts]</a>
+
+</div>

@@ -1,13 +1,17 @@
-<h1>
-    menu
-</h1>
+<div class="central-nav">
 
-<ul>
-    <% for (let post of site.posts.data) { %>
-    <li>
-        <a href="<%- url_for(post.path) %>"><%- post.title %></a>
-    </li>
-    <% } %>
-</ul>
+    <h1>
+        menu
+    </h1>
 
-<a href="/index.html">[index]</a>
+    <ul>
+        <% for (let post of site.posts.data) { %>
+            <li>
+                <a href="<%- url_for(post.path) %>"><%- post.title %></a>
+            </li>
+            <% } %>
+    </ul>
+
+    <a href="/index.html">[index]</a>
+
+</div>

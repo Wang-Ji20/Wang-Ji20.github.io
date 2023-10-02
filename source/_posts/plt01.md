@@ -43,8 +43,7 @@ I am not just saying that we should write clean codes, however. That's software 
 
 Several days ago I watched a talk about how to write *Software that can not be hacked*, which is just a terrible publicity for a random company... But the idea is important, though. We as programmers always want to write correct and efficent code, but how can we achieve this? We all know tests are not enough. They just show that in some cases the result of the program is acceptable, but cannot prove the program is correct.
 
-I wrote test for many programs. But as a notorius *bad* programmer, even I tried so hard, there still are corner cases where my software fails and segfault(In particular, when I say segfault, I do mean I'm writing C++).
-So I am always struggling for ways to write right programs. But how can I do this? Difficult. For a typical verification attempt, I need to calculate postconditions of procedures, and prove some theorems about the program. When the program is written by imperative languages, that's no easy work. Because we make commands to the runtime, produces side effects, the property of our program is hard to sketch.
+I wrote test for many programs. But as a notorius *bad* programmer, even I tried so hard, there still are corner cases where my software fails and segfault(In particular, when I say segfault, I do mean I'm writing C++). So I am always struggling for ways to write right programs. But how can I do this? Difficult. For a typical verification attempt, I need to calculate postconditions of procedures, and prove some theorems about the program. When the program is written by imperative languages, that's no easy work. Because we make commands to the runtime, produces side effects, the property of our program is hard to sketch.
 
 Declarative programming paradigm is the way around. Besides simple language like SQL or UNIX shell scripts, the general purpose declarative programming languages are also called functional programming languages, for they treat functions as first-class citizens. FP is about describe what you want your program do, rather than how to do it. By this method you don't specify about registers, memory allocation or loops. Instead, you ask questions about your system's behavior and logic. On these realms mathmaticians have developed a great range of tools that we can utilize, from induction to the theory of categories.
 
@@ -62,9 +61,7 @@ Its implementation is simple. It's terse and elegant. But the most importantly, 
 
 Then I want to talk about why there are so many programming languages. Why can't there be just one giant do-everything-language and everyone just stick to it?
 
-Well, let's imagine there is one, and every programmer use this ULang(Ultimate Language). We can use the ULang to write a RPG game system.
-We created our characters, items and plots. When we came to the gameplay system, we realise that we need to encode some logic in our system. What should you do if you opened that door in game?
-We cannot hard-code them in the compiled-code, because that would be very inflexible to change. So we need to describe game logic outside our main program. But.. When you are writing logics about something, aren't you writing computer programs by some language?
+Well, let's imagine there is one, and every programmer use this ULang(Ultimate Language). We can use the ULang to write a RPG game system. We created our characters, items and plots. When we came to the gameplay system, we realise that we need to encode some logic in our system. What should you do if you opened that door in game? We cannot hard-code them in the compiled-code, because that would be very inflexible to change. So we need to describe game logic outside our main program. But.. When you are writing logics about something, aren't you writing computer programs by some language?
 
 The same situation occurs in nearly every computer programs. Text processing, for example, conceives the regular languages and BNF. And transaction processing gives birth to the SQL language.
 
