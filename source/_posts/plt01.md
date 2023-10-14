@@ -14,7 +14,7 @@ PLT concerns me less than anything in the world in the past. I hate logic and I 
 
 ### Make Computer Programs Writeable and Readable
 
-How do we write codes and how do we write comments? My first motivation to learn PLT cames from this seemingly obvious problem. why, look at some my old codes:
+How do we write codes and how do we write comments? My first motivation to learn PLT came from this seemingly obvious problem. why, look at some my old codes:
 
 ```cpp
 // visit the root node is the entry method
@@ -33,7 +33,7 @@ void CodegenVisitor::visit(std::shared_ptr<AST> ast) {
 
 This code is from my first compiler project: C to LLVM IR. These domain knowledge can be ignored. We can just look at the code.
 
-Of course, the current I recognize these comment bad. They just repeats what the real C++ code does, so they are just redundency. Not only redundent, but also harmful. If I changed the code and the comment remain unchanged, then the comment obsoletes and mislead readers. I know I should delete them.
+Of course, the current I recognize these comment bad. They just repeats what the real C++ code does, so they are just redundancy. Not only redundant, but also harmful. If I changed the code and the comment remain unchanged, then the comment obsoletes and mislead readers. I know I should delete them.
 
 This is a simple example, but the problem is not such simple, especially when we think codes as "comments" for humans. Really, why only comments are comments? We all know that computer does not reads C++ programs. They are read by us. So they *are* comments. They should be as clear as possible.
 
@@ -41,11 +41,11 @@ I am not just saying that we should write clean codes, however. That's software 
 
 ### Make Computer Programs Correct
 
-Several days ago I watched a talk about how to write *Software that can not be hacked*, which is just a terrible publicity for a random company... But the idea is important, though. We as programmers always want to write correct and efficent code, but how can we achieve this? We all know tests are not enough. They just show that in some cases the result of the program is acceptable, but cannot prove the program is correct.
+Several days ago I watched a talk about how to write *Software that can not be hacked*, which is just a terrible publicity for a random company... But the idea is important, though. We as programmers always want to write correct and efficient code, but how can we achieve this? We all know tests are not enough. They just show that in some cases the result of the program is acceptable, but cannot prove the program is correct.
 
-I wrote test for many programs. But as a notorius *bad* programmer, even I tried so hard, there still are corner cases where my software fails and segfault(In particular, when I say segfault, I do mean I'm writing C++). So I am always struggling for ways to write right programs. But how can I do this? Difficult. For a typical verification attempt, I need to calculate postconditions of procedures, and prove some theorems about the program. When the program is written by imperative languages, that's no easy work. Because we make commands to the runtime, produces side effects, the property of our program is hard to sketch.
+I wrote test for many programs. But as a notorious *bad* programmer, even I tried so hard, there still are corner cases where my software fails and segfault(In particular, when I say segfault, I do mean I'm writing C++). So I am always struggling for ways to write right programs. But how can I do this? Difficult. For a typical verification attempt, I need to calculate postconditions of procedures, and prove some theorems about the program. When the program is written by imperative languages, that's no easy work. Because we make commands to the runtime, produces side effects, the property of our program is hard to sketch.
 
-Declarative programming paradigm is the way around. Besides simple language like SQL or UNIX shell scripts, the general purpose declarative programming languages are also called functional programming languages, for they treat functions as first-class citizens. FP is about describe what you want your program do, rather than how to do it. By this method you don't specify about registers, memory allocation or loops. Instead, you ask questions about your system's behavior and logic. On these realms mathmaticians have developed a great range of tools that we can utilize, from induction to the theory of categories.
+Declarative programming paradigm is the way around. Besides simple language like SQL or UNIX shell scripts, the general purpose declarative programming languages are also called functional programming languages, for they treat functions as first-class citizens. FP is about describe what you want your program do, rather than how to do it. By this method you don't specify about registers, memory allocation or loops. Instead, you ask questions about your system's behavior and logic. On these realms mathematicians have developed a great range of tools that we can utilize, from induction to the theory of categories.
 
 When I first discover functional programming, the haskell code below impressed me the most, a quicksort:
 
@@ -55,19 +55,19 @@ quicksort [] = []
 quicksort (x:xs) = quicksort [y | y <- xs, y < x] ++ [x] ++ quicksort [y | y <- xs, y >= x]
 ```
 
-Its implementation is simple. It's terse and elegant. But the most importantly, its correctness is trival to see. we can use induction to prove that in little time. That's the power of declarative programming. And with PLT we can even do more.
+Its implementation is simple. It's terse and elegant. But the most importantly, its correctness is trivial to see. we can use induction to prove that in little time. That's the power of declarative programming. And with PLT we can even do more.
 
 ### Computer Programs And Languages
 
 Then I want to talk about why there are so many programming languages. Why can't there be just one giant do-everything-language and everyone just stick to it?
 
-Well, let's imagine there is one, and every programmer use this ULang(Ultimate Language). We can use the ULang to write a RPG game system. We created our characters, items and plots. When we came to the gameplay system, we realise that we need to encode some logic in our system. What should you do if you opened that door in game? We cannot hard-code them in the compiled-code, because that would be very inflexible to change. So we need to describe game logic outside our main program. But.. When you are writing logics about something, aren't you writing computer programs by some language?
+Well, let's imagine there is one, and every programmer use this ULang(Ultimate Language). We can use the ULang to write a RPG game system. We created our characters, items and plots. When we came to the gameplay system, we realize that we need to encode some logic in our system. What should you do if you opened that door in game? We cannot hard-code them in the compiled-code, because that would be very inflexible to change. So we need to describe game logic outside our main program. But.. When you are writing logics about something, aren't you writing computer programs by some language?
 
 The same situation occurs in nearly every computer programs. Text processing, for example, conceives the regular languages and BNF. And transaction processing gives birth to the SQL language.
 
 For every new application let there be a new language. Language is the way everything interacts. It is not only describing logics, it **is** logic.
 
-So in order to build large, realiable and extensible system, it's vital to have a valid and versatile language of it.
+So in order to build large, reliable and extensible system, it's vital to have a valid and versatile language of it.
 
 ### About Efficiency
 
