@@ -6,7 +6,7 @@
   <link href="http://wang-ji20.github.io/atom.xml" rel="self"/>
   
   <link href="http://wang-ji20.github.io/"/>
-  <updated>2023-10-14T09:44:12.178Z</updated>
+  <updated>2023-10-18T07:03:47.204Z</updated>
   <id>http://wang-ji20.github.io/</id>
   
   <author>
@@ -17,11 +17,55 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>thinking on design</title>
+    <title>Styles in Clarity and Grace (draft)</title>
+    <link href="http://wang-ji20.github.io/2023/10/18/Styles-in-Clearity-and-Grace/"/>
+    <id>http://wang-ji20.github.io/2023/10/18/Styles-in-Clearity-and-Grace/</id>
+    <published>2023-10-18T07:03:47.204Z</published>
+    <updated>2023-10-18T07:03:47.204Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;&lt;em&gt;Style: Lessons in Clarity and Grace&lt;/em&gt; is the best book on writing that I have ever read. Strunk &amp;amp; White is, of course, great,</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>thinking on forms (draft)</title>
+    <link href="http://wang-ji20.github.io/2023/10/18/form/"/>
+    <id>http://wang-ji20.github.io/2023/10/18/form/</id>
+    <published>2023-10-18T07:03:47.204Z</published>
+    <updated>2023-10-18T07:03:47.204Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;We are often told to judge things by their essence, rather than their form. However, as I read more ancient texts, I found the advice is</summary>
+        
+      
+    
+    
+    
+    
+    <category term="literature" scheme="http://wang-ji20.github.io/tags/literature/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>thinking on design (draft)</title>
     <link href="http://wang-ji20.github.io/2023/09/23/art-and-design/"/>
     <id>http://wang-ji20.github.io/2023/09/23/art-and-design/</id>
     <published>2023-09-23T10:05:45.000Z</published>
-    <updated>2023-10-14T09:44:12.178Z</updated>
+    <updated>2023-10-18T07:03:47.204Z</updated>
     
     
       
@@ -42,7 +86,7 @@
     <link href="http://wang-ji20.github.io/2023/09/08/haskell-notes/"/>
     <id>http://wang-ji20.github.io/2023/09/08/haskell-notes/</id>
     <published>2023-09-08T08:05:52.000Z</published>
-    <updated>2023-10-14T09:44:12.178Z</updated>
+    <updated>2023-10-18T07:03:47.204Z</updated>
     
     
       
@@ -72,7 +116,7 @@
     <link href="http://wang-ji20.github.io/2023/09/08/rust-notes/"/>
     <id>http://wang-ji20.github.io/2023/09/08/rust-notes/</id>
     <published>2023-09-08T08:05:43.000Z</published>
-    <updated>2023-10-14T09:44:12.178Z</updated>
+    <updated>2023-10-18T07:03:47.204Z</updated>
     
     
     
@@ -93,7 +137,7 @@
     <link href="http://wang-ji20.github.io/2023/09/07/plt01/"/>
     <id>http://wang-ji20.github.io/2023/09/07/plt01/</id>
     <published>2023-09-07T14:04:36.000Z</published>
-    <updated>2023-10-14T09:44:12.178Z</updated>
+    <updated>2023-10-18T07:03:47.204Z</updated>
     
     
       
@@ -120,7 +164,7 @@
     <link href="http://wang-ji20.github.io/2023/09/06/Twisted-Quotes/"/>
     <id>http://wang-ji20.github.io/2023/09/06/Twisted-Quotes/</id>
     <published>2023-09-06T10:54:59.000Z</published>
-    <updated>2023-10-14T09:44:12.178Z</updated>
+    <updated>2023-10-18T07:03:47.204Z</updated>
     
     
       
@@ -146,7 +190,7 @@
     <link href="http://wang-ji20.github.io/2023/09/06/Type-Trait/"/>
     <id>http://wang-ji20.github.io/2023/09/06/Type-Trait/</id>
     <published>2023-09-06T10:54:59.000Z</published>
-    <updated>2023-10-14T09:44:12.178Z</updated>
+    <updated>2023-10-18T07:03:47.204Z</updated>
     
     
       
@@ -174,7 +218,7 @@
     <link href="http://wang-ji20.github.io/2023/09/06/emacs/"/>
     <id>http://wang-ji20.github.io/2023/09/06/emacs/</id>
     <published>2023-09-06T08:16:19.000Z</published>
-    <updated>2023-10-14T09:44:12.178Z</updated>
+    <updated>2023-10-18T07:03:47.204Z</updated>
     
     
       
@@ -202,7 +246,7 @@
     <link href="http://wang-ji20.github.io/2023/09/02/C-programming-language-pearls/"/>
     <id>http://wang-ji20.github.io/2023/09/02/C-programming-language-pearls/</id>
     <published>2023-09-02T14:49:41.000Z</published>
-    <updated>2023-10-14T09:44:12.178Z</updated>
+    <updated>2023-10-18T07:03:47.204Z</updated>
     
     
       
@@ -230,7 +274,7 @@
     <link href="http://wang-ji20.github.io/2023/08/29/C-Test/"/>
     <id>http://wang-ji20.github.io/2023/08/29/C-Test/</id>
     <published>2023-08-29T07:18:32.000Z</published>
-    <updated>2023-10-14T09:44:12.178Z</updated>
+    <updated>2023-10-18T07:03:47.204Z</updated>
     
     
       
@@ -261,7 +305,7 @@
     <link href="http://wang-ji20.github.io/2023/08/28/clean-code/"/>
     <id>http://wang-ji20.github.io/2023/08/28/clean-code/</id>
     <published>2023-08-28T10:00:44.000Z</published>
-    <updated>2023-10-14T09:44:12.178Z</updated>
+    <updated>2023-10-18T07:03:47.204Z</updated>
     
     
       
@@ -290,7 +334,7 @@
     <link href="http://wang-ji20.github.io/2023/08/26/vim/"/>
     <id>http://wang-ji20.github.io/2023/08/26/vim/</id>
     <published>2023-08-26T15:14:44.000Z</published>
-    <updated>2023-10-14T09:44:12.178Z</updated>
+    <updated>2023-10-18T07:03:47.204Z</updated>
     
     
       
@@ -318,7 +362,7 @@
     <link href="http://wang-ji20.github.io/2023/07/24/geb/"/>
     <id>http://wang-ji20.github.io/2023/07/24/geb/</id>
     <published>2023-07-24T05:59:54.000Z</published>
-    <updated>2023-10-14T09:44:12.178Z</updated>
+    <updated>2023-10-18T07:03:47.204Z</updated>
     
     
       
