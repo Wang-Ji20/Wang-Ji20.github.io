@@ -6,7 +6,7 @@
   <link href="http://wang-ji20.github.io/atom.xml" rel="self"/>
   
   <link href="http://wang-ji20.github.io/"/>
-  <updated>2023-10-18T07:03:47.204Z</updated>
+  <updated>2023-12-10T08:14:31.483Z</updated>
   <id>http://wang-ji20.github.io/</id>
   
   <author>
@@ -18,10 +18,10 @@
   
   <entry>
     <title>Styles in Clarity and Grace (draft)</title>
-    <link href="http://wang-ji20.github.io/2023/10/18/Styles-in-Clearity-and-Grace/"/>
-    <id>http://wang-ji20.github.io/2023/10/18/Styles-in-Clearity-and-Grace/</id>
-    <published>2023-10-18T07:03:47.204Z</published>
-    <updated>2023-10-18T07:03:47.204Z</updated>
+    <link href="http://wang-ji20.github.io/2023/12/10/Styles-in-Clearity-and-Grace/"/>
+    <id>http://wang-ji20.github.io/2023/12/10/Styles-in-Clearity-and-Grace/</id>
+    <published>2023-12-10T08:14:31.483Z</published>
+    <updated>2023-12-10T08:14:31.483Z</updated>
     
     
       
@@ -39,10 +39,10 @@
   
   <entry>
     <title>thinking on forms (draft)</title>
-    <link href="http://wang-ji20.github.io/2023/10/18/form/"/>
-    <id>http://wang-ji20.github.io/2023/10/18/form/</id>
-    <published>2023-10-18T07:03:47.204Z</published>
-    <updated>2023-10-18T07:03:47.204Z</updated>
+    <link href="http://wang-ji20.github.io/2023/12/10/form/"/>
+    <id>http://wang-ji20.github.io/2023/12/10/form/</id>
+    <published>2023-12-10T08:14:31.483Z</published>
+    <updated>2023-12-10T08:14:31.483Z</updated>
     
     
       
@@ -61,11 +61,32 @@
   </entry>
   
   <entry>
+    <title>Rudra</title>
+    <link href="http://wang-ji20.github.io/2023/12/10/Rudra/"/>
+    <id>http://wang-ji20.github.io/2023/12/10/Rudra/</id>
+    <published>2023-12-10T02:35:02.000Z</published>
+    <updated>2023-12-10T08:14:31.483Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;这篇文章介绍了 Rudra, 一个 Rust 编程语言的代码静态分析工具. 它可以检查代码中的内存安全错误. 它效率很高, 可以在六个小时内扫描几万个软件包. 在这个静态分析工具刚刚提出的时候, 它发现了两百多个内存安全问题, 其中许多问题都是比较难找的</summary>
+        
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
     <title>thinking on design (draft)</title>
     <link href="http://wang-ji20.github.io/2023/09/23/art-and-design/"/>
     <id>http://wang-ji20.github.io/2023/09/23/art-and-design/</id>
     <published>2023-09-23T10:05:45.000Z</published>
-    <updated>2023-10-18T07:03:47.204Z</updated>
+    <updated>2023-12-10T08:14:31.483Z</updated>
     
     
       
@@ -86,7 +107,7 @@
     <link href="http://wang-ji20.github.io/2023/09/08/haskell-notes/"/>
     <id>http://wang-ji20.github.io/2023/09/08/haskell-notes/</id>
     <published>2023-09-08T08:05:52.000Z</published>
-    <updated>2023-10-18T07:03:47.204Z</updated>
+    <updated>2023-12-10T08:14:31.483Z</updated>
     
     
       
@@ -116,7 +137,7 @@
     <link href="http://wang-ji20.github.io/2023/09/08/rust-notes/"/>
     <id>http://wang-ji20.github.io/2023/09/08/rust-notes/</id>
     <published>2023-09-08T08:05:43.000Z</published>
-    <updated>2023-10-18T07:03:47.204Z</updated>
+    <updated>2023-12-10T08:14:31.483Z</updated>
     
     
     
@@ -137,7 +158,7 @@
     <link href="http://wang-ji20.github.io/2023/09/07/plt01/"/>
     <id>http://wang-ji20.github.io/2023/09/07/plt01/</id>
     <published>2023-09-07T14:04:36.000Z</published>
-    <updated>2023-10-18T07:03:47.204Z</updated>
+    <updated>2023-12-10T08:14:31.483Z</updated>
     
     
       
@@ -164,7 +185,7 @@
     <link href="http://wang-ji20.github.io/2023/09/06/Twisted-Quotes/"/>
     <id>http://wang-ji20.github.io/2023/09/06/Twisted-Quotes/</id>
     <published>2023-09-06T10:54:59.000Z</published>
-    <updated>2023-10-18T07:03:47.204Z</updated>
+    <updated>2023-12-10T08:14:31.483Z</updated>
     
     
       
@@ -190,7 +211,7 @@
     <link href="http://wang-ji20.github.io/2023/09/06/Type-Trait/"/>
     <id>http://wang-ji20.github.io/2023/09/06/Type-Trait/</id>
     <published>2023-09-06T10:54:59.000Z</published>
-    <updated>2023-10-18T07:03:47.204Z</updated>
+    <updated>2023-12-10T08:14:31.483Z</updated>
     
     
       
@@ -218,7 +239,7 @@
     <link href="http://wang-ji20.github.io/2023/09/06/emacs/"/>
     <id>http://wang-ji20.github.io/2023/09/06/emacs/</id>
     <published>2023-09-06T08:16:19.000Z</published>
-    <updated>2023-10-18T07:03:47.204Z</updated>
+    <updated>2023-12-10T08:14:31.483Z</updated>
     
     
       
@@ -246,7 +267,7 @@
     <link href="http://wang-ji20.github.io/2023/09/02/C-programming-language-pearls/"/>
     <id>http://wang-ji20.github.io/2023/09/02/C-programming-language-pearls/</id>
     <published>2023-09-02T14:49:41.000Z</published>
-    <updated>2023-10-18T07:03:47.204Z</updated>
+    <updated>2023-12-10T08:14:31.483Z</updated>
     
     
       
@@ -274,7 +295,7 @@
     <link href="http://wang-ji20.github.io/2023/08/29/C-Test/"/>
     <id>http://wang-ji20.github.io/2023/08/29/C-Test/</id>
     <published>2023-08-29T07:18:32.000Z</published>
-    <updated>2023-10-18T07:03:47.204Z</updated>
+    <updated>2023-12-10T08:14:31.483Z</updated>
     
     
       
@@ -305,7 +326,7 @@
     <link href="http://wang-ji20.github.io/2023/08/28/clean-code/"/>
     <id>http://wang-ji20.github.io/2023/08/28/clean-code/</id>
     <published>2023-08-28T10:00:44.000Z</published>
-    <updated>2023-10-18T07:03:47.204Z</updated>
+    <updated>2023-12-10T08:14:31.483Z</updated>
     
     
       
@@ -334,7 +355,7 @@
     <link href="http://wang-ji20.github.io/2023/08/26/vim/"/>
     <id>http://wang-ji20.github.io/2023/08/26/vim/</id>
     <published>2023-08-26T15:14:44.000Z</published>
-    <updated>2023-10-18T07:03:47.204Z</updated>
+    <updated>2023-12-10T08:14:31.483Z</updated>
     
     
       
@@ -362,7 +383,7 @@
     <link href="http://wang-ji20.github.io/2023/07/24/geb/"/>
     <id>http://wang-ji20.github.io/2023/07/24/geb/</id>
     <published>2023-07-24T05:59:54.000Z</published>
-    <updated>2023-10-18T07:03:47.204Z</updated>
+    <updated>2023-12-10T08:14:31.483Z</updated>
     
     
       
