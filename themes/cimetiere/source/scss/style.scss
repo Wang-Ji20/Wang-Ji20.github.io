@@ -1,10 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=Major+Mono+Display&family=Noto+Serif+SC:wght@500&family=Noto+Serif:ital,wght@1,500&family=Noto+Sans+SC:wght@350&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&family=Noto+Sans+SC&family=Noto+Serif&family=Noto+Serif+SC&display=swap');
 
-// TODO: fallback fonts
 // TODO: mobile layout
-$font-display: 'Major Mono Display', monospace;
-$font-sans-serif: 'Noto Sans SC', sans-serif;
-$font-serif: 'Noto Serif SC', serif;
+$font-display: 'Noto Sans', 'Noto Sans SC', sans-serif;
+$font-sans-serif: 'Noto Sans', 'Noto Sans SC', sans-serif;
+$font-serif: 'Noto Serif', 'Noto Serif SC', serif;
 $font-tldr: 'Noto Serif', serif;
 
 $primary-color: #333;
