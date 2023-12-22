@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Major+Mono+Display&family=Noto+Serif+SC:wght@500&family=Noto+Serif:ital,wght@1,500&family=Noto+Sans+SC:wght@350&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans&family=Noto+Sans+SC&family=Noto+Serif&family=Noto+Serif+SC&display=swap");
 .flex {
   display: flex;
 }
@@ -18,12 +18,12 @@
 }
 
 body {
-  font-family: "Noto Serif SC", serif;
+  font-family: "Noto Serif", "Noto Serif SC", serif;
   color: #333;
 }
 
 h1 {
-  font: 100% "Major Mono Display", monospace, "Noto Sans SC", sans-serif;
+  font: 100% "Noto Sans", "Noto Sans SC", sans-serif, "Noto Sans", "Noto Sans SC", sans-serif;
   font-size: 3em;
 }
 
@@ -39,14 +39,14 @@ a :hover {
 #favorites a {
   color: #ffffff;
   text-decoration: underline;
-  font: 100% "Major Mono Display", monospace, "Noto Sans SC", sans-serif;
+  font: 100% "Noto Sans", "Noto Sans SC", sans-serif, "Noto Sans", "Noto Sans SC", sans-serif;
 }
 #favorites a :hover {
   color: black;
 }
 
 .decorate-font {
-  font: 100% "Major Mono Display", monospace, "Noto Sans SC", sans-serif;
+  font: 100% "Noto Sans", "Noto Sans SC", sans-serif, "Noto Sans", "Noto Sans SC", sans-serif;
 }
 
 .tldr {
