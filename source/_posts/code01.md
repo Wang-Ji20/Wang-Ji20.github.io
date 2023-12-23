@@ -1,5 +1,5 @@
 ---
-title: C01 - Spinlock in Linux Kernel
+title: `qspinlock`, a spinlock in the Linux Kernel
 date: 2023-12-22
 tags:
     - Linux
