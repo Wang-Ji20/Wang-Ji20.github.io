@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.1/mdb.min.css" rel="stylesheet" />
+    
+<link rel="stylesheet" href="/css/intellij-light.css">
+
+
+        <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.1/mdb.min.js"></script>
+        
+<link rel="stylesheet" href="/css/style.css">
+
+
+            <link rel="stylesheet"
+                href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+            <style>
+                .material-symbols-outlined {
+                    font-variation-settings:
+                        'FILL' 0,
+                        'wght' 400,
+                        'GRAD' 0,
+                        'opsz' 24
+                }
+            </style>
+
+<meta name="generator" content="Hexo 7.0.0-rc2"><link rel="alternate" href="/atom.xml" title="无辜者公墓" type="application/atom+xml">
+</head>
+
+<body>
+    <div class="flex flex-row-l">
+    <div class="sidebar flex flex-column flex-center wide-only" style="position: fixed; padding-top: 3em; padding-left: 3em; max-width: 300px">
+        <h4>Table of Contents</h4>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#dequeue-the-jewelry-of-array-based-data-structure"><span class="toc-text">dequeue, the jewelry of array-based data structure</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Linked-List-how-we-hated-and-loved-you"><span class="toc-text">Linked List, how we hated and loved you</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Intrusive-linked-list"><span class="toc-text">Intrusive linked list</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Recursive-functions-in-recursive-data-structure"><span class="toc-text">Recursive functions in recursive data structure</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Malformed-linked-lists"><span class="toc-text">Malformed linked lists</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Swiss-table"><span class="toc-text">Swiss table</span></a></li></ol>
+            <a href="/menu.html">[posts]</a>
+    </div>
+
+    <div class="post">
+        <nav style="padding-top: 10px; position:fixed; width: 100vw; max-width: 900px; background-color:white;">
+            <div class="flex flex-row-l">
+                <a href="/index.html" style="color: black; padding-left:20px">
+                    <span class="material-symbols-outlined" style="font-size: 20px;">
+                        home
+                    </span>
+                </a>
+                <p class="decorate-font">
+                    cemetery of innocents
+                </p>
+                <a href="" style="color: black; padding-right: 20px">
+                    <span class="material-symbols-outlined" style="font-size: 20px;">
+                        toc
+                    </span>
+                </a>
+            </div>
+            <hr style="margin: 0;">
+        </nav>
+        <div style="height: 70px;">
+        </div>
+
+        <div style="margin: 0 0 25px 5px;">
+            <h1>
+                array, linked list, hash - revisited
+            </h1>
+            <p class="tldr" style="margin: 0;">
+                December 31, 2023
+            </p>
+            
+                <span class="badge badge-primary badge-primary">
+                    <a href="/categories/CS/">CS</a>
+                </span>
+                
+            
+                <span class="badge rounded-pill badge-secondary">
+                    <a href="/tags/Data-Structures/">Data Structures</a>
+                </span>
+                
+        </div>
+        <p>We often say that designing data structures dominates the programming process. That’s a critical belief in data-oriented programming. So a revisit of common data structures is helpful.</p>
+<h2 id="dequeue-the-jewelry-of-array-based-data-structure"><a href="#dequeue-the-jewelry-of-array-based-data-structure" class="headerlink" title="dequeue, the jewelry of array-based data structure"></a>dequeue, the jewelry of array-based data structure</h2><p>A dequeue is a double-ended queue. It is nice because push&#x2F;pop on the front and back is O(1) so it can be used as both stack and queue. It also inherits the nice property of array-based structures. Accessing its elements cost O(1) regardless the size of the dequeue. (exclude the double linked list case…)</p>
+<p>Many programming languages offer this data structure in their stdlib. In C++ we can explicitly <code>#include &lt;deque&gt;</code>, but it appears more. In fact, C++ uses dequeue to back its stack and queue implementations. Rust provides <code>std::VecDeque</code> as their counterpart. <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Double-ended_queue#Language_support">Here</a>‘s a more comprehensive survey.</p>
+<p>We can implement this data structure in many ways, here are few of the choices:</p>
+<ul>
+<li><p>Use a ring buffer, record (start, end) or (start, size). The Rust <code>std::VecDeque</code> uses this approach.</p>
+</li>
+<li><p>Use double stacks. The first one supports the stack interface and they cooperate to mimic a queue. When the user inserting an element, however, the dequeue must balance their elements.</p>
+</li>
+<li><p>Use doubled linked lists. This approach loses the nice O(1) random access cost property.</p>
+</li>
+<li><p>Use linked small continuous spaces. C++ STL uses this <a target="_blank" rel="noopener" href="https://devblogs.microsoft.com/oldnewthing/20230810-00/?p=108587">approach</a>.</p>
+</li>
+</ul>
+<h2 id="Linked-List-how-we-hated-and-loved-you"><a href="#Linked-List-how-we-hated-and-loved-you" class="headerlink" title="Linked List, how we hated and loved you"></a>Linked List, how we hated and loved you</h2><p>Many people don’t like linked lists because it is not efficient in modern hardwares. It uses pointers to reference the next object, which is hard to optimize by caching. The bigger problem concerns the safety. Linked lists are notoriously difficult to write right. Maybe that’s why it is often presented as interview questions. Alas, to get a job, one may still need to look at it, closely.</p>
+<h3 id="Intrusive-linked-list"><a href="#Intrusive-linked-list" class="headerlink" title="Intrusive linked list"></a>Intrusive linked list</h3><p>We can embed our linked list into a structure by adding a pointer, that’s called a intrusive linked list. We can extract these part to a dedicated structure, <code>linked_list_node</code>. It only contains where’s the next and where’s the former(if doubled linked list).</p>
+<p>In linux kernel, intrusive linked lists are ubiquitous. Definition is in <code>include/linux/list.h</code>.</p>
+<h3 id="Recursive-functions-in-recursive-data-structure"><a href="#Recursive-functions-in-recursive-data-structure" class="headerlink" title="Recursive functions in recursive data structure"></a>Recursive functions in recursive data structure</h3><h3 id="Malformed-linked-lists"><a href="#Malformed-linked-lists" class="headerlink" title="Malformed linked lists"></a>Malformed linked lists</h3><h2 id="Swiss-table"><a href="#Swiss-table" class="headerlink" title="Swiss table"></a>Swiss table</h2>
+    </div>
+
+</div>
+
+</body>
+
+
+<footer style="bottom: 0;
+               width: 100vw;
+               background-color: #ffffff;
+               border-top: 1px solid;
+               padding: 0 1rem 0.7rem 1rem">
+    theme cemetery made by <a href="/about.html">myself</a>.
+    powered by <a target="_blank" rel="noopener" href="https://hexo.io/">hexo</a>.
+</footer>
+
+
+</html>

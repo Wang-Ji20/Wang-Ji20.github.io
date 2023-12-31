@@ -36,7 +36,7 @@
     <div class="flex flex-row-l">
     <div class="sidebar flex flex-column flex-center wide-only" style="position: fixed; padding-top: 3em; padding-left: 3em; max-width: 300px">
         <h4>Table of Contents</h4>
-        
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#wasm-runtime"><span class="toc-text">wasm runtime</span></a></li></ol>
             <a href="/menu.html">[posts]</a>
     </div>
 
@@ -64,7 +64,7 @@
 
         <div style="margin: 0 0 25px 5px;">
             <h1>
-                thinking on forms (draft)
+                wasm-bindgen, A rust compiler to webassembly
             </h1>
             <p class="tldr" style="margin: 0;">
                 December 23, 2023
@@ -72,13 +72,27 @@
             
             
                 <span class="badge rounded-pill badge-secondary">
-                    <a href="/tags/literature/">literature</a>
+                    <a href="/tags/Rust/">Rust</a>
+                </span>
+                
+                <span class="badge rounded-pill badge-secondary">
+                    <a href="/tags/Webassembly/">Webassembly</a>
                 </span>
                 
         </div>
-        <p>We are often told to judge things by their essence, rather than their form. However, as I read more ancient texts, I found the advice is quite misleading. The idiom is based on the observation that forms are just containers for some <em>true</em> thing in it. For example, words are means of conveying ideas, and orators are means of persuasion, etc. Form should comply with its content, isn’t it? Our dishes are made to place food, so their shapes is designed for that purpose. With that, we finish our lunch - the essence of a dish - and we are resting. The waiter came to collect the dishes, which remained intact. See, food is nowhere(in stomach, maybe), but the dishes are still there. Forms can last longer than their contents. If we are open-minded to see antiquities in museum, we may be surprised to find there are too many armors, vases, or mirrors. The mirrors are as polished and clear as they used to be, but where’s the beauty whose profile echoed in them? Well, Mais où sont les neiges d’antan!</p>
-<p>The unavoidable epilogue, for the snow, ancient beauty and everyone, is death. We struggle in the bleak crack of time, the ruins of the past. To live is to embrace change, forgive yourself and others; to endure and pursue happiness or well-being; to love, and to sacrifice. That can be one kind of view. But there may be others. The essence of arguments is not so crucial; it’s their means of stating their points that we can learn from.</p>
-
+        <p>I have always wanted to use web technology to present my projects. It’s portable, beautiful and fast. Who want to download a huge application and install them while they can click a link in the browser and everything settles down within a second? And whoever developer wants to tirelessly adapt their app to tens of platforms, it’s not me.</p>
+<p>But my attempts are often hindered by a demon, <a target="_blank" rel="noopener" href="https://james-iry.blogspot.com/2009/05/brief-incomplete-and-mostly-wrong.html">Javascript</a>. It has terrible syntax and mostly wrong semantics, yet it has been the lingua franca of the world wide web. How can no one notice that? There must be a way to bypass that. I want to write Rust in web!</p>
+<p>And there it is, the <a target="_blank" rel="noopener" href="https://webassembly.org/">webassembly</a>(acc. wasm) project. It introduces a intermediate language between high-level programming languages and the web browser. Compilers can compile their code into a form which is later interpreted by the browser. To satisfy the contract, three parts of work must be done:</p>
+<ul>
+<li><p>the standard: the compiler and the browser must agree on some assumptions.</p>
+</li>
+<li><p>compiler: it can turns the code to webassembly</p>
+</li>
+<li><p>browser: it should provide runtime environment for wasm to run.</p>
+</li>
+</ul>
+<p>The browser side is not discussed here. I want to explore the second part. To understand it, however, I must survey on the standard first.</p>
+<h2 id="wasm-runtime"><a href="#wasm-runtime" class="headerlink" title="wasm runtime"></a>wasm runtime</h2>
     </div>
 
 </div>

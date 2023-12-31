@@ -6,7 +6,7 @@
   <link href="http://wang-ji20.github.io/atom.xml" rel="self"/>
   
   <link href="http://wang-ji20.github.io/"/>
-  <updated>2023-12-23T15:52:52.434Z</updated>
+  <updated>2023-12-31T10:56:08.905Z</updated>
   <id>http://wang-ji20.github.io/</id>
   
   <author>
@@ -18,10 +18,10 @@
   
   <entry>
     <title>Styles in Clarity and Grace (draft)</title>
-    <link href="http://wang-ji20.github.io/2023/12/23/Styles-in-Clearity-and-Grace/"/>
-    <id>http://wang-ji20.github.io/2023/12/23/Styles-in-Clearity-and-Grace/</id>
-    <published>2023-12-23T15:52:52.434Z</published>
-    <updated>2023-12-23T15:52:52.434Z</updated>
+    <link href="http://wang-ji20.github.io/2023/12/31/Styles-in-Clearity-and-Grace/"/>
+    <id>http://wang-ji20.github.io/2023/12/31/Styles-in-Clearity-and-Grace/</id>
+    <published>2023-12-31T10:56:08.905Z</published>
+    <updated>2023-12-31T10:56:08.905Z</updated>
     
     
       
@@ -39,10 +39,10 @@
   
   <entry>
     <title>thinking on forms (draft)</title>
-    <link href="http://wang-ji20.github.io/2023/12/23/form/"/>
-    <id>http://wang-ji20.github.io/2023/12/23/form/</id>
-    <published>2023-12-23T15:52:52.434Z</published>
-    <updated>2023-12-23T15:52:52.434Z</updated>
+    <link href="http://wang-ji20.github.io/2023/12/31/form/"/>
+    <id>http://wang-ji20.github.io/2023/12/31/form/</id>
+    <published>2023-12-31T10:56:08.905Z</published>
+    <updated>2023-12-31T10:56:08.905Z</updated>
     
     
       
@@ -61,11 +61,88 @@
   </entry>
   
   <entry>
+    <title>array, linked list, hash - revisited</title>
+    <link href="http://wang-ji20.github.io/2023/12/31/code03/"/>
+    <id>http://wang-ji20.github.io/2023/12/31/code03/</id>
+    <published>2023-12-31T06:09:47.000Z</published>
+    <updated>2023-12-31T10:56:08.905Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;We often say that designing data structures dominates the programming process. That’s a critical belief in data-oriented programming. So</summary>
+        
+      
+    
+    
+    
+    <category term="CS" scheme="http://wang-ji20.github.io/categories/CS/"/>
+    
+    
+    <category term="Data Structures" scheme="http://wang-ji20.github.io/tags/Data-Structures/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>wasm-bindgen, A rust compiler to webassembly</title>
+    <link href="http://wang-ji20.github.io/2023/12/23/code02/"/>
+    <id>http://wang-ji20.github.io/2023/12/23/code02/</id>
+    <published>2023-12-23T15:51:07.000Z</published>
+    <updated>2023-12-31T10:56:08.905Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;I have always wanted to use web technology to present my projects. It’s portable, beautiful and fast. Who want to download a huge</summary>
+        
+      
+    
+    
+    
+    
+    <category term="Rust" scheme="http://wang-ji20.github.io/tags/Rust/"/>
+    
+    <category term="Webassembly" scheme="http://wang-ji20.github.io/tags/Webassembly/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>qspinlock, a spinlock in the Linux Kernel</title>
+    <link href="http://wang-ji20.github.io/2023/12/21/code01/"/>
+    <id>http://wang-ji20.github.io/2023/12/21/code01/</id>
+    <published>2023-12-21T16:00:00.000Z</published>
+    <updated>2023-12-31T10:56:08.905Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;Recent days(months) have seen my self-indulgent consequent 3 walkthroughs on &lt;a href=&quot;https://baldursgate3.game/&quot;&gt;Baldur’s Gate 3&lt;/a&gt;.</summary>
+        
+      
+    
+    
+    
+    <category term="CS" scheme="http://wang-ji20.github.io/categories/CS/"/>
+    
+    
+    <category term="Linux" scheme="http://wang-ji20.github.io/tags/Linux/"/>
+    
+    <category term="Synchronization" scheme="http://wang-ji20.github.io/tags/Synchronization/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Rudra</title>
     <link href="http://wang-ji20.github.io/2023/12/10/Rudra/"/>
     <id>http://wang-ji20.github.io/2023/12/10/Rudra/</id>
     <published>2023-12-10T02:35:02.000Z</published>
-    <updated>2023-12-23T15:52:52.434Z</updated>
+    <updated>2023-12-31T10:56:08.901Z</updated>
     
     
       
@@ -86,7 +163,7 @@
     <link href="http://wang-ji20.github.io/2023/09/23/art-and-design/"/>
     <id>http://wang-ji20.github.io/2023/09/23/art-and-design/</id>
     <published>2023-09-23T10:05:45.000Z</published>
-    <updated>2023-12-23T15:52:52.434Z</updated>
+    <updated>2023-12-31T10:56:08.905Z</updated>
     
     
       
@@ -107,7 +184,7 @@
     <link href="http://wang-ji20.github.io/2023/09/08/haskell-notes/"/>
     <id>http://wang-ji20.github.io/2023/09/08/haskell-notes/</id>
     <published>2023-09-08T08:05:52.000Z</published>
-    <updated>2023-12-23T15:52:52.434Z</updated>
+    <updated>2023-12-31T10:56:08.905Z</updated>
     
     
       
@@ -137,7 +214,7 @@
     <link href="http://wang-ji20.github.io/2023/09/08/rust-notes/"/>
     <id>http://wang-ji20.github.io/2023/09/08/rust-notes/</id>
     <published>2023-09-08T08:05:43.000Z</published>
-    <updated>2023-12-23T15:52:52.434Z</updated>
+    <updated>2023-12-31T10:56:08.905Z</updated>
     
     
     
@@ -158,7 +235,7 @@
     <link href="http://wang-ji20.github.io/2023/09/07/plt01/"/>
     <id>http://wang-ji20.github.io/2023/09/07/plt01/</id>
     <published>2023-09-07T14:04:36.000Z</published>
-    <updated>2023-12-23T15:52:52.434Z</updated>
+    <updated>2023-12-31T10:56:08.905Z</updated>
     
     
       
@@ -185,7 +262,7 @@
     <link href="http://wang-ji20.github.io/2023/09/06/Twisted-Quotes/"/>
     <id>http://wang-ji20.github.io/2023/09/06/Twisted-Quotes/</id>
     <published>2023-09-06T10:54:59.000Z</published>
-    <updated>2023-12-23T15:52:52.434Z</updated>
+    <updated>2023-12-31T10:56:08.905Z</updated>
     
     
       
@@ -211,7 +288,7 @@
     <link href="http://wang-ji20.github.io/2023/09/06/Type-Trait/"/>
     <id>http://wang-ji20.github.io/2023/09/06/Type-Trait/</id>
     <published>2023-09-06T10:54:59.000Z</published>
-    <updated>2023-12-23T15:52:52.434Z</updated>
+    <updated>2023-12-31T10:56:08.905Z</updated>
     
     
       
@@ -239,7 +316,7 @@
     <link href="http://wang-ji20.github.io/2023/09/06/emacs/"/>
     <id>http://wang-ji20.github.io/2023/09/06/emacs/</id>
     <published>2023-09-06T08:16:19.000Z</published>
-    <updated>2023-12-23T15:52:52.434Z</updated>
+    <updated>2023-12-31T10:56:08.905Z</updated>
     
     
       
@@ -267,7 +344,7 @@
     <link href="http://wang-ji20.github.io/2023/09/02/C-programming-language-pearls/"/>
     <id>http://wang-ji20.github.io/2023/09/02/C-programming-language-pearls/</id>
     <published>2023-09-02T14:49:41.000Z</published>
-    <updated>2023-12-23T15:52:52.434Z</updated>
+    <updated>2023-12-31T10:56:08.901Z</updated>
     
     
       
@@ -295,7 +372,7 @@
     <link href="http://wang-ji20.github.io/2023/08/29/C-Test/"/>
     <id>http://wang-ji20.github.io/2023/08/29/C-Test/</id>
     <published>2023-08-29T07:18:32.000Z</published>
-    <updated>2023-12-23T15:52:52.434Z</updated>
+    <updated>2023-12-31T10:56:08.901Z</updated>
     
     
       
@@ -326,7 +403,7 @@
     <link href="http://wang-ji20.github.io/2023/08/28/clean-code/"/>
     <id>http://wang-ji20.github.io/2023/08/28/clean-code/</id>
     <published>2023-08-28T10:00:44.000Z</published>
-    <updated>2023-12-23T15:52:52.434Z</updated>
+    <updated>2023-12-31T10:56:08.905Z</updated>
     
     
       
@@ -355,7 +432,7 @@
     <link href="http://wang-ji20.github.io/2023/08/26/vim/"/>
     <id>http://wang-ji20.github.io/2023/08/26/vim/</id>
     <published>2023-08-26T15:14:44.000Z</published>
-    <updated>2023-12-23T15:52:52.434Z</updated>
+    <updated>2023-12-31T10:56:08.905Z</updated>
     
     
       
@@ -383,7 +460,7 @@
     <link href="http://wang-ji20.github.io/2023/07/24/geb/"/>
     <id>http://wang-ji20.github.io/2023/07/24/geb/</id>
     <published>2023-07-24T05:59:54.000Z</published>
-    <updated>2023-12-23T15:52:52.434Z</updated>
+    <updated>2023-12-31T10:56:08.905Z</updated>
     
     
       
