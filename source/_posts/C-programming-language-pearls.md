@@ -183,6 +183,16 @@ int foo(void)
 
 这个功能似乎是 GCC 扩展.
 
+## `%` 操作符
+
+`%` 操作符, 就是取模. 在 C / C++ 中, 正数的情况就不说了. 负数的情况下结果也会是负数.
+
+所以这并不是取模运算符, 而是余数运算符.
+
+```C
+a == (a / b) * b + a % b
+```
+
 ## 参考资料
 
 [1] *The Practice of Programming. Brian W. Kernighan, Rob Pike.* Addison-Wesley. 1999.
