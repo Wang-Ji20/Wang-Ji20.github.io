@@ -54,7 +54,7 @@ The author depicts the scenery very concisely, yet his words are very precise. H
 
 > The connection is not always easy to form. If the writer writes too much, the overwhelming details clutters the true feeling of him. Readers feel lost in words. Worse, they start to suspect whether the author is honest. So we prune the text, but not too much. That's the trade-off of spacing and detailing.
 
-The author did not bother writing his emotion, or argues about anything as well. Instead of saying like, Oh, this place is truly a misanthropist's heaven, he just remains silent.
+The author did not bother writing his emotion, or argues about anything as well. Instead of saying like, Oh, this place is truly a misanthropist's heaven, he just remained silent. The unspoken is beautiful.
 
 ### Unifying and varying
 
