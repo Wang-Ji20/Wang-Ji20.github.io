@@ -36,7 +36,7 @@
     <div class="flex flex-row-l">
     <div class="sidebar flex flex-column flex-center wide-only" style="position: fixed; padding-top: 3em; padding-left: 3em; max-width: 300px">
         <h4>Table of Contents</h4>
-        
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#let-is-not-a-binding"><span class="toc-text">let _ &#x3D; .. is not a binding</span></a></li></ol>
             <a href="/menu.html">[posts]</a>
     </div>
 
@@ -88,7 +88,12 @@
                 </span>
                 
         </div>
-        
+        <h2 id="let-is-not-a-binding"><a href="#let-is-not-a-binding" class="headerlink" title="let _ &#x3D; .. is not a binding"></a>let <code>_</code> &#x3D; .. is not a binding</h2><p>When you are writing</p>
+<figure class="highlight rust"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs rust"><span class="hljs-keyword">let</span> <span class="hljs-variable">_</span> = <span class="hljs-title function_ invoke__">some_function</span>();<br><span class="hljs-comment">// returning value is dropped here.</span><br></code></pre></td></tr></table></figure>
+
+<p>The return value is dropped immediately, because you cannot gave a value to <code>_</code> as well as you cannot read it. <code>_</code> is not a variable so this statement is not a variable binding.</p>
+<p>When using RAII in rust, don’t forget this, use <code>_&#123;ident&#125;</code> to denote the return value. That thing is a variable so it follows correct scoping rules.</p>
+
     </div>
 
 </div>
