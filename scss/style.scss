@@ -1,10 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans&family=Noto+Sans+SC&family=Noto+Serif&family=Noto+Serif+SC&display=swap');
 
-// TODO: mobile layout
 $font-display: 'Noto Sans', 'Noto Sans SC', sans-serif;
 $font-sans-serif: 'Noto Sans', 'Noto Sans SC', sans-serif;
 $font-serif: 'Noto Serif', 'Noto Serif SC', serif;
-$font-tldr: 'Noto Serif', serif;
 
 $primary-color: #333;
 $secondary-color: #ffffff;
@@ -40,12 +38,12 @@ h1 {
 
 a {
     color: $link-color;
-    text-decoration: underline;
 
-    :hover {
-        color: darken($primary-color, 100%);
-        text-decoration: underline;
-    }
+}
+
+a:hover {
+    color: darken($primary-color, 100%);
+    text-decoration: underline;
 }
 
 #favorites a {
@@ -60,10 +58,6 @@ a {
 
 .decorate-font {
     font: 100% $font-display, $font-sans-serif;
-}
-
-.tldr {
-    font: 100% $font-tldr;
 }
 
 .language-hljs {
@@ -107,13 +101,63 @@ img {
 
 .text-in-container {
     padding: 1rem 1rem 0 1rem;
+    align-self: center;
+}
+
+// Overall styles
+
+// site header
+
+.cdi-style {
+    font-family: sans-serif;
+    font-weight: 600;
+    max-width: fit-content;
+}
+
+.top-links {
+    max-width: fit-content;
+    padding-right: 1em;
+}
+
+.link-padding {
+    padding-left: 1em;
+    padding-right: 1em;
 }
 
 .central-nav {
     max-width: 900px;
     margin: 0 auto;
-    border-left: 1px solid;
-    border-right: 1px solid;
     border-color: #e0e0e0;
+}
+
+.top-nav {
+    display: flex;
+    flex: auto;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+.occupy-screen {
     height: 100vh;
+}
+
+// site footer
+
+.site-footer {
+    max-width: 900px;
+    margin: 15px auto;
+    border-color: #e0e0e0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.fit-content {
+    max-width: fit-content;
+}
+
+.footer-links {
+    margin-left: 1em;
+    margin-right: 1em;
 }

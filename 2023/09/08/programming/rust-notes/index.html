@@ -36,7 +36,7 @@
     <div class="flex flex-row-l">
     <div class="sidebar flex flex-column flex-center wide-only" style="position: fixed; padding-top: 3em; padding-left: 3em; max-width: 300px">
         <h4>Table of Contents</h4>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#let-is-not-a-binding"><span class="toc-text">let _ &#x3D; .. is not a binding</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#let-is-not-a-binding"><span class="toc-text">let _ &#x3D; .. is not a binding</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#impl-trait-vs-dyn-trait"><span class="toc-text">impl trait vs. dyn trait</span></a></li></ol>
             <a href="/menu.html">[posts]</a>
     </div>
 
@@ -93,6 +93,11 @@
 
 <p>The return value is dropped immediately, because you cannot gave a value to <code>_</code> as well as you cannot read it. <code>_</code> is not a variable so this statement is not a variable binding.</p>
 <p>When using RAII in rust, don’t forget this, use <code>_&#123;ident&#125;</code> to denote the return value. That thing is a variable so it follows correct scoping rules.</p>
+<h2 id="impl-trait-vs-dyn-trait"><a href="#impl-trait-vs-dyn-trait" class="headerlink" title="impl trait vs. dyn trait"></a>impl trait vs. dyn trait</h2><p>We can write these two functions:</p>
+<figure class="highlight rust"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs rust"><span class="hljs-keyword">fn</span> <span class="hljs-title function_">print_this</span>(s: <span class="hljs-keyword">impl</span> <span class="hljs-title class_">ToString</span>) &#123;<br>    <span class="hljs-built_in">println!</span>(<span class="hljs-string">&quot;&#123;&#125;&quot;</span>, s.<span class="hljs-title function_ invoke__">to_string</span>());<br>&#125;<br><br><span class="hljs-keyword">fn</span> <span class="hljs-title function_">print_this_dyn</span>(s: &amp;<span class="hljs-keyword">dyn</span> <span class="hljs-built_in">ToString</span>) &#123;<br>    <span class="hljs-built_in">println!</span>(<span class="hljs-string">&quot;&#123;&#125;&quot;</span>, s.<span class="hljs-title function_ invoke__">to_string</span>())<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p><code>impl ToString</code> is static dispatch. The compiler specialize the function in compile-time, like a C++ template function.</p>
+<p><code>dyn ToString</code> is a dynamic dispatch, requiring a trait object which has a virtual function table. Here I use a reference because I didn’t require s binding by <code>Size</code>.</p>
 
     </div>
 
@@ -100,14 +105,22 @@
 
 </body>
 
-
-<footer style="bottom: 0;
-               width: 100vw;
-               background-color: #ffffff;
-               border-top: 1px solid;
-               padding: 0 1rem 0.7rem 1rem">
-    theme cemetery made by <a href="/about.html">myself</a>.
-    powered by <a target="_blank" rel="noopener" href="https://hexo.io/">hexo</a>.
+<hr style="max-width: 900px; margin: 0 auto">
+<footer class="site-footer">
+    <div class="top-nav fit-content">
+        © 2024 Ji Wang |
+        <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc/4.0/" style="padding-left: 5px;">
+            Creative Commons Attribution License
+        </a>
+    </div>
+    <div class="top-nav fit-content">
+        <a target="_blank" rel="noopener" href="https://github.com/Wang-Ji20" class="footer-links"><img src="./asset/github.svg" alt="github"
+                width="20" height="20"></a>
+        <a href="mailto:jiwangcdi@gmail.com" class="footer-links"><img src="./asset/email.svg" alt="email" width="20"
+                height="20"></a>
+        <a target="_blank" rel="noopener" href="https://www.linkedin.com/in/%E9%9B%86-%E7%8E%8B-67b0b92a7/" class="footer-links"><img
+                src="./asset/linkedin.svg" alt="linkedin" width="20" height="20"></a>
+    </div>
 </footer>
 
 
