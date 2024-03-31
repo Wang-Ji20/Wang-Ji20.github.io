@@ -40,3 +40,7 @@ In linux kernel, intrusive linked lists are ubiquitous. Definition is in `includ
 ### Malformed linked lists
 
 ## Swiss table
+
+## Skip-list
+
+
