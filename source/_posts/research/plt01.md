@@ -1,5 +1,5 @@
 ---
-title: programming language theory - preface
+title: why study programming languages
 date: 2023-09-07 22:04:36
 tags:
 - plt
@@ -90,16 +90,17 @@ This series will cover a wide range of topics, about the design and implementati
 ## bibliography
 
 - books
-    - The Little Schemer (Scheme)
-    - Structure and Interpretation of Computer Programs (Scheme)
-    - Programming Language Pragmatics (PLT & Compiler)
-    - Type and Programming Languages (PLT)
-    - Software Foundations (Coq, Logic)
+  - The Little Schemer (Scheme)
+  - Structure and Interpretation of Computer Programs (Scheme)
+  - Programming Language Pragmatics (PLT & Compiler)
+  - Type and Programming Languages (PLT)
+  - Software Foundations (Coq, Logic)
 - course
-    - UW Coursera Programming Languages (PLT)
-    - Stanford CS242 Programming Languages (PLT)
+  - UW Coursera Programming Languages (PLT)
+  - Stanford CS242 Programming Languages (PLT)
 
 tools & PLs:
+
 - Scheme
 - Racket
 - Haskell

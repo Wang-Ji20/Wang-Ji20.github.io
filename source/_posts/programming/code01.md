@@ -10,18 +10,6 @@ categories:
 
 Recent days(months) have seen my self-indulgent consequent 3 walkthroughs on [Baldur's Gate 3](https://baldursgate3.game/). To say I regret spending so much time on it is not accurate, as I really enjoy that game. But life goes on, so I shall quit the redemption of Bhaalspawn, and resume my inquiry to software source codes.
 
-## Daily read code series
-
-I start to read other codes, learning how they solve their problems, to benefit my own coding practice.
-
-In this series, I might read medium-sized code snippets(about 1000loc), and write about my lessons and feeling about them. The code I will select matches the following standard:
-
-- Self-contained. implements one feature in a larger system, or is a independent project on their own.
-
-- A bit challenging: Never learn new thing if not difficult somehow.
-
-## Day 1: Linux
-
 I have always wanted to read Linux. It's said to be well-crafted and itself is such a crucial source code which powers the whole world! So let's start.
 
 To read it, I need to configure my text editor first(VSCode, in my case).
@@ -43,22 +31,22 @@ Here I choose three spinlock API in linux kernel space:
     From include/linux/spinlock.h
  */
 
-# define spin_lock_init(_lock)			\
-do {						\
-	spinlock_check(_lock);			\
-	*(_lock) = __SPIN_LOCK_UNLOCKED(_lock);	\
+# define spin_lock_init(_lock)   \
+do {      \
+ spinlock_check(_lock);   \
+ *(_lock) = __SPIN_LOCK_UNLOCKED(_lock); \
 } while (0)
 
 #endif
 
 static __always_inline void spin_lock(spinlock_t *lock)
 {
-	raw_spin_lock(&lock->rlock);
+ raw_spin_lock(&lock->rlock);
 }
 
 static __always_inline void spin_unlock(spinlock_t *lock)
 {
-	raw_spin_unlock(&lock->rlock);
+ raw_spin_unlock(&lock->rlock);
 }
 ```
 
@@ -67,7 +55,7 @@ They are self-contained and complete. First initiate a lock, lock it, and unlock
 There's another macro worth mentioning:
 
 ```C
-#define DEFINE_SPINLOCK(x)	spinlock_t x = __SPIN_LOCK_UNLOCKED(x)
+#define DEFINE_SPINLOCK(x) spinlock_t x = __SPIN_LOCK_UNLOCKED(x)
 ```
 
 That's a shortcut for defining spinlock which marries the definition and initialization. As a language without ctors, this is kind of the only way to establish some invariant when a type is constructed.
@@ -119,17 +107,17 @@ Now we are going to see the true presence of Spinlocks. How many states should i
 // include/linux/spinlock_types.h
 
 typedef struct spinlock {
-	union {
-		struct raw_spinlock rlock;
+ union {
+  struct raw_spinlock rlock;
 
 #ifdef CONFIG_DEBUG_LOCK_ALLOC
 # define LOCK_PADSIZE (offsetof(struct raw_spinlock, dep_map))
-		struct {
-			u8 __padding[LOCK_PADSIZE];
-			struct lockdep_map dep_map;
-		};
+  struct {
+   u8 __padding[LOCK_PADSIZE];
+   struct lockdep_map dep_map;
+  };
 #endif
-	};
+ };
 } spinlock_t;
 ```
 
@@ -138,13 +126,13 @@ As I said, I will ignore the `lockdeps` module, so spinlock is just the same as 
 ```C
 // include/asm-generic/qspinlock_types.h
 typedef struct raw_spinlock {
-	arch_spinlock_t raw_lock;
+ arch_spinlock_t raw_lock;
 #ifdef CONFIG_DEBUG_SPINLOCK
-	unsigned int magic, owner_cpu;
-	void *owner;
+ unsigned int magic, owner_cpu;
+ void *owner;
 #endif
 #ifdef CONFIG_DEBUG_LOCK_ALLOC
-	struct lockdep_map dep_map;
+ struct lockdep_map dep_map;
 #endif
 } raw_spinlock_t;
 ```
@@ -155,23 +143,23 @@ Aside from debugging codes, that structure is another direct mapping of the `arc
 // include/asm-generic/qspinlock_types.h
 
 typedef struct qspinlock {
-	union {
-		atomic_t val;
+ union {
+  atomic_t val;
 
-		/*
-		 * By using the whole 2nd least significant byte for the
-		 * pending bit, we can allow better optimization of the lock
-		 * acquisition for the pending bit holder.
-		 */
-		struct {
-			u8	locked;
-			u8	pending;
-		};
-		struct {
-			u16	locked_pending;
-			u16	tail;
-		};
-	};
+  /*
+   * By using the whole 2nd least significant byte for the
+   * pending bit, we can allow better optimization of the lock
+   * acquisition for the pending bit holder.
+   */
+  struct {
+   u8 locked;
+   u8 pending;
+  };
+  struct {
+   u16 locked_pending;
+   u16 tail;
+  };
+ };
     // omit situation for big endian machines
 } arch_spinlock_t;
 ```
@@ -185,10 +173,10 @@ Intuitively, the field `locked` says whether this spinlock is in a locked state.
 ```C
 // include/linux/spinlock.h
 
-# define spin_lock_init(_lock)			\
-do {						\
-	spinlock_check(_lock);			\
-	*(_lock) = __SPIN_LOCK_UNLOCKED(_lock);	\
+# define spin_lock_init(_lock)   \
+do {      \
+ spinlock_check(_lock);   \
+ *(_lock) = __SPIN_LOCK_UNLOCKED(_lock); \
 } while (0)
 ```
 
@@ -199,7 +187,7 @@ Here's a trick in weak typing `C` to ensure some type safety:
 ```C
 static __always_inline raw_spinlock_t *spinlock_check(spinlock_t *lock)
 {
-	return &lock->rlock;
+ return &lock->rlock;
 }
 ```
 
@@ -212,7 +200,7 @@ After several macro expansions, let's see how the bookkeeper registers an initia
 ```C
 // include/asm-generic/qspinlock_types.h
 
-#define	__ARCH_SPIN_LOCK_UNLOCKED	{ { .val = ATOMIC_INIT(0) } }
+#define __ARCH_SPIN_LOCK_UNLOCKED { { .val = ATOMIC_INIT(0) } }
 ```
 
 It simply make the struct zero.
@@ -227,8 +215,8 @@ The first expansion resolves to this function:
 
 static inline void __raw_spin_lock(raw_spinlock_t *lock)
 {
-	preempt_disable();
-	spin_acquire(&lock->dep_map, 0, 0, _RET_IP_);
+ preempt_disable();
+ spin_acquire(&lock->dep_map, 0, 0, _RET_IP_);
     LOCK_CONTENDED(lock, do_raw_spin_trylock, do_raw_spin_lock);
 }
 ```
@@ -243,7 +231,7 @@ static inline void __raw_spin_lock(raw_spinlock_t *lock)
 // include/linux/lockdep.h
 
 #define LOCK_CONTENDED(_lock, try, lock) \
-	lock(_lock)
+ lock(_lock)
 
 ```
 
@@ -252,9 +240,9 @@ static inline void __raw_spin_lock(raw_spinlock_t *lock)
 ```C
 static inline void do_raw_spin_lock(raw_spinlock_t *lock) __acquires(lock)
 {
-	__acquire(lock);
-	arch_spin_lock(&lock->raw_lock);
-	mmiowb_spin_lock();
+ __acquire(lock);
+ arch_spin_lock(&lock->raw_lock);
+ mmiowb_spin_lock();
 }
 ```
 
@@ -267,7 +255,7 @@ static inline void do_raw_spin_lock(raw_spinlock_t *lock) __acquires(lock)
 And the real work is...
 
 ```C
-#define arch_spin_lock(l)		queued_spin_lock(l)
+#define arch_spin_lock(l)  queued_spin_lock(l)
 ```
 
 Then we came to `qspinlock.h`.
@@ -283,12 +271,12 @@ The definition of queued_spin_lock is quite simple; it tries to acquire the lock
  */
 static __always_inline void queued_spin_lock(struct qspinlock *lock)
 {
-	int val = 0;
+ int val = 0;
 
-	if (likely(atomic_try_cmpxchg_acquire(&lock->val, &val, _Q_LOCKED_VAL)))
-		return;
+ if (likely(atomic_try_cmpxchg_acquire(&lock->val, &val, _Q_LOCKED_VAL)))
+  return;
 
-	queued_spin_lock_slowpath(lock, val);
+ queued_spin_lock_slowpath(lock, val);
 }
 ```
 
@@ -303,32 +291,32 @@ Eliminating [instrumentation](https://en.wikipedia.org/wiki/Instrumentation_(com
 ```C
 // arch/x86/include/asm/cmpxchg.h
 
-#define __raw_try_cmpxchg(_ptr, _pold, _new, size, lock)		\
-({									\
-	bool success;							\
-	__typeof__(_ptr) _old = (__typeof__(_ptr))(_pold);		\
-	__typeof__(*(_ptr)) __old = *_old;				\
-	__typeof__(*(_ptr)) __new = (_new);				\
-	switch (size) {							\
-						\
-	case __X86_CASE_L:						\
-	{								\
-		volatile u32 *__ptr = (volatile u32 *)(_ptr);		\
-		asm volatile(lock "cmpxchgl %[new], %[ptr]"		\
-			     CC_SET(z)					\
-			     : CC_OUT(z) (success),			\
-			       [ptr] "+m" (*__ptr),			\
-			       [old] "+a" (__old)			\
-			     : [new] "r" (__new)			\
-			     : "memory");				\
-		break;							\
-	}								\
-	default:							\
-		__cmpxchg_wrong_size();					\
-	}								\
-	if (unlikely(!success))						\
-		*_old = __old;						\
-	likely(success);						\
+#define __raw_try_cmpxchg(_ptr, _pold, _new, size, lock)  \
+({         \
+ bool success;       \
+ __typeof__(_ptr) _old = (__typeof__(_ptr))(_pold);  \
+ __typeof__(*(_ptr)) __old = *_old;    \
+ __typeof__(*(_ptr)) __new = (_new);    \
+ switch (size) {       \
+      \
+ case __X86_CASE_L:      \
+ {        \
+  volatile u32 *__ptr = (volatile u32 *)(_ptr);  \
+  asm volatile(lock "cmpxchgl %[new], %[ptr]"  \
+        CC_SET(z)     \
+        : CC_OUT(z) (success),   \
+          [ptr] "+m" (*__ptr),   \
+          [old] "+a" (__old)   \
+        : [new] "r" (__new)   \
+        : "memory");    \
+  break;       \
+ }        \
+ default:       \
+  __cmpxchg_wrong_size();     \
+ }        \
+ if (unlikely(!success))      \
+  *_old = __old;      \
+ likely(success);      \
 })
 ```
 
@@ -339,12 +327,12 @@ There's some sanity checks. They are necessary, but I will ignore them, and dive
 ```c
 asm volatile(
                  "lock;"
-                 "cmpxchgl %[new], %[ptr]"		\
-			     : "=@ccz" (success),			\
-			       [ptr] "+m" (*__ptr),			\
-			       [old] "+a" (__old)			\
-			     : [new] "r" (__new)			\
-			     : "memory");				\
+                 "cmpxchgl %[new], %[ptr]"  \
+        : "=@ccz" (success),   \
+          [ptr] "+m" (*__ptr),   \
+          [old] "+a" (__old)   \
+        : [new] "r" (__new)   \
+        : "memory");    \
 ```
 
 Asm block is scary at the first sight, so we need some patience and good [guidance](http://www.ibiblio.org/gferg/ldp/GCC-Inline-Assembly-HOWTO.html).
@@ -369,7 +357,7 @@ The first part is a instruction pattern. Just like `printf`, the pattern is fill
 After this block, we can expect `success` to store the [conditional code](https://en.wikipedia.org/wiki/Status_register) which tells us whether the exchange happened. The GCC [documentation](https://gcc.gnu.org/onlinedocs/gcc/extensions-to-the-c-language-family/how-to-use-inline-assembly-language-in-c-code.html) tells us:
 
 > x86 family:
-The flag output constraints for the x86 family are of the form =@cc<cond> where cond is one of the standard conditions defined in the ISA manual for jcc or setcc.
+The flag output constraints for the x86 family are of the form =@cc(cond) where cond is one of the standard conditions defined in the ISA manual for jcc or setcc.
 
 In particular, `z` means equal or [zero flag](https://en.wikipedia.org/wiki/Zero_flag) set.
 
@@ -402,24 +390,24 @@ As we enter the slow path, the value of lock is held or the lock is claimed but 
 We denote the lock state by a triple `(queue tail, pending bit, lock value)`.
 
 ```C
-	/*
-	 * Wait for in-progress pending->locked hand-overs with a bounded
-	 * number of spins so that we guarantee forward progress.
-	 *
-	 * 0,1,0 -> 0,0,1
-	 */
-	if (val == _Q_PENDING_VAL) {
-		int cnt = _Q_PENDING_LOOPS;
-		val = atomic_cond_read_relaxed(&lock->val,
-					       (VAL != _Q_PENDING_VAL) || !cnt--);
-	}
+ /*
+  * Wait for in-progress pending->locked hand-overs with a bounded
+  * number of spins so that we guarantee forward progress.
+  *
+  * 0,1,0 -> 0,0,1
+  */
+ if (val == _Q_PENDING_VAL) {
+  int cnt = _Q_PENDING_LOOPS;
+  val = atomic_cond_read_relaxed(&lock->val,
+            (VAL != _Q_PENDING_VAL) || !cnt--);
+ }
 ```
 
 `(0, 0, 0)` is the fast path. The slow path starts with `(0, 1, 0)`, where the lock is released recently by a old owner, but the current pending lock(not me) hasn't fully acquired it. On that case we have to wait until it acquires the lock, after which the lock enters the state `(0, 0, 1)`.
 
 ```C
-	if (val & ~_Q_LOCKED_MASK)
-		goto queue;
+ if (val & ~_Q_LOCKED_MASK)
+  goto queue;
 ```
 
 Then we read the lock again. We fetch the `pending | queue` tail bits. They are set if someone else is already waiting for the lock. In that condition, we know our lock is the 3rd candidate, so we must queue. That's the slower slow path. But let's assume our lock is the pending lock so that we can go through the quicker slow path.
@@ -432,54 +420,54 @@ That function atomically test and set the pending bit of our lock. It returns th
 
 ```C
 
-	/*
-	 * If we observe contention, there is a concurrent locker.
-	 *
-	 * Undo and queue; our setting of PENDING might have made the
-	 * n,0,0 -> 0,0,0 transition fail and it will now be waiting
-	 * on @next to become !NULL.
-	 */
-	if (unlikely(val & ~_Q_LOCKED_MASK)) {
+ /*
+  * If we observe contention, there is a concurrent locker.
+  *
+  * Undo and queue; our setting of PENDING might have made the
+  * n,0,0 -> 0,0,0 transition fail and it will now be waiting
+  * on @next to become !NULL.
+  */
+ if (unlikely(val & ~_Q_LOCKED_MASK)) {
 
-		/* Undo PENDING if we set it. */
-		if (!(val & _Q_PENDING_MASK))
-			clear_pending(lock);
+  /* Undo PENDING if we set it. */
+  if (!(val & _Q_PENDING_MASK))
+   clear_pending(lock);
 
-		goto queue;
-	}
+  goto queue;
+ }
 
 ```
 
 After that our lock can simply spin until the former lock owner releases the lock and takes the lock:
 
 ```C
-	/*
-	 * We're pending, wait for the owner to go away.
-	 *
-	 * 0,1,1 -> *,1,0
-	 *
-	 * this wait loop must be a load-acquire such that we match the
-	 * store-release that clears the locked bit and create lock
-	 * sequentiality; this is because not all
-	 * clear_pending_set_locked() implementations imply full
-	 * barriers.
-	 */
-	if (val & _Q_LOCKED_MASK)
-		smp_cond_load_acquire(&lock->locked, !VAL);
+ /*
+  * We're pending, wait for the owner to go away.
+  *
+  * 0,1,1 -> *,1,0
+  *
+  * this wait loop must be a load-acquire such that we match the
+  * store-release that clears the locked bit and create lock
+  * sequentiality; this is because not all
+  * clear_pending_set_locked() implementations imply full
+  * barriers.
+  */
+ if (val & _Q_LOCKED_MASK)
+  smp_cond_load_acquire(&lock->locked, !VAL);
 
-	/*
-	 * take ownership and clear the pending bit.
-	 *
-	 * 0,1,0 -> 0,0,1
-	 */
-	clear_pending_set_locked(lock);
-	lockevent_inc(lock_pending);
-	return;
+ /*
+  * take ownership and clear the pending bit.
+  *
+  * 0,1,0 -> 0,0,1
+  */
+ clear_pending_set_locked(lock);
+ lockevent_inc(lock_pending);
+ return;
 
-	/*
-	 * End of pending bit optimistic spinning and beginning of MCS
-	 * queuing.
-	 */
+ /*
+  * End of pending bit optimistic spinning and beginning of MCS
+  * queuing.
+  */
 ```
 
 ### The slowest path
@@ -490,16 +478,16 @@ When the lock is busy, the lock is arranged as a queue. The queue data structure
 
 // kernel/locking/mcs_spinlock.h
 struct mcs_spinlock {
-	struct mcs_spinlock *next;
-	int locked; /* 1 if lock acquired */
-	int count;  /* nesting count, see qspinlock.c */
+ struct mcs_spinlock *next;
+ int locked; /* 1 if lock acquired */
+ int count;  /* nesting count, see qspinlock.c */
 };
 
 // kernel/locking/qspinlock.c
 struct qnode {
-	struct mcs_spinlock mcs;
+ struct mcs_spinlock mcs;
 #ifdef CONFIG_PARAVIRT_SPINLOCKS
-	long reserved[2];
+ long reserved[2];
 #endif
 };
 
@@ -535,55 +523,55 @@ tail = encode_tail(smp_processor_id(), idx);
 If one CPU has given out more than four instances of locks, the qspinlock fall back to normal spinlock.
 
 ```C
-	if (unlikely(idx >= MAX_NODES)) {
-		lockevent_inc(lock_no_node);
-		while (!queued_spin_trylock(lock))
-			cpu_relax();
-		goto release;
-	}
+ if (unlikely(idx >= MAX_NODES)) {
+  lockevent_inc(lock_no_node);
+  while (!queued_spin_trylock(lock))
+   cpu_relax();
+  goto release;
+ }
 ```
 
 After that, our lock get from CPU a node to enqueue.
 
 ```C
-	node = grab_mcs_node(node, idx);
+ node = grab_mcs_node(node, idx);
 
-	/*
-	 * Keep counts of non-zero index values:
-	 */
-	lockevent_cond_inc(lock_use_node2 + idx - 1, idx);
+ /*
+  * Keep counts of non-zero index values:
+  */
+ lockevent_cond_inc(lock_use_node2 + idx - 1, idx);
 
-	/*
-	 * Ensure that we increment the head node->count before initialising
-	 * the actual node. If the compiler is kind enough to reorder these
-	 * stores, then an IRQ could overwrite our assignments.
-	 */
-	barrier();
+ /*
+  * Ensure that we increment the head node->count before initialising
+  * the actual node. If the compiler is kind enough to reorder these
+  * stores, then an IRQ could overwrite our assignments.
+  */
+ barrier();
 
-	node->locked = 0;
-	node->next = NULL;
-	pv_init_node(node);
+ node->locked = 0;
+ node->next = NULL;
+ pv_init_node(node);
 ```
 
 It's passed so long. During that time, the lock may have been released, so we can probe again to see whether we can grab the lock now:
 
 ```C
-	if (queued_spin_trylock(lock))
-		goto release;
+ if (queued_spin_trylock(lock))
+  goto release;
 ```
 
 As our lock has gained a node to enqueue, the next thing is to actuate the enqueue.
 
 ```C
 /*
-	 * Publish the updated tail.
-	 * We have already touched the queueing cacheline; don't bother with
-	 * pending stuff.
-	 *
-	 * p,*,* -> n,*,*
-	 */
-	old = xchg_tail(lock, tail);
-	next = NULL;
+  * Publish the updated tail.
+  * We have already touched the queueing cacheline; don't bother with
+  * pending stuff.
+  *
+  * p,*,* -> n,*,*
+  */
+ old = xchg_tail(lock, tail);
+ next = NULL;
 ```
 
 We replaced the tail id by our new tail id, refetching the old tail id. That id is decoded to find qnode. We need that qnode because it's our former lock owner. After its release, it can find us and unset our lock bit.
@@ -593,28 +581,28 @@ Then start waiting! The loop is inside the macro `arch_mcs_spin_lock_contended`,
 ```C
 
 /*
-	 * if there was a previous node; link it and wait until reaching the
-	 * head of the waitqueue.
-	 */
-	if (old & _Q_TAIL_MASK) {
-		prev = decode_tail(old);
+  * if there was a previous node; link it and wait until reaching the
+  * head of the waitqueue.
+  */
+ if (old & _Q_TAIL_MASK) {
+  prev = decode_tail(old);
 
-		/* Link @node into the waitqueue. */
-		WRITE_ONCE(prev->next, node);
+  /* Link @node into the waitqueue. */
+  WRITE_ONCE(prev->next, node);
 
-		pv_wait_node(node, prev);
-		arch_mcs_spin_lock_contended(&node->locked);
+  pv_wait_node(node, prev);
+  arch_mcs_spin_lock_contended(&node->locked);
 
-		/*
-		 * While waiting for the MCS lock, the next pointer may have
-		 * been set by another lock waiter. We optimistically load
-		 * the next pointer & prefetch the cacheline for writing
-		 * to reduce latency in the upcoming MCS unlock operation.
-		 */
-		next = READ_ONCE(node->next);
-		if (next)
-			prefetchw(next);
-	}
+  /*
+   * While waiting for the MCS lock, the next pointer may have
+   * been set by another lock waiter. We optimistically load
+   * the next pointer & prefetch the cacheline for writing
+   * to reduce latency in the upcoming MCS unlock operation.
+   */
+  next = READ_ONCE(node->next);
+  if (next)
+   prefetchw(next);
+ }
 
 
 ```
@@ -628,55 +616,55 @@ val = atomic_cond_read_acquire(&lock->val, !(VAL & _Q_LOCKED_PENDING_MASK));
 ```C
 
 locked:
-	/*
-	 * claim the lock:
-	 *
-	 * n,0,0 -> 0,0,1 : lock, uncontended
-	 * *,*,0 -> *,*,1 : lock, contended
-	 *
-	 * If the queue head is the only one in the queue (lock value == tail)
-	 * and nobody is pending, clear the tail code and grab the lock.
-	 * Otherwise, we only need to grab the lock.
-	 */
+ /*
+  * claim the lock:
+  *
+  * n,0,0 -> 0,0,1 : lock, uncontended
+  * *,*,0 -> *,*,1 : lock, contended
+  *
+  * If the queue head is the only one in the queue (lock value == tail)
+  * and nobody is pending, clear the tail code and grab the lock.
+  * Otherwise, we only need to grab the lock.
+  */
 
-	/*
-	 * In the PV case we might already have _Q_LOCKED_VAL set, because
-	 * of lock stealing; therefore we must also allow:
-	 *
-	 * n,0,1 -> 0,0,1
-	 *
-	 * Note: at this point: (val & _Q_PENDING_MASK) == 0, because of the
-	 *       above wait condition, therefore any concurrent setting of
-	 *       PENDING will make the uncontended transition fail.
-	 */
-	if ((val & _Q_TAIL_MASK) == tail) {
-		if (atomic_try_cmpxchg_relaxed(&lock->val, &val, _Q_LOCKED_VAL))
-			goto release; /* No contention */
-	}
+ /*
+  * In the PV case we might already have _Q_LOCKED_VAL set, because
+  * of lock stealing; therefore we must also allow:
+  *
+  * n,0,1 -> 0,0,1
+  *
+  * Note: at this point: (val & _Q_PENDING_MASK) == 0, because of the
+  *       above wait condition, therefore any concurrent setting of
+  *       PENDING will make the uncontended transition fail.
+  */
+ if ((val & _Q_TAIL_MASK) == tail) {
+  if (atomic_try_cmpxchg_relaxed(&lock->val, &val, _Q_LOCKED_VAL))
+   goto release; /* No contention */
+ }
 
-	/*
-	 * Either somebody is queued behind us or _Q_PENDING_VAL got set
-	 * which will then detect the remaining tail and queue behind us
-	 * ensuring we'll see a @next.
-	 */
-	set_locked(lock);
+ /*
+  * Either somebody is queued behind us or _Q_PENDING_VAL got set
+  * which will then detect the remaining tail and queue behind us
+  * ensuring we'll see a @next.
+  */
+ set_locked(lock);
 
-	/*
-	 * contended path; wait for next if not observed yet, release.
-	 */
-	if (!next)
-		next = smp_cond_load_relaxed(&node->next, (VAL));
+ /*
+  * contended path; wait for next if not observed yet, release.
+  */
+ if (!next)
+  next = smp_cond_load_relaxed(&node->next, (VAL));
 
-	arch_mcs_spin_unlock_contended(&next->locked);
-	pv_kick_node(lock, next);
+ arch_mcs_spin_unlock_contended(&next->locked);
+ pv_kick_node(lock, next);
 
 release:
-	trace_contention_end(lock, 0);
+ trace_contention_end(lock, 0);
 
-	/*
-	 * release the node
-	 */
-	__this_cpu_dec(qnodes[0].mcs.count);
+ /*
+  * release the node
+  */
+ __this_cpu_dec(qnodes[0].mcs.count);
 
 ```
 

@@ -14,6 +14,7 @@
   "author": "Ji Wang",
   "license": "ISC",
   "dependencies": {
+    "hexo-theme-cimetiere": "file:",
     "sass": "^1.68.0"
   }
 }

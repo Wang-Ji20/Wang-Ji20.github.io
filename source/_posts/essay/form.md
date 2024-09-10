@@ -1,5 +1,5 @@
 ---
-title: thinking on forms (draft)
+title: Presentation is more important than "core"
 tags:
 - literature
 ---

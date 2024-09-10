@@ -1,5 +1,5 @@
 ---
-title: emacs
+title: emacs 的一些指令
 date: 2023-09-06 16:16:19
 tags:
 - text
