@@ -36,7 +36,7 @@
     <div class="flex flex-row-l">
     <div class="sidebar flex flex-column flex-center wide-only" style="position: fixed; padding-top: 3em; padding-left: 3em; max-width: 300px">
         <h4>Table of Contents</h4>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BF%90%E7%AE%97%E7%AC%A6%E9%A1%BA%E5%BA%8F"><span class="toc-text">运算符顺序</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#newtype-vs-data"><span class="toc-text">newtype vs data</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Functor-Applicative-Monad"><span class="toc-text">Functor, Applicative, Monad</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#do-notation"><span class="toc-text">do notation</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Monad-Transformer"><span class="toc-text">Monad Transformer</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%BF%90%E7%AE%97%E7%AC%A6%E9%A1%BA%E5%BA%8F"><span class="toc-text">运算符顺序</span></a></li></ol>
             <a href="/menu.html">[posts]</a>
     </div>
 
@@ -64,7 +64,7 @@
 
         <div style="margin: 0 0 25px 5px;">
             <h1>
-                haskell notes
+                haskell
             </h1>
             <p class="tldr" style="margin: 0;">
                 September 8, 2023
@@ -91,8 +91,7 @@
         <p>这里记录一些 Haskell 相关的笔记. 内容很杂, 除了最常规的 Haskell 语法语义, 标准库之外, 也可能会有一些函数式编程习语, 设计模式等内容.</p>
 <h2 id="运算符顺序"><a href="#运算符顺序" class="headerlink" title="运算符顺序"></a>运算符顺序</h2><p>函数式编程语言似乎总是避免不了括号地狱(笑话: 苏联特工偷走了美国代码的最后一页, 发现都是<code>)</code>…). 不过我们可以在 Haskell 中妥善利用运算符顺序, 来减少括号的层数.</p>
 <p>首先介绍一个概念: 结合性. 运算符的结合性决定了运算符在没有括号的情况下, 该如何结合. 例如, <code>+</code> 的结合性是左结合, 所以 <code>1 + 2 + 3</code> 等价于 <code>(1 + 2) + 3</code>. 而 <code>:</code> 的结合性是右结合, 所以 <code>1 : 2 : 3 : []</code> 等价于 <code>1 : (2 : (3 : []))</code>.</p>
-<h2 id="newtype-vs-data"><a href="#newtype-vs-data" class="headerlink" title="newtype vs data"></a><code>newtype</code> vs <code>data</code></h2><p><code>newtype</code> 和 <code>data</code> 都可以用来定义新的类型. 但是它们有一些区别.</p>
-<h2 id="Functor-Applicative-Monad"><a href="#Functor-Applicative-Monad" class="headerlink" title="Functor, Applicative, Monad"></a><code>Functor</code>, <code>Applicative</code>, <code>Monad</code></h2><h2 id="do-notation"><a href="#do-notation" class="headerlink" title="do notation"></a><code>do</code> notation</h2><h2 id="Monad-Transformer"><a href="#Monad-Transformer" class="headerlink" title="Monad Transformer"></a>Monad Transformer</h2>
+
     </div>
 
 </div>

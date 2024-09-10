@@ -64,7 +64,7 @@
 
         <div style="margin: 0 0 25px 5px;">
             <h1>
-                C programming pearls
+                C 语言的一些笔记
             </h1>
             <p class="tldr" style="margin: 0;">
                 September 2, 2023
@@ -91,13 +91,13 @@
 <h2 id="VLA"><a href="#VLA" class="headerlink" title="VLA"></a>VLA</h2><p><code>VLA</code> 是 <code>Variable Length Array</code> 的缩写. <code>C99</code> 引入了这个特性. 这个特性允许我们写出这样的代码:</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-type">int</span><br><span class="hljs-title function_">some_function</span><span class="hljs-params">(<span class="hljs-type">int</span> n)</span><br>&#123;<br>    <span class="hljs-type">int</span> <span class="hljs-built_in">array</span>[n];<br>    ...<br>&#125;<br></code></pre></td></tr></table></figure>
 
-<p>看上去有些令人诧异. 按道理说, 声明动态数组都在堆上, 怎么能这样就声明一个动态数组呢? 其实, 本来栈上就可以动态分配内存的, 我们不用栈只是因为它太小了. 从汇编的角度考虑, 栈分配内存无非就是让 <code>%rsp</code> 往下移动一些字节, 这些字节的数量可以是立即数, 当然也可以是一个变量. <code>Linux</code> 中提供了一个系统调用 <code>alloca()</code> 来实现在栈上分配动态内存. 可以调那个来在栈上分配内存.</p>
+<p>看上去有些令人诧异. 按道理说, 声明动态数组都在堆上, 怎么能这样就声明一个动态数组呢? 其实, 本来栈上就可以动态分配内存的, 不用栈只是因为它太小了. 从汇编的角度考虑, 栈分配内存无非就是让 <code>%rsp</code> 往下移动一些字节, 这些字节的数量可以是立即数, 当然也可以是一个变量. <code>Linux</code> 中提供了一个系统调用 <code>alloca()</code> 来实现在栈上分配动态内存. 可以调那个来在栈上分配内存.</p>
 <p>另外, 我们不熟悉这种写法还有一个原因, 就是 <code>C++</code> 不支持这种写法. 因为在 <code>C</code> 引入这个特性的时候, <code>C++</code> 已经有很多特性依赖于固定长度数组, 所以不太可能兼容 <code>C</code> 的这个特性.</p>
 <p><a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/1887097/why-arent-variable-length-arrays-part-of-the-c-standard">许多人</a>认为这<a href="(https://nullprogram.com/blog/2019/10/27/)">不是</a>一个好写法. <code>Bjarne Stroustrup</code> 本人也提出了<a target="_blank" rel="noopener" href="https://www.open-std.org/jtc1/sc22/wg21/docs/papers/2013/n3810.pdf">替代方案</a>.</p>
 <h2 id="restrict"><a href="#restrict" class="headerlink" title="restrict"></a><code>restrict</code></h2><p>这又是一个在 <code>C++</code> 里没有的关键字, 但这个关键字在 C 语言的很多地方都可以看到, 例如:</p>
-<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs c"><br><span class="hljs-keyword">extern</span> <span class="hljs-type">long</span> <span class="hljs-type">int</span> <span class="hljs-title function_">strtol</span> <span class="hljs-params">(<span class="hljs-type">const</span> <span class="hljs-type">char</span> *__restrict __nptr,</span><br><span class="hljs-params">			<span class="hljs-type">char</span> **__restrict __endptr, <span class="hljs-type">int</span> __base)</span><br>     __THROW __<span class="hljs-title function_">nonnull</span> <span class="hljs-params">((<span class="hljs-number">1</span>))</span>;<br><br></code></pre></td></tr></table></figure>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs c"><br><span class="hljs-keyword">extern</span> <span class="hljs-type">long</span> <span class="hljs-type">int</span> <span class="hljs-title function_">strtol</span> <span class="hljs-params">(<span class="hljs-type">const</span> <span class="hljs-type">char</span> *__restrict __nptr,</span><br><span class="hljs-params">                        <span class="hljs-type">char</span> **__restrict __endptr,</span><br><span class="hljs-params">                        <span class="hljs-type">int</span> __base)</span><br>     __THROW __<span class="hljs-title function_">nonnull</span> <span class="hljs-params">((<span class="hljs-number">1</span>))</span>;<br><br></code></pre></td></tr></table></figure>
 
-<p>这个关键字告诉编译器, 这个指针是唯一指向这个内存区域的指针. 也就是说, 不存在指针别名的情况, 因此编译器可以利用这个信息生成更快的代码. 不过, 作为程序员来说, 我认为可都用不到这个关键字就是了.</p>
+<p>这个关键字告诉编译器, 这个指针是唯一指向这个内存区域的指针. 也就是说, 不存在指针别名的情况, 因此编译器可以利用这个信息生成更快的代码. 不过, 一般程序员应该都用不到这个关键字.</p>
 <h2 id="const-修饰谁"><a href="#const-修饰谁" class="headerlink" title="const 修饰谁?"></a><code>const</code> 修饰谁?</h2><p>通常来说, <code>const</code> 修饰左边的东西. 左边没有的时候, 修饰右边的东西. 比如:</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-type">const</span> <span class="hljs-type">int</span> *p;<br></code></pre></td></tr></table></figure>
 

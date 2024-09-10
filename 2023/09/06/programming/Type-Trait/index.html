@@ -131,7 +131,6 @@
 <p>这样, 我们就可以在模板定义的时候指定 <code>has_serialize</code> 来要求 <code>T</code> 必须有 <code>serialize</code> 方法. 例如:</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs cpp"><br><span class="hljs-keyword">template</span>&lt;<span class="hljs-keyword">typename</span> T, <span class="hljs-keyword">typename</span> = T&gt;<br><span class="hljs-keyword">struct</span> <span class="hljs-type">has_serialize_concept_t</span> : std::false_type &#123;&#125;;<br><br><span class="hljs-keyword">template</span> &lt;has_serialize_concept T&gt;<br><span class="hljs-keyword">struct</span> <span class="hljs-title class_">has_serialize_concept_t</span>&lt;T, T&gt; : std::true_type &#123;&#125;;<br><br></code></pre></td></tr></table></figure>
 
-
     </div>
 
 </div>

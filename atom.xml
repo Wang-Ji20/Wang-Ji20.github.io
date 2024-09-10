@@ -6,7 +6,7 @@
   <link href="http://wang-ji20.github.io/atom.xml" rel="self"/>
   
   <link href="http://wang-ji20.github.io/"/>
-  <updated>2024-03-31T13:49:14.432Z</updated>
+  <updated>2024-09-10T16:25:14.696Z</updated>
   <id>http://wang-ji20.github.io/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Styles in Clarity and Grace (draft)</title>
-    <link href="http://wang-ji20.github.io/2024/03/31/essay/Styles-in-Clearity-and-Grace/"/>
-    <id>http://wang-ji20.github.io/2024/03/31/essay/Styles-in-Clearity-and-Grace/</id>
-    <published>2024-03-31T13:49:14.432Z</published>
-    <updated>2024-03-31T13:49:14.432Z</updated>
+    <title>Styles in Clarity and Grace</title>
+    <link href="http://wang-ji20.github.io/2024/09/10/essay/Styles-in-Clearity-and-Grace/"/>
+    <id>http://wang-ji20.github.io/2024/09/10/essay/Styles-in-Clearity-and-Grace/</id>
+    <published>2024-09-10T16:25:14.696Z</published>
+    <updated>2024-09-10T16:25:14.696Z</updated>
     
     
       
@@ -35,14 +35,16 @@
     
     
     
+    <category term="literature" scheme="http://wang-ji20.github.io/tags/literature/"/>
+    
   </entry>
   
   <entry>
-    <title>thinking on forms (draft)</title>
-    <link href="http://wang-ji20.github.io/2024/03/31/essay/form/"/>
-    <id>http://wang-ji20.github.io/2024/03/31/essay/form/</id>
-    <published>2024-03-31T13:49:14.432Z</published>
-    <updated>2024-03-31T13:49:14.432Z</updated>
+    <title>Presentation is more important than &quot;core&quot;</title>
+    <link href="http://wang-ji20.github.io/2024/09/10/essay/form/"/>
+    <id>http://wang-ji20.github.io/2024/09/10/essay/form/</id>
+    <published>2024-09-10T16:25:14.696Z</published>
+    <updated>2024-09-10T16:25:14.696Z</updated>
     
     
       
@@ -65,7 +67,7 @@
     <link href="http://wang-ji20.github.io/2024/03/05/reveng/article01/"/>
     <id>http://wang-ji20.github.io/2024/03/05/reveng/article01/</id>
     <published>2024-03-05T16:00:00.000Z</published>
-    <updated>2024-03-31T13:49:14.436Z</updated>
+    <updated>2024-09-10T16:25:14.696Z</updated>
     
     
       
@@ -82,61 +84,11 @@
   </entry>
   
   <entry>
-    <title>array, linked list, hash - revisited</title>
-    <link href="http://wang-ji20.github.io/2023/12/31/programming/code03/"/>
-    <id>http://wang-ji20.github.io/2023/12/31/programming/code03/</id>
-    <published>2023-12-31T06:09:47.000Z</published>
-    <updated>2024-03-31T13:49:14.432Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;We often say that designing data structures dominates the programming process. That’s a critical belief in data-oriented programming. So</summary>
-        
-      
-    
-    
-    
-    <category term="CS" scheme="http://wang-ji20.github.io/categories/CS/"/>
-    
-    
-    <category term="Data Structures" scheme="http://wang-ji20.github.io/tags/Data-Structures/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>wasm-bindgen, A rust compiler to webassembly</title>
-    <link href="http://wang-ji20.github.io/2023/12/23/programming/code02/"/>
-    <id>http://wang-ji20.github.io/2023/12/23/programming/code02/</id>
-    <published>2023-12-23T15:51:07.000Z</published>
-    <updated>2024-03-31T13:49:14.432Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;I have always wanted to use web technology to present my projects. It’s portable, beautiful and fast. Who want to download a huge</summary>
-        
-      
-    
-    
-    
-    
-    <category term="Rust" scheme="http://wang-ji20.github.io/tags/Rust/"/>
-    
-    <category term="Webassembly" scheme="http://wang-ji20.github.io/tags/Webassembly/"/>
-    
-  </entry>
-  
-  <entry>
     <title>qspinlock, a spinlock in the Linux Kernel</title>
     <link href="http://wang-ji20.github.io/2023/12/21/programming/code01/"/>
     <id>http://wang-ji20.github.io/2023/12/21/programming/code01/</id>
     <published>2023-12-21T16:00:00.000Z</published>
-    <updated>2024-03-31T13:49:14.432Z</updated>
+    <updated>2024-09-10T16:25:14.696Z</updated>
     
     
       
@@ -159,11 +111,11 @@
   </entry>
   
   <entry>
-    <title>Rudra</title>
+    <title>Rudra 论文阅读</title>
     <link href="http://wang-ji20.github.io/2023/12/10/research/Rudra/"/>
     <id>http://wang-ji20.github.io/2023/12/10/research/Rudra/</id>
     <published>2023-12-10T02:35:02.000Z</published>
-    <updated>2024-03-31T13:49:14.436Z</updated>
+    <updated>2024-09-10T16:25:14.696Z</updated>
     
     
       
@@ -180,32 +132,34 @@
   </entry>
   
   <entry>
-    <title>thinking on design (draft)</title>
-    <link href="http://wang-ji20.github.io/2023/09/23/essay/art-and-design/"/>
-    <id>http://wang-ji20.github.io/2023/09/23/essay/art-and-design/</id>
+    <title>Spacing in Dai Zhang&#39;s prose is beautiful</title>
+    <link href="http://wang-ji20.github.io/2023/09/23/essay/spacing/"/>
+    <id>http://wang-ji20.github.io/2023/09/23/essay/spacing/</id>
     <published>2023-09-23T10:05:45.000Z</published>
-    <updated>2024-03-31T13:49:14.432Z</updated>
+    <updated>2024-09-10T16:25:14.696Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;p&gt;I love graphic design, but I hate drawing; I enjoy writing, but I don’t like reciting dictionaries. The former, design, the latter,</summary>
+    <summary type="html">&lt;p&gt;In literature, there’s always a tradeoff between space and detail. It’s not a good practice to detail everything. When we write about</summary>
         
       
     
     
     
+    
+    <category term="literature" scheme="http://wang-ji20.github.io/tags/literature/"/>
     
   </entry>
   
   <entry>
-    <title>haskell notes</title>
+    <title>haskell</title>
     <link href="http://wang-ji20.github.io/2023/09/08/programming/haskell-notes/"/>
     <id>http://wang-ji20.github.io/2023/09/08/programming/haskell-notes/</id>
     <published>2023-09-08T08:05:52.000Z</published>
-    <updated>2024-03-31T13:49:14.436Z</updated>
+    <updated>2024-09-10T16:25:14.696Z</updated>
     
     
       
@@ -235,7 +189,7 @@
     <link href="http://wang-ji20.github.io/2023/09/08/programming/rust-notes/"/>
     <id>http://wang-ji20.github.io/2023/09/08/programming/rust-notes/</id>
     <published>2023-09-08T08:05:43.000Z</published>
-    <updated>2024-03-31T13:49:14.436Z</updated>
+    <updated>2024-09-10T16:25:14.696Z</updated>
     
     
       
@@ -260,11 +214,11 @@
   </entry>
   
   <entry>
-    <title>programming language theory - preface</title>
+    <title>why study programming languages</title>
     <link href="http://wang-ji20.github.io/2023/09/07/research/plt01/"/>
     <id>http://wang-ji20.github.io/2023/09/07/research/plt01/</id>
     <published>2023-09-07T14:04:36.000Z</published>
-    <updated>2024-03-31T13:49:14.436Z</updated>
+    <updated>2024-09-10T16:25:14.696Z</updated>
     
     
       
@@ -291,7 +245,7 @@
     <link href="http://wang-ji20.github.io/2023/09/06/essay/Twisted-Quotes/"/>
     <id>http://wang-ji20.github.io/2023/09/06/essay/Twisted-Quotes/</id>
     <published>2023-09-06T10:54:59.000Z</published>
-    <updated>2024-03-31T13:49:14.432Z</updated>
+    <updated>2024-09-10T16:25:14.696Z</updated>
     
     
       
@@ -317,7 +271,7 @@
     <link href="http://wang-ji20.github.io/2023/09/06/programming/Type-Trait/"/>
     <id>http://wang-ji20.github.io/2023/09/06/programming/Type-Trait/</id>
     <published>2023-09-06T10:54:59.000Z</published>
-    <updated>2024-03-31T13:49:14.432Z</updated>
+    <updated>2024-09-10T16:25:14.696Z</updated>
     
     
       
@@ -341,11 +295,11 @@
   </entry>
   
   <entry>
-    <title>emacs</title>
+    <title>emacs 的一些指令</title>
     <link href="http://wang-ji20.github.io/2023/09/06/programming/emacs/"/>
     <id>http://wang-ji20.github.io/2023/09/06/programming/emacs/</id>
     <published>2023-09-06T08:16:19.000Z</published>
-    <updated>2024-03-31T13:49:14.432Z</updated>
+    <updated>2024-09-10T16:25:14.696Z</updated>
     
     
       
@@ -369,11 +323,11 @@
   </entry>
   
   <entry>
-    <title>C programming pearls</title>
+    <title>C 语言的一些笔记</title>
     <link href="http://wang-ji20.github.io/2023/09/02/programming/C-programming-language-pearls/"/>
     <id>http://wang-ji20.github.io/2023/09/02/programming/C-programming-language-pearls/</id>
     <published>2023-09-02T14:49:41.000Z</published>
-    <updated>2024-03-31T13:49:14.432Z</updated>
+    <updated>2024-09-10T16:25:14.696Z</updated>
     
     
       
@@ -397,11 +351,11 @@
   </entry>
   
   <entry>
-    <title>C++ Test</title>
+    <title>C++ 测试环境配置</title>
     <link href="http://wang-ji20.github.io/2023/08/29/programming/C-Test/"/>
     <id>http://wang-ji20.github.io/2023/08/29/programming/C-Test/</id>
     <published>2023-08-29T07:18:32.000Z</published>
-    <updated>2024-03-31T13:49:14.432Z</updated>
+    <updated>2024-09-10T16:25:14.696Z</updated>
     
     
       
@@ -428,11 +382,11 @@
   </entry>
   
   <entry>
-    <title>Clean Code</title>
+    <title>Clean Code 的一些笔记</title>
     <link href="http://wang-ji20.github.io/2023/08/28/programming/clean-code/"/>
     <id>http://wang-ji20.github.io/2023/08/28/programming/clean-code/</id>
     <published>2023-08-28T10:00:44.000Z</published>
-    <updated>2024-03-31T13:49:14.432Z</updated>
+    <updated>2024-09-10T16:25:14.696Z</updated>
     
     
       
@@ -461,7 +415,7 @@
     <link href="http://wang-ji20.github.io/2023/08/26/programming/vim/"/>
     <id>http://wang-ji20.github.io/2023/08/26/programming/vim/</id>
     <published>2023-08-26T15:14:44.000Z</published>
-    <updated>2024-03-31T13:49:14.436Z</updated>
+    <updated>2024-09-10T16:25:14.696Z</updated>
     
     
       
@@ -485,11 +439,11 @@
   </entry>
   
   <entry>
-    <title>geb</title>
+    <title>哥德尔 埃舍尔 巴赫 集异璧之大成 读后感</title>
     <link href="http://wang-ji20.github.io/2023/07/24/essay/geb/"/>
     <id>http://wang-ji20.github.io/2023/07/24/essay/geb/</id>
     <published>2023-07-24T05:59:54.000Z</published>
-    <updated>2024-03-31T13:49:14.432Z</updated>
+    <updated>2024-09-10T16:25:14.696Z</updated>
     
     
       
