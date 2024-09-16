@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.1/mdb.min.css" rel="stylesheet" />
+    
+<link rel="stylesheet" href="/css/intellij-light.css">
+
+
+        <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.1/mdb.min.js"></script>
+        
+<link rel="stylesheet" href="/css/style.css">
+
+
+            <link rel="stylesheet"
+                href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+            <style>
+                .material-symbols-outlined {
+                    font-variation-settings:
+                        'FILL' 0,
+                        'wght' 400,
+                        'GRAD' 0,
+                        'opsz' 24
+                }
+            </style>
+
+<meta name="generator" content="Hexo 7.0.0-rc2"><link rel="alternate" href="/atom.xml" title="无辜者公墓" type="application/atom+xml">
+</head>
+
+<body>
+    <div class="flex flex-row-l">
+    <div class="sidebar flex flex-column flex-center wide-only" style="position: fixed; padding-top: 3em; padding-left: 3em; max-width: 300px">
+        <h4>Table of Contents</h4>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#JS-async-and-Rust-async"><span class="toc-text">JS async and Rust async</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#lazy-first-await"><span class="toc-text">lazy first await</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#task-spawn"><span class="toc-text">task spawn</span></a></li></ol></li></ol>
+            <a href="/menu.html">[posts]</a>
+    </div>
+
+    <div class="post">
+        <nav style="padding-top: 10px; position:fixed; width: 100vw; max-width: 900px; background-color:white;">
+            <div class="flex flex-row-l">
+                <a href="/index.html" style="color: black; padding-left:20px">
+                    <span class="material-symbols-outlined" style="font-size: 20px;">
+                        home
+                    </span>
+                </a>
+                <p class="decorate-font">
+                    cemetery of innocents
+                </p>
+                <a href="" style="color: black; padding-right: 20px">
+                    <span class="material-symbols-outlined" style="font-size: 20px;">
+                        toc
+                    </span>
+                </a>
+            </div>
+            <hr style="margin: 0;">
+        </nav>
+        <div style="height: 70px;">
+        </div>
+
+        <div style="margin: 0 0 25px 5px;">
+            <h1>
+                Tokio async is lazy
+            </h1>
+            <p class="tldr" style="margin: 0;">
+                September 15, 2024
+            </p>
+            
+                <span class="badge badge-primary badge-primary">
+                    <a href="/categories/CS/">CS</a>
+                </span>
+                
+            
+                <span class="badge rounded-pill badge-secondary">
+                    <a href="/tags/programming/">programming</a>
+                </span>
+                
+                <span class="badge rounded-pill badge-secondary">
+                    <a href="/tags/Rust/">Rust</a>
+                </span>
+                
+        </div>
+        <p>Asynchronous programming is hard because its execution flow is different from normal flows. Async functions does not run from the start to the <code>return</code> clause. It returns many many times. For every <code>await</code>, it yields control back to its caller, and its caller yields control back to its own caller, etc. At last, the control flow propagates back to the runtime scheduler, which is invisible to the user. When the scheduler took control of the program, it first saves the “remaining” code and runtime context between <code>await</code> and <code>return</code>. These data are called <code>continuations(or tasks or future or promise)</code>. The scheduler looks at all continuations, <code>poll</code> them. When one continuation is ready to run, the scheduler give control to it, running the code from <code>await</code> to the next yielding point.</p>
+<p>Initially, the continuation pool only has one element: the async main function. So actually if you have one async main function, and this main function awaits other async functions, the code is not async at all. Because the pool has only one continuation, it must wait until main is ready to execute anyway. It cannot do other useful business at this time. So it is equivalent to a synchronized main function.</p>
+<p>If we want our code to do some other things when our main function is blocked, we must spawn a new task. After that, the pool will have lots of tasks for the scheduler to schedule. It can see which task is ready and choose ready task to execute.</p>
+<p>This makes async programming looks like threading. If we use multithread programming, we spawn a lot of threads as well. The difference lay in the behavior of scheduler. A multithread scheduler is preemptive. It can stop our thread task at anytime during its execution. But asynchronous scheduler does not do this thing. It can not interfere our execution unless we <code>await</code> in code. Any code between <code>await</code>s are blocked. In fact, we can think of multi-threading as an “everywhere” async-await because the scheduler potentially are present in between every statements &#x2F; expressions.</p>
+<p>So a trivial example of rust tokio async is as follows:</p>
+<figure class="highlight rust"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><code class="hljs rust"><span class="hljs-meta">#[tokio::main]</span><br><span class="hljs-keyword">async</span> <span class="hljs-keyword">fn</span> <span class="hljs-title function_">main</span>() &#123;<br>    <span class="hljs-keyword">let</span> <span class="hljs-variable">aa</span> = task::<span class="hljs-title function_ invoke__">spawn</span>(<span class="hljs-keyword">async</span> &#123;<span class="hljs-title function_ invoke__">asFunc</span>().<span class="hljs-keyword">await</span>&#125;);<br>    <span class="hljs-keyword">let</span> <span class="hljs-variable">bb</span> = task::<span class="hljs-title function_ invoke__">spawn</span>(<span class="hljs-keyword">async</span> &#123;<br>        <span class="hljs-built_in">print!</span>(<span class="hljs-string">&quot;before 1000&quot;</span>);<br>        <span class="hljs-title function_ invoke__">sleep</span>(Duration::<span class="hljs-title function_ invoke__">from_millis</span>(<span class="hljs-number">1000</span>)).<span class="hljs-keyword">await</span>;<br>        <span class="hljs-built_in">print!</span>(<span class="hljs-string">&quot;1000&quot;</span>)<br>    &#125;);<br>    <span class="hljs-keyword">let</span> <span class="hljs-variable">cc</span> = task::<span class="hljs-title function_ invoke__">spawn</span>(<span class="hljs-keyword">async</span> &#123;<br>        <span class="hljs-built_in">print!</span>(<span class="hljs-string">&quot;before 1&quot;</span>);<br>        <span class="hljs-title function_ invoke__">sleep</span>(Duration::<span class="hljs-title function_ invoke__">from_millis</span>(<span class="hljs-number">1</span>)).<span class="hljs-keyword">await</span>;<br>        <span class="hljs-built_in">print!</span>(<span class="hljs-string">&quot;1&quot;</span>)<br>    &#125;);<br>    <span class="hljs-built_in">println!</span>(<span class="hljs-string">&quot;Hello, world!&quot;</span>);<br>    <span class="hljs-built_in">println!</span>(<span class="hljs-string">&quot;Bye, world!&quot;</span>);<br>    bb.<span class="hljs-keyword">await</span>.<span class="hljs-title function_ invoke__">unwrap</span>();<br>&#125;<br><br><span class="hljs-keyword">async</span> <span class="hljs-keyword">fn</span> <span class="hljs-title function_">asFunc</span>() &#123;<br>    <span class="hljs-built_in">println!</span>(<span class="hljs-string">&quot;async&quot;</span>);<br>    <span class="hljs-keyword">let</span> <span class="hljs-variable">dd</span> = fs::<span class="hljs-title function_ invoke__">read_to_string</span>(<span class="hljs-string">&quot;Cargo.toml&quot;</span>);<br>    <span class="hljs-keyword">let</span> <span class="hljs-variable">hh</span> = dd.<span class="hljs-keyword">await</span>.<span class="hljs-title function_ invoke__">unwrap</span>();<br>    <span class="hljs-built_in">println!</span>(<span class="hljs-string">&quot;out &#123;&#125;&quot;</span>, hh);<br>    <span class="hljs-keyword">return</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>We are interpreting the output result here:</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs text">Hello, world!<br>Bye, world!<br>before 1000async<br>before 1out [package]<br>name = &quot;rusty&quot;<br>version = &quot;0.1.0&quot;<br>edition = &quot;2021&quot;<br><br>[[bin]]<br>path = &quot;src/main2.rs&quot;<br>name = &quot;alltuples&quot;<br><br>[dependencies]<br>tokio = &#123; version = &quot;1.40.0&quot;, features = [&quot;full&quot;] &#125;<br><br>11000<br></code></pre></td></tr></table></figure>
+
+<p>In this code, we spawned three tasks. Adding the main task, the async pool has four tasks in sum.</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs text">Main<br>aa<br>bb<br>cc<br></code></pre></td></tr></table></figure>
+
+<p>When the first <code>.await</code> is executed, the main task polls the bb task. Then when bb reaches the await inside bb, it yield the control back to tokio scheduler. That’s why the third line only has <code>before 1000</code>.</p>
+<p>Tokio then looks which of the remaining two tasks is ready for execution(note that because main awaits bb, these two tasks must be ready at the same time). So the <code>async</code> in the third line is printed by task aa. When task aa reaches <code>.await</code>, it yields the control back to the scheduler, then scheduler execute cc until the first <code>await</code>. The remaining output are printed by the continuation of the three tasks.</p>
+<h2 id="JS-async-and-Rust-async"><a href="#JS-async-and-Rust-async" class="headerlink" title="JS async and Rust async"></a>JS async and Rust async</h2><p>JavaScript async-await is different from tokio’s, for two properties:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">const</span> <span class="hljs-title function_">main</span> = <span class="hljs-keyword">async</span> (<span class="hljs-params"></span>) =&gt; &#123;<br>    <span class="hljs-keyword">const</span> aa = <span class="hljs-title function_">asFunc</span>();<br>    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&#x27;main&#x27;</span>);<br>    <span class="hljs-keyword">await</span> aa;<br>&#125;;<br><br><span class="hljs-keyword">const</span> <span class="hljs-title function_">asFunc</span> = <span class="hljs-keyword">async</span> (<span class="hljs-params"></span>) =&gt; &#123;<br>    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-string">&#x27;async&#x27;</span>);<br>    <span class="hljs-keyword">const</span> dd = <span class="hljs-keyword">await</span> fs.<span class="hljs-title function_">readFile</span>(<span class="hljs-string">&#x27;a.cs&#x27;</span>, <span class="hljs-string">&#x27;ascii&#x27;</span>)<br>    <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(dd);<br>    <span class="hljs-keyword">return</span>;<br>&#125;;<br><br><span class="hljs-title function_">main</span>();<br></code></pre></td></tr></table></figure>
+
+<h3 id="lazy-first-await"><a href="#lazy-first-await" class="headerlink" title="lazy first await"></a>lazy first await</h3><p>JavaScript async functions execute its code before first <code>await</code> when called, while rust execute these code after the first <code>await</code>. So this code in js outputs this:</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs text">async<br>main<br>async void main () &#123;<br>    Console.Write(&quot;hello&quot;);<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>We can see the async is first, then main. Because it first execute <code>console.log(&#39;async&#39;)</code>. It did not yield until the first <code>await</code>. But the equivalent tokio code:</p>
+<figure class="highlight rust"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs rust"><span class="hljs-meta">#[tokio::main]</span><br><span class="hljs-keyword">async</span> <span class="hljs-keyword">fn</span> <span class="hljs-title function_">main</span>() &#123;<br>    <span class="hljs-keyword">let</span> <span class="hljs-variable">aa</span> = <span class="hljs-title function_ invoke__">asFunc</span>();<br>    <span class="hljs-built_in">println!</span>(<span class="hljs-string">&quot;main&quot;</span>);<br>    aa.<span class="hljs-keyword">await</span>;<br>&#125;<br><br><span class="hljs-keyword">async</span> <span class="hljs-keyword">fn</span> <span class="hljs-title function_">asFunc</span>() &#123;<br>    <span class="hljs-built_in">println!</span>(<span class="hljs-string">&quot;async&quot;</span>);<br>    <span class="hljs-keyword">let</span> <span class="hljs-variable">dd</span> = fs::<span class="hljs-title function_ invoke__">read_to_string</span>(<span class="hljs-string">&quot;Cargo.toml&quot;</span>).<span class="hljs-keyword">await</span>.<span class="hljs-title function_ invoke__">unwrap</span>();<br>    <span class="hljs-built_in">println!</span>(<span class="hljs-string">&quot;&#123;&#125;&quot;</span>, dd);<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<p>The output is</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs text">main<br>async<br>[package]<br>name = &quot;rusty&quot;<br>version = &quot;0.1.0&quot;<br>edition = &quot;2021&quot;<br><br>[[bin]]<br>path = &quot;src/main2.rs&quot;<br>name = &quot;alltuples&quot;<br><br>[dependencies]<br>tokio = &#123; version = &quot;1.40.0&quot;, features = [&quot;full&quot;] &#125;<br></code></pre></td></tr></table></figure>
+
+<p>we can see, the line <code>async</code> is executed in <code>aa.await</code>, rather than when <code>asFunc()</code> is called.</p>
+<h3 id="task-spawn"><a href="#task-spawn" class="headerlink" title="task spawn"></a>task spawn</h3><p>JS automatically spawn new task to its event loop, but in rust we must spawn new tasks explicitly. This is because many js async functions are part of runtime library, they insert the task to event loop automatically. For example, in the first rust example, its js equivalent only need to call function <code>setTimeOut</code> to insert a timed task to its event loop. But in tokio we must <code>task::spawn</code> it manually.</p>
+
+    </div>
+
+</div>
+
+</body>
+
+<hr style="max-width: 900px; margin: 0 auto">
+<footer class="site-footer">
+    <div class="top-nav fit-content">
+        © 2024 Ji Wang |
+        <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc/4.0/" style="padding-left: 5px;">
+            Creative Commons Attribution License
+        </a>
+    </div>
+    <div class="top-nav fit-content">
+        <a target="_blank" rel="noopener" href="https://github.com/Wang-Ji20" class="footer-links"><img src="./asset/github.svg" alt="github"
+                width="20" height="20"></a>
+        <a href="mailto:jiwangcdi@gmail.com" class="footer-links"><img src="./asset/email.svg" alt="email" width="20"
+                height="20"></a>
+        <a target="_blank" rel="noopener" href="https://www.linkedin.com/in/%E9%9B%86-%E7%8E%8B-67b0b92a7/" class="footer-links"><img
+                src="./asset/linkedin.svg" alt="linkedin" width="20" height="20"></a>
+    </div>
+</footer>
+
+
+</html>
