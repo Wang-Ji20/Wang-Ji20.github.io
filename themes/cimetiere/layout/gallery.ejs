@@ -1,0 +1,93 @@
+<div class="central-nav">
+
+    <%- include('header.ejs') %>
+
+    <h1>
+        gallery
+    </h1>
+
+    <div class="gallery-grid">
+        <%
+        // Filter posts that have 'gallery' tag or image content
+        for (let post of site.posts.data) {
+            const hasGalleryTag = post.tags && post.tags.some(tag => tag.name === 'gallery');
+            const hasImage = post.content && post.content.includes('<img');
+
+            if (hasGalleryTag || hasImage) {
+        %>
+            <div class="gallery-item">
+                <a href="<%- url_for(post.path) %>">
+                    <div class="gallery-preview">
+                        <%
+                        // Extract first image if available
+                        const imgMatch = post.content && post.content.match(/<img[^>]+src="([^"]+)"/);
+                        if (imgMatch) {
+                        %>
+                            <img src="<%- imgMatch[1] %>" alt="<%- post.title %>" loading="lazy">
+                        <% } else { %>
+                            <div class="no-image">No preview</div>
+                        <% } %>
+                    </div>
+                    <div class="gallery-title"><%- post.title %></div>
+                </a>
+            </div>
+        <%
+            }
+        }
+        %>
+    </div>
+
+    <style>
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .gallery-item {
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            overflow: hidden;
+            transition: transform 0.2s;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .gallery-preview {
+            height: 150px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #f5f5f5;
+        }
+
+        .gallery-preview img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: cover;
+        }
+
+        .no-image {
+            color: #999;
+            font-size: 0.9rem;
+        }
+
+        .gallery-title {
+            padding: 0.5rem;
+            font-size: 0.9rem;
+            text-align: center;
+        }
+
+        .gallery-item a {
+            text-decoration: none;
+            color: inherit;
+        }
+    </style>
+
+    <a href="/index.html" style="display: block; margin-top: 2rem;">[index]</a>
+
+</div>

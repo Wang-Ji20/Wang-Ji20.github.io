@@ -1,0 +1,28 @@
+<div class="central-nav">
+
+    <%- include('header.ejs') %>
+
+    <h1>
+        research
+    </h1>
+
+    <ul>
+        <%
+        // Filter posts from research-related directories
+        const researchDirs = ['research/', 'ai/', 'reveng/', 'programming/'];
+        for (let post of site.posts.data) {
+            const isInResearchDir = researchDirs.some(dir => post.path.includes(dir));
+            if (isInResearchDir) {
+        %>
+            <li>
+                <a href="<%- url_for(post.path) %>"><%- post.title %></a>
+            </li>
+        <%
+            }
+        }
+        %>
+    </ul>
+
+    <a href="/index.html">[index]</a>
+
+</div>

@@ -1,0 +1,26 @@
+<div class="central-nav">
+
+    <%- include('header.ejs') %>
+
+    <h1>
+        story
+    </h1>
+
+    <ul>
+        <%
+        // Filter posts from essay directory
+        for (let post of site.posts.data) {
+            if (post.path.includes('story/')) {
+        %>
+            <li>
+                <a href="<%- url_for(post.path) %>"><%- post.title %></a>
+            </li>
+        <%
+            }
+        }
+        %>
+    </ul>
+
+    <a href="/index.html">[index]</a>
+
+</div>

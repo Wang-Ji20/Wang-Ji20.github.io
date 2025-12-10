@@ -1,3 +1,4 @@
+@use 'sass:color';
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans&family=Noto+Sans+SC&family=Noto+Serif&family=Noto+Serif+SC&display=swap');
 
 $font-display: 'Noto Sans', 'Noto Sans SC', sans-serif;
@@ -6,7 +7,7 @@ $font-serif: 'Noto Serif', 'Noto Serif SC', serif;
 
 $primary-color: #333;
 $secondary-color: #ffffff;
-$link-color: #333333;
+$link-color: #ffffff;
 
 .flex {
     display: flex;
@@ -29,20 +30,31 @@ $link-color: #333333;
 body {
     font-family: $font-serif;
     color: $primary-color;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+
+    @media (max-width: 768px) {
+        font-size: 16px;
+    }
 }
 
 h1 {
     font: 100% $font-display, $font-sans-serif;
     font-size: 3em;
+
+    @media (max-width: 768px) {
+        font-size: 2em;
+    }
 }
 
 a {
-    color: $link-color;
-
+    color: #021629;
+    text-decoration: underline;
 }
 
 a:hover {
-    color: darken($primary-color, 100%);
+    color: color.adjust(#021629, $lightness: -50%);
     text-decoration: underline;
 }
 
@@ -52,7 +64,7 @@ a:hover {
     font: 100% $font-display, $font-sans-serif;
 
     :hover {
-        color: darken($secondary-color, 100%);
+        color: color.adjust($secondary-color, $lightness: -100%);
     }
 }
 
@@ -106,6 +118,19 @@ img {
 
 // Overall styles
 
+// Site wrapper for sticky footer
+.site-wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.site-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
 // site header
 
 .cdi-style {
@@ -119,15 +144,29 @@ img {
     padding-right: 1em;
 }
 
-.link-padding {
-    padding-left: 1em;
-    padding-right: 1em;
+.link-margin {
+    margin-left: 1em;
+    margin-right: 1em;
+    padding-left: 0.1em;
+    padding-right: 0.1em;
+    color: $link-color;
+    background-color: #717171;
+    
+    @media (max-width: 768px) {
+        margin: 0.5em;
+        font-size: 0.9rem;
+    }
 }
 
 .central-nav {
-    max-width: 900px;
+    max-width: 1200px;
     margin: 0 auto;
     border-color: #e0e0e0;
+    padding: 0 1rem;
+
+    @media (max-width: 768px) {
+        padding: 0 0.5rem;
+    }
 }
 
 .top-nav {
@@ -136,10 +175,78 @@ img {
     flex-direction: row;
     justify-content: space-between;
     align-items: baseline;
+
+    @media (max-width: 768px) {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
 }
 
 .occupy-screen {
     height: 100vh;
+    min-height: 100vh;
+}
+
+// Main content sections
+.main-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 1rem 1rem;
+}
+
+.hero-section {
+    text-align: center;
+    margin-bottom: 2rem;
+
+    p {
+        font-size: 1.4rem;
+        line-height: 1.7;
+        margin: 0.8rem 0;
+        opacity: 0.85;
+        font-weight: 300;
+
+        @media (max-width: 768px) {
+            font-size: 1.1rem;
+            margin: 0.6rem 0;
+            line-height: 1.6;
+        }
+    }
+}
+
+.content-section,
+.links-section {
+    display: flex;
+    justify-content: center;
+    margin: 2rem 0;
+}
+
+.section-placeholder {
+    background-color: transparent;
+    border-left: 2px solid rgba(0, 0, 0, 0.1);
+    padding: 1rem 1.5rem;
+    text-align: left;
+    max-width: 600px;
+    width: 100%;
+
+    h2 {
+        font-family: $font-display;
+        font-size: 1.2rem;
+        margin-bottom: 0.5rem;
+        color: $primary-color;
+        opacity: 0.6;
+        font-weight: normal;
+    }
+
+    p {
+        color: $primary-color;
+        opacity: 0.4;
+        font-style: italic;
+        margin: 0;
+        font-size: 0.9rem;
+    }
 }
 
 // site footer
@@ -151,6 +258,15 @@ img {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
+    padding: 0 1rem;
+
+    @media (max-width: 768px) {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        text-align: center;
+        padding: 0 1rem 1rem 1rem;
+    }
 }
 
 .fit-content {
@@ -160,4 +276,18 @@ img {
 .footer-links {
     margin-left: 1em;
     margin-right: 1em;
+}
+
+// HR styling for consistency
+hr {
+    border: none;
+    border-top: 1px solid #474747;
+    max-width: 900px;
+    margin: 0.5rem auto;
+    width: 90%;
+
+    @media (max-width: 768px) {
+        width: 95%;
+        margin: 1.5rem auto;
+    }
 }

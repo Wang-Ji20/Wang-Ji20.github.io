@@ -28,9 +28,12 @@
 </head>
 
 <body>
-    <%- body %>
+    <div class="site-wrapper">
+        <main class="site-content">
+            <%- body %>
+        </main>
+        <%- include('footer.ejs') %>
+    </div>
 </body>
-
-<%- include('footer.ejs') %>
 
 </html>

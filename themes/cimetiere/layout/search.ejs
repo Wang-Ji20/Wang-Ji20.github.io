@@ -1,0 +1,187 @@
+<div class="central-nav">
+
+    <%- include('header.ejs') %>
+
+    <h1>
+        search
+    </h1>
+
+    <div class="search-container">
+        <input type="text" id="search-input" placeholder="Search posts..." autocomplete="off">
+        <div id="search-results"></div>
+    </div>
+
+    <div id="all-posts" style="display: none;">
+        <h2>All Posts</h2>
+        <ul id="posts-list"></ul>
+    </div>
+
+    <style>
+        .search-container {
+            margin-bottom: 2rem;
+        }
+
+        #search-input {
+            width: 100%;
+            padding: 0.5rem;
+            font-size: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            margin-bottom: 1rem;
+        }
+
+        #search-input:focus {
+            outline: none;
+            border-color: #999;
+        }
+
+        #search-results {
+            margin-top: 1rem;
+        }
+
+        .search-result {
+            margin-bottom: 1rem;
+            padding: 0.5rem;
+            border-left: 3px solid #ddd;
+            background-color: #f9f9f9;
+        }
+
+        .search-result h3 {
+            margin: 0 0 0.25rem 0;
+        }
+
+        .search-result h3 a {
+            color: #333;
+            text-decoration: none;
+        }
+
+        .search-result h3 a:hover {
+            text-decoration: underline;
+        }
+
+        .search-result .post-excerpt {
+            color: #666;
+            font-size: 0.9rem;
+            margin: 0.25rem 0;
+        }
+
+        .search-result .post-meta {
+            color: #999;
+            font-size: 0.8rem;
+        }
+
+        .search-highlight {
+            background-color: #fff3cd;
+            padding: 0.1rem;
+        }
+
+        .no-results {
+            color: #666;
+            font-style: italic;
+        }
+    </style>
+
+    <script>
+        // Client-side search implementation
+        document.addEventListener('DOMContentLoaded', function() {
+            const searchInput = document.getElementById('search-input');
+            const searchResults = document.getElementById('search-results');
+            const allPostsContainer = document.getElementById('all-posts');
+            const postsList = document.getElementById('posts-list');
+
+            // Store all posts data
+            const allPosts = [
+                <%
+                let postsData = [];
+                for (let post of site.posts.data) {
+                    // Create a plain text excerpt from content
+                    const content = post.content || '';
+                    const plainText = content
+                        .replace(/<[^>]*>/g, '')
+                        .replace(/\s+/g, ' ')
+                        .trim()
+                        .substring(0, 200);
+                %>
+                {
+                    title: `<%- post.title.replace(/'/g, "\\'") %>`,
+                    url: `<%- url_for(post.path) %>`,
+                    date: `<%- post.date %>`,
+                    content: `<%- plainText.replace(/'/g, "\\'") %>`,
+                    tags: <%- JSON.stringify(post.tags ? post.tags.map(tag => tag.name) : []) %>
+                },
+                <% } %>
+            ];
+
+            // Display all posts when search is empty
+            function showAllPosts() {
+                if (searchInput.value.trim() === '') {
+                    searchResults.innerHTML = '';
+                    allPostsContainer.style.display = 'none';
+                    return;
+                }
+            }
+
+            // Search function
+            function performSearch(query) {
+                query = query.toLowerCase().trim();
+
+                if (query === '') {
+                    showAllPosts();
+                    return;
+                }
+
+                const results = allPosts.filter(post => {
+                    const titleMatch = post.title.toLowerCase().includes(query);
+                    const contentMatch = post.content.toLowerCase().includes(query);
+                    const tagsMatch = post.tags.some(tag => tag.toLowerCase().includes(query));
+
+                    return titleMatch || contentMatch || tagsMatch;
+                });
+
+                displayResults(results, query);
+            }
+
+            // Display search results
+            function displayResults(results, query) {
+                allPostsContainer.style.display = 'none';
+
+                if (results.length === 0) {
+                    searchResults.innerHTML = '<p class="no-results">No results found.</p>';
+                    return;
+                }
+
+                const html = results.map(post => {
+                    const highlightedTitle = highlightText(post.title, query);
+                    const highlightedContent = highlightText(post.content, query);
+
+                    return `
+                        <div class="search-result">
+                            <h3><a href="${post.url}">${highlightedTitle}</a></h3>
+                            ${highlightedContent ? `<div class="post-excerpt">${highlightedContent}...</div>` : ''}
+                            <div class="post-meta">${post.date}</div>
+                        </div>
+                    `;
+                }).join('');
+
+                searchResults.innerHTML = html;
+            }
+
+            // Highlight matching text
+            function highlightText(text, query) {
+                const regex = new RegExp(`(${query})`, 'gi');
+                return text.replace(regex, '<span class="search-highlight">$1</span>');
+            }
+
+            // Event listeners
+            searchInput.addEventListener('input', function() {
+                performSearch(this.value);
+            });
+
+            // Show all posts initially
+            showAllPosts();
+        });
+    </script>
+
+    <a href="/index.html" style="display: block; margin-top: 2rem;">[index]</a>
+
+</div>
