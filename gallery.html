@@ -37,30 +37,98 @@
         <main class="site-content">
             <div class="central-nav">
 
+    <div class="top-nav">
+    <div class="top-nav">
+        <h1 class="text-in-container cdi-style">
+            <a href="/" class="link-margin">CDI</a>
+        </h1>
+    </div>
+    <div class="top-nav top-links">
+        <a href="research.html" class="link-margin">Research</a>
+        <a href="story.html" class="link-margin">Story</a>
+        <a href="essay.html" class="link-margin">Essay</a>
+        <a href="gallery.html" class="link-margin">Gallery</a>
+        <a href="about.html" class="link-margin">About</a>
+        <a href="archive.html" class="link-margin">Archive</a>
+        <a href="search.html" class="link-margin">Search</a>
+    </div>
+</div>
+<hr>
+
+
     <h1>
-        tag: c++
+        gallery
     </h1>
 
-    <ul>
+    <div class="gallery-grid">
         
-            <li>
-                <a href="/2023/09/06/programming/Type-Trait/">
-                    Type Trait
-                </a>
-            </li>
-            
-            <li>
+            <div class="gallery-item">
                 <a href="/2023/08/29/programming/C-Test/">
-                    C++ 测试环境配置
+                    <div class="gallery-preview">
+                        
+                            <img src="/images/lcov-report.png" alt="C++ 测试环境配置" loading="lazy">
+                        
+                    </div>
+                    <div class="gallery-title">C++ 测试环境配置</div>
                 </a>
-            </li>
-            
-    </ul>
+            </div>
+        
+    </div>
 
-    <a href="/menu.html">[posts]</a>
+    <style>
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .gallery-item {
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            overflow: hidden;
+            transition: transform 0.2s;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+
+        .gallery-preview {
+            height: 150px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: #f5f5f5;
+        }
+
+        .gallery-preview img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: cover;
+        }
+
+        .no-image {
+            color: #999;
+            font-size: 0.9rem;
+        }
+
+        .gallery-title {
+            padding: 0.5rem;
+            font-size: 0.9rem;
+            text-align: center;
+        }
+
+        .gallery-item a {
+            text-decoration: none;
+            color: inherit;
+        }
+    </style>
+
+    <a href="/index.html" style="display: block; margin-top: 2rem;">[index]</a>
 
 </div>
-
         </main>
         <hr>
 <footer class="site-footer">

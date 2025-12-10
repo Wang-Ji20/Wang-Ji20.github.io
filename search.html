@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.1/mdb.min.css" rel="stylesheet" />
+    
+<link rel="stylesheet" href="/css/intellij-light.css">
+
+
+        <script type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.4.1/mdb.min.js"></script>
+        
+<link rel="stylesheet" href="/css/style.css">
+
+
+            <link rel="stylesheet"
+                href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+            <style>
+                .material-symbols-outlined {
+                    font-variation-settings:
+                        'FILL' 0,
+                        'wght' 400,
+                        'GRAD' 0,
+                        'opsz' 24
+                }
+            </style>
+
+<meta name="generator" content="Hexo 7.0.0-rc2"><link rel="alternate" href="/atom.xml" title="无辜者公墓" type="application/atom+xml">
+</head>
+
+<body>
+    <div class="site-wrapper">
+        <main class="site-content">
+            <div class="central-nav">
+
+    <div class="top-nav">
+    <div class="top-nav">
+        <h1 class="text-in-container cdi-style">
+            <a href="/" class="link-margin">CDI</a>
+        </h1>
+    </div>
+    <div class="top-nav top-links">
+        <a href="research.html" class="link-margin">Research</a>
+        <a href="story.html" class="link-margin">Story</a>
+        <a href="essay.html" class="link-margin">Essay</a>
+        <a href="gallery.html" class="link-margin">Gallery</a>
+        <a href="about.html" class="link-margin">About</a>
+        <a href="archive.html" class="link-margin">Archive</a>
+        <a href="search.html" class="link-margin">Search</a>
+    </div>
+</div>
+<hr>
+
+
+    <h1>
+        search
+    </h1>
+
+    <div class="search-container">
+        <input type="text" id="search-input" placeholder="Search posts..." autocomplete="off">
+        <div id="search-results"></div>
+    </div>
+
+    <div id="all-posts" style="display: none;">
+        <h2>All Posts</h2>
+        <ul id="posts-list"></ul>
+    </div>
+
+    <style>
+        .search-container {
+            margin-bottom: 2rem;
+        }
+
+        #search-input {
+            width: 100%;
+            padding: 0.5rem;
+            font-size: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            margin-bottom: 1rem;
+        }
+
+        #search-input:focus {
+            outline: none;
+            border-color: #999;
+        }
+
+        #search-results {
+            margin-top: 1rem;
+        }
+
+        .search-result {
+            margin-bottom: 1rem;
+            padding: 0.5rem;
+            border-left: 3px solid #ddd;
+            background-color: #f9f9f9;
+        }
+
+        .search-result h3 {
+            margin: 0 0 0.25rem 0;
+        }
+
+        .search-result h3 a {
+            color: #333;
+            text-decoration: none;
+        }
+
+        .search-result h3 a:hover {
+            text-decoration: underline;
+        }
+
+        .search-result .post-excerpt {
+            color: #666;
+            font-size: 0.9rem;
+            margin: 0.25rem 0;
+        }
+
+        .search-result .post-meta {
+            color: #999;
+            font-size: 0.8rem;
+        }
+
+        .search-highlight {
+            background-color: #fff3cd;
+            padding: 0.1rem;
+        }
+
+        .no-results {
+            color: #666;
+            font-style: italic;
+        }
+    </style>
+
+    <script>
+        // Client-side search implementation
+        document.addEventListener('DOMContentLoaded', function() {
+            const searchInput = document.getElementById('search-input');
+            const searchResults = document.getElementById('search-results');
+            const allPostsContainer = document.getElementById('all-posts');
+            const postsList = document.getElementById('posts-list');
+
+            // Store all posts data
+            const allPosts = [
+                
+                {
+                    title: `tokenize`,
+                    url: `/2024/10/12/ai/tokenize/`,
+                    date: `1728712343000`,
+                    content: `word embeddingBecause deep neural network models cannot process raw text directly, we need to representour word as continuous valued vectors. This process is called embedding. embedding isto convert n`,
+                    tags: ["AI"]
+                },
+                
+                {
+                    title: `Styles in Clarity and Grace`,
+                    url: `/2025/12/10/essay/Styles-in-Clearity-and-Grace/`,
+                    date: `1765379860547`,
+                    content: `Style: Lessons in Clarity and Grace is the best book on writing that I have ever read. Strunk &amp; White is, of course, great, but their principles are not as applicable as that one. Flexible, but to`,
+                    tags: ["literature"]
+                },
+                
+                {
+                    title: `Twisted Quotes`,
+                    url: `/2023/09/06/essay/Twisted-Quotes/`,
+                    date: `1693997699000`,
+                    content: `引文总是扭曲的. “一本书产生了, 这是个微小的事件, 一个任人随意把玩的小玩意儿. 从那时起, 他便进入反复的无尽游戏之中; 围绕着它的四周, 在远离它的地方, 它的化身们开始群集挤动; 每次阅读, 都为它暂时提供一个不可捉摸, 却又独一无二的驱壳; 它本身的一些片段, 被人们抽出来强调, 炫示, 到处流传着, 这些片段甚至会被认为可以几近概括其全体. 到了后来, 有时它还会在这些片段中找到栖身`,
+                    tags: ["quotes"]
+                },
+                
+                {
+                    title: `Presentation is more important than "core"`,
+                    url: `/2025/12/10/essay/form/`,
+                    date: `1765379860547`,
+                    content: `We are often told to judge things by their essence, rather than their form. However, as I read more ancient texts, I found the advice is quite misleading. The idiom is based on the observation that fo`,
+                    tags: ["literature"]
+                },
+                
+                {
+                    title: `哥德尔 埃舍尔 巴赫 集异璧之大成 读后感`,
+                    url: `/2023/07/24/essay/geb/`,
+                    date: `1690178394000`,
+                    content: `从人类简史之后，我总是对科普读物敬而远之。那本书广为流传，但只是一袭华美的袍，上面爬满了虱子。它的态度玩世不恭。它过度泛化（这就像自私的基因）。它为了反常识而反常识。更重要的是，这些“反常识”的话对我来说其实并没有多少新异性（我从张荫麟那里借来这个词），而这种新异性同样是 Steven Pinker 的作品所缺乏的(抱歉提到另一个人. 此人最著名的作品应当是 The language instin`,
+                    tags: ["maths","non-fiction"]
+                },
+                
+                {
+                    title: `娜乌西卡`,
+                    url: `/2025/12/10/essay/kaze01/`,
+                    date: `1765379860547`,
+                    content: `又是一段女英雄的传奇. 浅蓝色的女孩撑着滑翔翼, 像鸟儿一样自由地飞在空中, 指挥落难的旅人逃离王虫的魔爪. 人迹罕至的地方, 一般的主人公应该会以人类鲁莽的勇气征服自然, 赢得负伤的棕熊, 失去双翼的鹰和一片烧成灰烬的森林吧. 但娜乌西卡的勇敢却不是这样. 不妙. 凶暴的松鼠爬上了女孩的胳膊, 转了几圈, 张牙舞爪. 她一向松鼠伸出手指, 松鼠就咬了上去. 一定很疼, 我看到娜乌西卡的双眼痛苦地`,
+                    tags: ["film"]
+                },
+                
+                {
+                    title: `Spacing in Dai Zhang\'s prose is beautiful`,
+                    url: `/2023/09/23/essay/spacing/`,
+                    date: `1695463545000`,
+                    content: `In literature, there’s always a tradeoff between space and detail. It’s not a good practice to detail everything. When we write about one thing, we should somehow omit repeats. For example, in Dai Zha`,
+                    tags: ["literature"]
+                },
+                
+                {
+                    title: `The essence of teaching`,
+                    url: `/2024/09/10/essay/the-essence-of-teaching/`,
+                    date: `1725984000000`,
+                    content: `We are continually learning to adapt to an ever-changing world. Effective learning requires not only quality materials but also effective methods. But how can we differentiate between what is useful a`,
+                    tags: ["education"]
+                },
+                
+                {
+                    title: `C++ 测试环境配置`,
+                    url: `/2023/08/29/programming/C-Test/`,
+                    date: `1693293512000`,
+                    content: `这篇文章记录一下我现在在 C++ 中使用的测试框架和测试流程(可比 Go, Rust 复杂多了…). 我用 GoogleTest 做单元测试, 用 CMake 构建和运行单元测试, 用 Clang 和 llvm-cov 做覆盖率的报告. CMake 测试模块CMake 有一个测试模块, 叫做 CTest. 在根 CMakeLists.txt 用以下代码可以把这个模块加入进来. 123if(CMAK`,
+                    tags: ["c++","programming","testing","cmake"]
+                },
+                
+                {
+                    title: `C 语言的一些笔记`,
+                    url: `/2023/09/02/programming/C-programming-language-pearls/`,
+                    date: `1693666181000`,
+                    content: `这里写一些 C 语言相关的小知识. 因为我已经使用 C 很久了, 所以不会有特别基础的内容. 除了基础的语法语义之外, 还有可能会提到其标准库, 工具链, 运行环境(OS 相关), 设计模式, 命令式编程习语等等. 这里的东西有一些是 C 语言和 C++ 共享的, 一些不是. 第一条常识: C 和 C++ 之间的区别很大, 它们不是同一种语言. 最重要的区别是 ABI 上的区别, C++ 的名字修`,
+                    tags: ["programming","C"]
+                },
+                
+                {
+                    title: `Type Trait`,
+                    url: `/2023/09/06/programming/Type-Trait/`,
+                    date: `1693997699000`,
+                    content: `在模板元编程中, 我们常常要储存一些元信息. 例如类型 T 是否是整数, 类型 T 是否为指针等等. 这些信息存储在类型特质(type_trait)中. 为了方便理解, 我要用一个序列化器的例子来说明. 假设我们需要写一个序列化器, 它至少有以下两个功能: 直接序列化值类型 T 序列化指针 T* p, 相当于序列化 *p 因此, 我们写一个 template &lt;typename T&gt;,`,
+                    tags: ["c++","programming"]
+                },
+                
+                {
+                    title: `Clean Code 的一些笔记`,
+                    url: `/2023/08/28/programming/clean-code/`,
+                    date: `1693216844000`,
+                    content: `Clean Code 由 Robert C. Martin 在 2009 年出版。他是一个著名的软件工程师，以推广敏捷开发著称。所以，敏捷开发的思想也渗透在这本书里。在这本书中，他详细描述了编程的方法论，包括最重要的：如何鉴别好代码和坏代码，以及写干净代码的准则。这些准则环环相扣，形成一个统一的整体。 主题要写干净的代码。没有人能一次写出干净的代码，要多次重写；但是这值得。 命名计算机不看代码。计`,
+                    tags: ["programming","style","methodology"]
+                },
+                
+                {
+                    title: `qspinlock, a spinlock in the Linux Kernel`,
+                    url: `/2023/12/21/programming/code01/`,
+                    date: `1703174400000`,
+                    content: `Recent days(months) have seen my self-indulgent consequent 3 walkthroughs on Baldur’s Gate 3. To say I regret spending so much time on it is not accurate, as I really enjoy that game. But life goes on`,
+                    tags: ["Linux","Synchronization"]
+                },
+                
+                {
+                    title: `emacs 的一些指令`,
+                    url: `/2023/09/06/programming/emacs/`,
+                    date: `1693988179000`,
+                    content: `今天开始学习使用 emacs. 指令C-x C-c 退出 emacs. C-g 取消当前操作. C-x C-f 打开文件. C-x C-s 保存文件. C-x C-w 另存为. C-space 设置标记. C-w: 剪切 M-w: 复制 C-y: 粘贴 C-k: 剪切到行尾 C-x u 撤销 C-x 2 分割窗口, 用 C-x o 切换窗口 C-s C-r 搜索`,
+                    tags: ["text","toolbox"]
+                },
+                
+                {
+                    title: `haskell`,
+                    url: `/2023/09/08/programming/haskell-notes/`,
+                    date: `1694160352000`,
+                    content: `这里记录一些 Haskell 相关的笔记. 内容很杂, 除了最常规的 Haskell 语法语义, 标准库之外, 也可能会有一些函数式编程习语, 设计模式等内容. 运算符顺序函数式编程语言似乎总是避免不了括号地狱(笑话: 苏联特工偷走了美国代码的最后一页, 发现都是)…). 不过我们可以在 Haskell 中妥善利用运算符顺序, 来减少括号的层数. 首先介绍一个概念: 结合性. 运算符的结合性决定了`,
+                    tags: ["programming","haskell","notes"]
+                },
+                
+                {
+                    title: `python programming pearls`,
+                    url: `/2025/12/10/programming/python/`,
+                    date: `1765379860548`,
+                    content: `Dictionary comprehensionThis feature is in PEP 247. I only know aboutlist comprehensions before. The basic usage is like: 123&#123; k:v for k, v in enumerate(range(3))&#125;&#123;0: 0, 1: 1, 2: 2&#125`,
+                    tags: ["programming","python"]
+                },
+                
+                {
+                    title: `Tokio async is lazy`,
+                    url: `/2024/09/15/programming/js-async-tokio-async/`,
+                    date: `1726416000000`,
+                    content: `Asynchronous programming is hard because its execution flow differs from the normal sequential flow. An async function doesn’t run from start to finish in one go; instead, it returns control multiple `,
+                    tags: ["programming","Rust"]
+                },
+                
+                {
+                    title: `rust-notes`,
+                    url: `/2023/09/08/programming/rust-notes/`,
+                    date: `1694160343000`,
+                    content: `let _ &#x3D; .. is not a bindingWhen you are writing 12let _ = some_function();// returning value is dropped here. The return value is dropped immediately, because you cannot gave a value to _ as well`,
+                    tags: ["programming","notes","rust"]
+                },
+                
+                {
+                    title: `vim`,
+                    url: `/2023/08/26/programming/vim/`,
+                    date: `1693062884000`,
+                    content: `我使用 VSCode 中的 Vim 模拟器已经很久了。但是除了常用的 w 前进，b 后退，d 删除之外，许多导航用的命令都已经淡忘。特此记之。 导航 e 到这个词的尾部。 ^ 到一行的开头。 $ 到一行的结尾。 gg 到文章开头。 G 到文章结尾。 &lt;数字&gt; G 到某一行。 / 查询 在此模式下，n 下一个，N 上一个。 就地修改 x 修剪，删除 r 替换单个字符 R 替换很多字符 编`,
+                    tags: ["text","toolbox"]
+                },
+                
+                {
+                    title: `Rudra 论文阅读`,
+                    url: `/2023/12/10/research/Rudra/`,
+                    date: `1702175702000`,
+                    content: `这篇文章介绍了 Rudra, 一个 Rust 编程语言的代码静态分析工具. 它可以检查代码中的内存安全错误. 它效率很高, 可以在六个小时内扫描几万个软件包. 在这个静态分析工具刚刚提出的时候, 它发现了两百多个内存安全问题, 其中许多问题都是比较难找的 Bug. 论文要解决的问题RustRust 是一个比较新的编程语言. 为什么要使用 Rust 呢? 因为内存安全. 动态分配内存是编程中非常常见`,
+                    tags: []
+                },
+                
+                {
+                    title: `逆向 CCCF 2024/03 卷首语`,
+                    url: `/2024/03/05/reveng/article01/`,
+                    date: `1709654400000`,
+                    content: `心理学家 Steven Pinker 在 The Sense of Style 中为学徒作家指了一条学习写作的明路. 他说, 我们如果想要培养一个作家的眼光, 就要让他去逆向工程好文章. 成为好作家的第一步就是成为一个好的读者. 他需要分辨什么样的文章是好的, 从而改进自己的写作. 科技文章要么失之专业, 要么失之趣味. 以完备的谋篇, 流畅的组织, 清晰的逻辑, 严谨的用语, 点缀以并非夸夸其谈`,
+                    tags: []
+                },
+                
+                {
+                    title: `why study programming languages`,
+                    url: `/2023/09/07/research/plt01/`,
+                    date: `1694095476000`,
+                    content: `PLT concerns me less than anything in the world in the past. I hate logic and I hate compilers. They are typically too boring to me. So I am very surprised to witness myself charmed by this subject. T`,
+                    tags: ["notes","plt"]
+                },
+                
+            ];
+
+            // Display all posts when search is empty
+            function showAllPosts() {
+                if (searchInput.value.trim() === '') {
+                    searchResults.innerHTML = '';
+                    allPostsContainer.style.display = 'none';
+                    return;
+                }
+            }
+
+            // Search function
+            function performSearch(query) {
+                query = query.toLowerCase().trim();
+
+                if (query === '') {
+                    showAllPosts();
+                    return;
+                }
+
+                const results = allPosts.filter(post => {
+                    const titleMatch = post.title.toLowerCase().includes(query);
+                    const contentMatch = post.content.toLowerCase().includes(query);
+                    const tagsMatch = post.tags.some(tag => tag.toLowerCase().includes(query));
+
+                    return titleMatch || contentMatch || tagsMatch;
+                });
+
+                displayResults(results, query);
+            }
+
+            // Display search results
+            function displayResults(results, query) {
+                allPostsContainer.style.display = 'none';
+
+                if (results.length === 0) {
+                    searchResults.innerHTML = '<p class="no-results">No results found.</p>';
+                    return;
+                }
+
+                const html = results.map(post => {
+                    const highlightedTitle = highlightText(post.title, query);
+                    const highlightedContent = highlightText(post.content, query);
+
+                    return `
+                        <div class="search-result">
+                            <h3><a href="${post.url}">${highlightedTitle}</a></h3>
+                            ${highlightedContent ? `<div class="post-excerpt">${highlightedContent}...</div>` : ''}
+                            <div class="post-meta">${post.date}</div>
+                        </div>
+                    `;
+                }).join('');
+
+                searchResults.innerHTML = html;
+            }
+
+            // Highlight matching text
+            function highlightText(text, query) {
+                const regex = new RegExp(`(${query})`, 'gi');
+                return text.replace(regex, '<span class="search-highlight">$1</span>');
+            }
+
+            // Event listeners
+            searchInput.addEventListener('input', function() {
+                performSearch(this.value);
+            });
+
+            // Show all posts initially
+            showAllPosts();
+        });
+    </script>
+
+    <a href="/index.html" style="display: block; margin-top: 2rem;">[index]</a>
+
+</div>
+        </main>
+        <hr>
+<footer class="site-footer">
+    <div class="top-nav fit-content">
+        © 2024 Ji Wang |
+        <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc/4.0/" style="padding-left: 5px;">
+            Creative Commons Attribution License
+        </a>
+    </div>
+    <div class="top-nav fit-content">
+        <a target="_blank" rel="noopener" href="https://github.com/Wang-Ji20" class="footer-links"><img src="/asset/github.svg" alt="github"
+                width="20" height="20"></a>
+        <a href="mailto:jiwangcdi@gmail.com" class="footer-links"><img src="/asset/email.svg" alt="email" width="20"
+                height="20"></a>
+        <a target="_blank" rel="noopener" href="https://www.linkedin.com/in/%E9%9B%86-%E7%8E%8B-67b0b92a7/" class="footer-links"><img
+                src="/asset/linkedin.svg" alt="linkedin" width="20" height="20"></a>
+    </div>
+</footer>
+
+    </div>
+</body>
+
+</html>

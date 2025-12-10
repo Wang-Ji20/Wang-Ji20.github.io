@@ -33,7 +33,9 @@
 </head>
 
 <body>
-    <div class="flex flex-row-l">
+    <div class="site-wrapper">
+        <main class="site-content">
+            <div class="flex flex-row-l">
     <div class="sidebar flex flex-column flex-center wide-only" style="position: fixed; padding-top: 3em; padding-left: 3em; max-width: 300px">
         <h4>Table of Contents</h4>
         <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Spinlock-API"><span class="toc-text">Spinlock API</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Some-language-constructs"><span class="toc-text">Some language constructs</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#PV-locks"><span class="toc-text">PV locks</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Spinlock-and-Raw-Spinlock"><span class="toc-text">Spinlock and Raw Spinlock</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Init"><span class="toc-text">Init</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Locking"><span class="toc-text">Locking</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#From-C-to-x86-Assembly"><span class="toc-text">From C to x86 Assembly</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#inlining-assemblies"><span class="toc-text">inlining assemblies</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Memory-order"><span class="toc-text">Memory order</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Locking-the-slow-path"><span class="toc-text">Locking - the slow path</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#The-quicker-slow-path"><span class="toc-text">The quicker slow path</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#The-slowest-path"><span class="toc-text">The slowest path</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Conclusion"><span class="toc-text">Conclusion</span></a></li></ol>
@@ -264,9 +266,8 @@
 
 </div>
 
-</body>
-
-<hr style="max-width: 900px; margin: 0 auto">
+        </main>
+        <hr>
 <footer class="site-footer">
     <div class="top-nav fit-content">
         © 2024 Ji Wang |
@@ -275,14 +276,16 @@
         </a>
     </div>
     <div class="top-nav fit-content">
-        <a target="_blank" rel="noopener" href="https://github.com/Wang-Ji20" class="footer-links"><img src="./asset/github.svg" alt="github"
+        <a target="_blank" rel="noopener" href="https://github.com/Wang-Ji20" class="footer-links"><img src="/asset/github.svg" alt="github"
                 width="20" height="20"></a>
-        <a href="mailto:jiwangcdi@gmail.com" class="footer-links"><img src="./asset/email.svg" alt="email" width="20"
+        <a href="mailto:jiwangcdi@gmail.com" class="footer-links"><img src="/asset/email.svg" alt="email" width="20"
                 height="20"></a>
         <a target="_blank" rel="noopener" href="https://www.linkedin.com/in/%E9%9B%86-%E7%8E%8B-67b0b92a7/" class="footer-links"><img
-                src="./asset/linkedin.svg" alt="linkedin" width="20" height="20"></a>
+                src="/asset/linkedin.svg" alt="linkedin" width="20" height="20"></a>
     </div>
 </footer>
 
+    </div>
+</body>
 
 </html>
