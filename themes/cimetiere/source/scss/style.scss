@@ -147,10 +147,11 @@ img {
 .link-margin {
     margin-left: 1em;
     margin-right: 1em;
-    padding-left: 0.1em;
-    padding-right: 0.1em;
+    padding-left: 0.2em;
+    padding-right: 0.2em;
     color: $link-color;
     background-color: #717171;
+    transform: skewX(-5deg);
     
     @media (max-width: 768px) {
         margin: 0.5em;
