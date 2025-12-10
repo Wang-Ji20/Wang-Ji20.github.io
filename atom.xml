@@ -6,7 +6,7 @@
   <link href="http://wang-ji20.github.io/atom.xml" rel="self"/>
   
   <link href="http://wang-ji20.github.io/"/>
-  <updated>2025-12-10T15:17:40.548Z</updated>
+  <updated>2025-12-10T15:29:52.173Z</updated>
   <id>http://wang-ji20.github.io/</id>
   
   <author>
@@ -20,8 +20,8 @@
     <title>python programming pearls</title>
     <link href="http://wang-ji20.github.io/2025/12/10/programming/python/"/>
     <id>http://wang-ji20.github.io/2025/12/10/programming/python/</id>
-    <published>2025-12-10T15:17:40.548Z</published>
-    <updated>2025-12-10T15:17:40.548Z</updated>
+    <published>2025-12-10T15:29:52.173Z</published>
+    <updated>2025-12-10T15:29:52.173Z</updated>
     
     
       
@@ -45,8 +45,8 @@
     <title>Styles in Clarity and Grace</title>
     <link href="http://wang-ji20.github.io/2025/12/10/essay/Styles-in-Clearity-and-Grace/"/>
     <id>http://wang-ji20.github.io/2025/12/10/essay/Styles-in-Clearity-and-Grace/</id>
-    <published>2025-12-10T15:17:40.547Z</published>
-    <updated>2025-12-10T15:17:40.547Z</updated>
+    <published>2025-12-10T15:29:52.172Z</published>
+    <updated>2025-12-10T15:29:52.172Z</updated>
     
     
       
@@ -68,8 +68,8 @@
     <title>Presentation is more important than &quot;core&quot;</title>
     <link href="http://wang-ji20.github.io/2025/12/10/essay/form/"/>
     <id>http://wang-ji20.github.io/2025/12/10/essay/form/</id>
-    <published>2025-12-10T15:17:40.547Z</published>
-    <updated>2025-12-10T15:17:40.547Z</updated>
+    <published>2025-12-10T15:29:52.172Z</published>
+    <updated>2025-12-10T15:29:52.172Z</updated>
     
     
       
@@ -91,8 +91,8 @@
     <title>娜乌西卡</title>
     <link href="http://wang-ji20.github.io/2025/12/10/essay/kaze01/"/>
     <id>http://wang-ji20.github.io/2025/12/10/essay/kaze01/</id>
-    <published>2025-12-10T15:17:40.547Z</published>
-    <updated>2025-12-10T15:17:40.547Z</updated>
+    <published>2025-12-10T15:29:52.172Z</published>
+    <updated>2025-12-10T15:29:52.172Z</updated>
     
     
       
@@ -115,7 +115,7 @@
     <link href="http://wang-ji20.github.io/2024/10/12/ai/tokenize/"/>
     <id>http://wang-ji20.github.io/2024/10/12/ai/tokenize/</id>
     <published>2024-10-12T05:52:23.000Z</published>
-    <updated>2025-12-10T15:17:40.547Z</updated>
+    <updated>2025-12-10T15:29:52.172Z</updated>
     
     
       
@@ -138,7 +138,7 @@
     <link href="http://wang-ji20.github.io/2024/09/15/programming/js-async-tokio-async/"/>
     <id>http://wang-ji20.github.io/2024/09/15/programming/js-async-tokio-async/</id>
     <published>2024-09-15T16:00:00.000Z</published>
-    <updated>2025-12-10T15:17:40.548Z</updated>
+    <updated>2025-12-10T15:29:52.173Z</updated>
     
     
       
@@ -165,7 +165,7 @@
     <link href="http://wang-ji20.github.io/2024/09/10/essay/the-essence-of-teaching/"/>
     <id>http://wang-ji20.github.io/2024/09/10/essay/the-essence-of-teaching/</id>
     <published>2024-09-10T16:00:00.000Z</published>
-    <updated>2025-12-10T15:17:40.547Z</updated>
+    <updated>2025-12-10T15:29:52.172Z</updated>
     
     
       
@@ -184,32 +184,11 @@
   </entry>
   
   <entry>
-    <title>逆向 CCCF 2024/03 卷首语</title>
-    <link href="http://wang-ji20.github.io/2024/03/05/reveng/article01/"/>
-    <id>http://wang-ji20.github.io/2024/03/05/reveng/article01/</id>
-    <published>2024-03-05T16:00:00.000Z</published>
-    <updated>2025-12-10T15:17:40.549Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;心理学家 Steven Pinker 在 &lt;em&gt;The Sense of Style&lt;/em&gt; 中为学徒作家指了一条学习写作的明路. 他说, 我们如果想要培养一个作家的眼光, 就要让他去逆向工程好文章. 成为好作家的第一步就是成为一个好的读者.</summary>
-        
-      
-    
-    
-    
-    
-  </entry>
-  
-  <entry>
     <title>qspinlock, a spinlock in the Linux Kernel</title>
     <link href="http://wang-ji20.github.io/2023/12/21/programming/code01/"/>
     <id>http://wang-ji20.github.io/2023/12/21/programming/code01/</id>
     <published>2023-12-21T16:00:00.000Z</published>
-    <updated>2025-12-10T15:17:40.548Z</updated>
+    <updated>2025-12-10T15:29:52.173Z</updated>
     
     
       
@@ -236,14 +215,14 @@
     <link href="http://wang-ji20.github.io/2023/12/10/research/Rudra/"/>
     <id>http://wang-ji20.github.io/2023/12/10/research/Rudra/</id>
     <published>2023-12-10T02:35:02.000Z</published>
-    <updated>2025-12-10T15:17:40.548Z</updated>
+    <updated>2025-12-10T15:29:52.174Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;p&gt;这篇文章介绍了 Rudra, 一个 Rust 编程语言的代码静态分析工具. 它可以检查代码中的内存安全错误. 它效率很高, 可以在六个小时内扫描几万个软件包. 在这个静态分析工具刚刚提出的时候, 它发现了两百多个内存安全问题, 其中许多问题都是比较难找的</summary>
+    <summary type="html">&lt;p&gt;&lt;a href=&quot;https://dl.acm.org/doi/pdf/10.1145/3477132.3483570&quot;&gt;这篇文章&lt;/a&gt;介绍了 Rudra, 一个 Rust 编程语言的代码静态分析工具. 它可以检查代码中的内存安全错误. 它效率很高,</summary>
         
       
     
@@ -257,7 +236,7 @@
     <link href="http://wang-ji20.github.io/2023/09/23/essay/spacing/"/>
     <id>http://wang-ji20.github.io/2023/09/23/essay/spacing/</id>
     <published>2023-09-23T10:05:45.000Z</published>
-    <updated>2025-12-10T15:17:40.547Z</updated>
+    <updated>2025-12-10T15:29:52.172Z</updated>
     
     
       
@@ -280,7 +259,7 @@
     <link href="http://wang-ji20.github.io/2023/09/08/programming/haskell-notes/"/>
     <id>http://wang-ji20.github.io/2023/09/08/programming/haskell-notes/</id>
     <published>2023-09-08T08:05:52.000Z</published>
-    <updated>2025-12-10T15:17:40.548Z</updated>
+    <updated>2025-12-10T15:29:52.173Z</updated>
     
     
       
@@ -310,7 +289,7 @@
     <link href="http://wang-ji20.github.io/2023/09/08/programming/rust-notes/"/>
     <id>http://wang-ji20.github.io/2023/09/08/programming/rust-notes/</id>
     <published>2023-09-08T08:05:43.000Z</published>
-    <updated>2025-12-10T15:17:40.548Z</updated>
+    <updated>2025-12-10T15:29:52.173Z</updated>
     
     
       
@@ -339,7 +318,7 @@
     <link href="http://wang-ji20.github.io/2023/09/07/research/plt01/"/>
     <id>http://wang-ji20.github.io/2023/09/07/research/plt01/</id>
     <published>2023-09-07T14:04:36.000Z</published>
-    <updated>2025-12-10T15:17:40.549Z</updated>
+    <updated>2025-12-10T15:29:52.174Z</updated>
     
     
       
@@ -366,7 +345,7 @@
     <link href="http://wang-ji20.github.io/2023/09/06/essay/Twisted-Quotes/"/>
     <id>http://wang-ji20.github.io/2023/09/06/essay/Twisted-Quotes/</id>
     <published>2023-09-06T10:54:59.000Z</published>
-    <updated>2025-12-10T15:17:40.547Z</updated>
+    <updated>2025-12-10T15:29:52.172Z</updated>
     
     
       
@@ -392,7 +371,7 @@
     <link href="http://wang-ji20.github.io/2023/09/06/programming/Type-Trait/"/>
     <id>http://wang-ji20.github.io/2023/09/06/programming/Type-Trait/</id>
     <published>2023-09-06T10:54:59.000Z</published>
-    <updated>2025-12-10T15:17:40.548Z</updated>
+    <updated>2025-12-10T15:29:52.173Z</updated>
     
     
       
@@ -420,7 +399,7 @@
     <link href="http://wang-ji20.github.io/2023/09/06/programming/emacs/"/>
     <id>http://wang-ji20.github.io/2023/09/06/programming/emacs/</id>
     <published>2023-09-06T08:16:19.000Z</published>
-    <updated>2025-12-10T15:17:40.548Z</updated>
+    <updated>2025-12-10T15:29:52.173Z</updated>
     
     
       
@@ -448,7 +427,7 @@
     <link href="http://wang-ji20.github.io/2023/09/02/programming/C-programming-language-pearls/"/>
     <id>http://wang-ji20.github.io/2023/09/02/programming/C-programming-language-pearls/</id>
     <published>2023-09-02T14:49:41.000Z</published>
-    <updated>2025-12-10T15:17:40.548Z</updated>
+    <updated>2025-12-10T15:29:52.173Z</updated>
     
     
       
@@ -476,7 +455,7 @@
     <link href="http://wang-ji20.github.io/2023/08/29/programming/C-Test/"/>
     <id>http://wang-ji20.github.io/2023/08/29/programming/C-Test/</id>
     <published>2023-08-29T07:18:32.000Z</published>
-    <updated>2025-12-10T15:17:40.547Z</updated>
+    <updated>2025-12-10T15:29:52.173Z</updated>
     
     
       
@@ -507,7 +486,7 @@
     <link href="http://wang-ji20.github.io/2023/08/28/programming/clean-code/"/>
     <id>http://wang-ji20.github.io/2023/08/28/programming/clean-code/</id>
     <published>2023-08-28T10:00:44.000Z</published>
-    <updated>2025-12-10T15:17:40.548Z</updated>
+    <updated>2025-12-10T15:29:52.173Z</updated>
     
     
       
@@ -528,6 +507,34 @@
     <category term="style" scheme="http://wang-ji20.github.io/tags/style/"/>
     
     <category term="methodology" scheme="http://wang-ji20.github.io/tags/methodology/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>vim</title>
+    <link href="http://wang-ji20.github.io/2023/08/26/programming/vim/"/>
+    <id>http://wang-ji20.github.io/2023/08/26/programming/vim/</id>
+    <published>2023-08-26T15:14:44.000Z</published>
+    <updated>2025-12-10T15:29:52.173Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;我使用 VSCode 中的 Vim 模拟器已经很久了。但是除了常用的 w 前进，b 后退，d 删除之外，许多导航用的命令都已经淡忘。特此记之。&lt;/p&gt;
+&lt;h2 id=&quot;导航&quot;&gt;&lt;a href=&quot;#导航&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="CS" scheme="http://wang-ji20.github.io/categories/CS/"/>
+    
+    
+    <category term="text" scheme="http://wang-ji20.github.io/tags/text/"/>
+    
+    <category term="toolbox" scheme="http://wang-ji20.github.io/tags/toolbox/"/>
     
   </entry>
   
