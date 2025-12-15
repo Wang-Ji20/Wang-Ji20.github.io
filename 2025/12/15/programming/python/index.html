@@ -38,7 +38,7 @@
             <div class="flex flex-row-l">
     <div class="sidebar flex flex-column flex-center wide-only" style="position: fixed; padding-top: 3em; padding-left: 3em; max-width: 300px">
         <h4>Table of Contents</h4>
-        
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Dictionary-comprehension"><span class="toc-text">Dictionary comprehension</span></a></li></ol>
             <a href="/menu.html">[posts]</a>
     </div>
 
@@ -66,22 +66,24 @@
 
         <div style="margin: 0 0 25px 5px;">
             <h1>
-                Styles in Clarity and Grace
+                python programming pearls
             </h1>
             <p class="tldr" style="margin: 0;">
-                December 10, 2025
+                December 15, 2025
             </p>
             
             
                 <span class="badge rounded-pill badge-secondary">
-                    <a href="/tags/literature/">literature</a>
+                    <a href="/tags/programming/">programming</a>
+                </span>
+                
+                <span class="badge rounded-pill badge-secondary">
+                    <a href="/tags/python/">python</a>
                 </span>
                 
         </div>
-        <p><em>Style: Lessons in Clarity and Grace</em> is the best book on writing that I have ever read. Strunk &amp; White is, of course, great, but their principles are not as applicable as that one. Flexible, but too hard for beginners.</p>
-<p>The first lesson is to have confidence: It’s good to write clear, and everyone can do this.</p>
-<p>Why writing is hard: The difficulty comes from the fact that readers and writers know different things. Writers know more, so they are susceptible to a false belief that their writings are clear.</p>
-<p>The pragmatic approach: So we need to perceive how readers respond to our prose, and adjust our words to better serve them. That process needs carefully revision. But not in the drafting phase. At that time you just write everything, and you get a version that is complete. Then you start your revision and make it better. This method is called iterative refinement.</p>
+        <h2 id="Dictionary-comprehension"><a href="#Dictionary-comprehension" class="headerlink" title="Dictionary comprehension"></a>Dictionary comprehension</h2><p>This feature is in <a target="_blank" rel="noopener" href="https://peps.python.org/pep-0274/">PEP 247</a>. I only know about<br>list comprehensions before. The basic usage is like:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs python3">&#123; k:v for k, v in enumerate(range(3))&#125;<br><br>&#123;0: 0, 1: 1, 2: 2&#125;<br></code></pre></td></tr></table></figure>
 
     </div>
 
@@ -91,7 +93,7 @@
         <hr>
 <footer class="site-footer">
     <div class="top-nav fit-content">
-        © 2024 Ji Wang |
+        © 2023-2025 Ji Wang |
         <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc/4.0/" style="padding-left: 5px;">
             Creative Commons Attribution License
         </a>
