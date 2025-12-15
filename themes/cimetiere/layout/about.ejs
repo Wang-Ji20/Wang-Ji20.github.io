@@ -2,252 +2,66 @@
 
     <%- include('header.ejs') %>
 
-</div>
+        <h1>
+            <b>
+                about me 关于我
+            </b>
+        </h1>
 
-<div class="flex flex-column">
+        <div class="post">
 
-    <h1>
-        <b>
-            about me
-        </b>
-    </h1>
 
-    <section class="flex">
-        <style>
-            @import url('https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap');
-        </style>
-        <div class="flex flex-row-l flex-center" style="gap: 2.5em;">
-            <div class="flex flex-column flex-center">
-                <h1>
-                    王集
-                </h1>
-                <h1 style="font-family: 'Dela Gothic One', cursive;">
-                    Ji Wang
-                </h1>
-            </div>
-            <div class="flex flex-column" style="max-width: 70%;">
-                <p>
-                    Bio: Ji Wang is a student at Tsinghua University, Beijing, China. He is learning software
-                    engineering at this campus, expecting to earn his bachelor's degree in 2025.
-                    Gradually he grasps the skill of reading, writing, designing and coding, but still has a long way to
-                    go as long as he keeps doing useless things.
-                </p>
-                <p>
-                    Skills: Software Engineering, Simple Design/Data Science/Machine Learning.
-                </p>
-                <p>
-                    Languages: Chinese(native), English(fluent).
-                </p>
-                <p>
-                    <a href="mailto:jiwangcdi@gmail.com">[email]</a>
-                    <a href="cv.pdf">[cv]</a>
-                </p>
-            </div>
-        </div>
-    </section>
-
-    <section id="CS" class="flex flex-column flex-center">
-        <div class="flex flex-column">
-            <h2>
-                Computer Science
-            </h2>
-            <div class="section-label ms-1"></div>
-            <div class="mb-3"></div>
-            <div class="flex flex-row-l flex-center">
-                <section class="Developer">
-                    <span class="material-symbols-outlined" style="font-size: 120px;">
-                        build
-                    </span>
-                    <h3>
-                        Developer
-                    </h3>
-                    <div class="mb-3"></div>
-                    <p>
-                        I am probably a full-stack developer.
-                    </p>
-                </section>
-                <section class="PL">
-                    <span class="material-symbols-outlined" style="font-size: 120px;">
-                        edit_note
-                    </span>
-                    <h3>
-                        Programming Language
-                    </h3>
-                    <p>
-                    <div class="mb-3"></div>
-                    <p>
-                        Learning the design and impl of PLs.
-                    </p>
-                </section>
-                <section class="Sys">
-                    <span class="material-symbols-outlined" style="font-size: 120px;">
-                        terminal
-                    </span>
-                    <h3>
-                        Systems
-                    </h3>
-                    <p>
-                    <div class="mb-3"></div>
-                    <p>
-                        Interested in data systems and cloud applications.
-                    </p>
-                </section>
-            </div>
             <p>
-                on concrete skills, please refer to my <a href="portfolio.html">[portfolio]</a>.
+                我一直都不是很喜欢自我介绍。
+                虽然我可以自我介绍，但我在自我介绍的时候总是喜欢倒出各种各样的琐碎小事。
+                我会谈起最近做的事情，有意思的发现，还有一些用到包浆的段子。
+                时不时的，我会操纵大家的期待，制造一些反差，逗大家笑一笑。
+                不过作为纯 i 人，这样真的很累，所以一般介绍完自己，我就精疲力尽了。
             </p>
-        </div>
-    </section>
 
-    <section id="favorites" class="flex flex-column flex-center">
-        <div class="flex flex-column">
-            <h2>
-                Favorites
-            </h2>
-            <div class="section-label ms-1"></div>
-            <div class="mb-3"></div>
-            <section>
-                <div class="flex flex-row-l">
-                    <div class="flex flex-column flex-center">
-                        <span class="material-symbols-outlined" style="font-size: 120px;">
-                            book
-                        </span>
-                        <h3>Book</h3>
-                    </div>
-                    <ul>
-                        <a href="https://www.gutenberg.org/files/600/600-h/600-h.htm">
-                            <h2>notes from the underground</h2>
-                        </a>
-                        <a href="https://www.gutenberg.org/cache/epub/2149/pg2149-images.html#chap3.28">
-                            <h2>short stories of edgar allan poe</h2>
-                        </a>
-                        <a href="https://www.peterhessler.net/">
-                            <h2>rivertown (peter hessler)</h2>
-                        </a>
-                    </ul>
-                </div>
-            </section>
-            <section>
-                <div class="flex flex-row-l">
-                    <ul>
-                        <a href="https://en.wikipedia.org/wiki/Hyouka">
-                            <h2>
-                                hyouka
-                            </h2>
-                        </a>
-                        <a href="https://en.wikipedia.org/wiki/Fate/stay_night">
-                            <h2>
-                                fate/stay night
-                            </h2>
-                        </a>
-                        <a href="https://en.wikipedia.org/wiki/Arcane_(TV_series)">
-                            <h2>
-                                arcane
-                            </h2>
-                        </a>
-                        <a href="https://en.wikipedia.org/wiki/Shirobako">
-                            <h2>
-                                shirobako
-                            </h2>
-                        </a>
-                    </ul>
-                    <div class="flex flex-column flex-center">
-                        <span class="material-symbols-outlined" style="font-size: 120px;">
-                            manga
-                        </span>
-                        <h3>Anime</h3>
-                    </div>
-                </div>
-            </section>
-            <section>
-                <div class="flex flex-row-l">
-                    <div class="flex flex-column flex-center">
-                        <span class="material-symbols-outlined" style="font-size: 120px;">
-                            joystick
-                        </span>
-                        <h3>Game</h3>
-                    </div>
-                    <ul>
-                        <a href="https://laurahunt.itch.io/if-on-a-winters-night-four-travelers">
-                            <h2>if on a winter's night, four travellers</h2>
-                        </a>
-                        <a href="https://en.wikipedia.org/wiki/Octopath_Traveler">
-                            <h2>octopath traveller series</h2>
-                        </a>
-                        <a href="https://en.wikipedia.org/wiki/Octopath_Traveler">
-                            <h2>paradox games(w/ city skylines)</h2>
-                        </a>
-                        <a href="https://www.minecraft.net/en-us">
-                            <h2>
-                                Minecraft
-                            </h2>
-                        </a>
-                    </ul>
-                </div>
-            </section>
-        </div>
-    </section>
+            <p>
+                这样做的效果。
+                其实就算大家笑哈哈，也很少有人会真的在意我。
+                说到底，为什么任何人会对任何人的生活感兴趣啊！
+                大部分的自我介绍都是走个形式。很多人都只是想要一个大概的印象。
+                你只需要说自己是男嘉宾女嘉宾，就读于xx学校/在xx上班，爱好为何。
+                星座为何。MBTI 为何。然后就可以下台了。
+            </p>
 
-    <section id="Hobby">
-        <div class="flex flex-column">
-            <h2>
-                Hobbies
-            </h2>
-            <div class="section-label ms-1"></div>
+            <p>
+                我不愿意这样，因为我不想被角色困住。
+                我不是某个单位/机构的附属，我也不是某种意识形态的化身，某种刻板的人格面具。
+                所以我会说许多琐碎的小事，我希望大家能够从我的行动、我的思想中理解我这个人。
+                当然不了解也没关系。反正我说话那么啰嗦，不看可以节省的时间，绝对高于平均水平。
+            </p>
+
+            <p>
+                如此这般，我就成了一系列故事的化身。我会读别人的故事，也会写一些故事。
+                毕竟讲故事是人类的本能。夜色降临，穴居人围火坐定的时候，故事就诞生了。
+                它是我们生活世界的侧面，印象的如实描绘。
+                如果想看我写的故事，请你点击 Story 板块。
+                虽然比起我的故事，我更希望你去看契诃夫。
+                他的《牵小狗的女人》和《醋栗》都是很好的作品。而且比较短。
+                如果有时间，还可以去看《包法利夫人》、《地下室手记》或者《好兵帅克历险记》。
+            </p>
+
+            <p>
+                不光是生活，故事也延展到了世界的各个方面。有关知识的故事，请看 Research 板块。
+                虽然我还没有能力讲好知识的故事。
+                时不时，我会想一些问题。冥思苦想的结果，就是一篇篇 Essay 了。
+            </p>
+
+            <p>
+                我很想创作一些视觉的，互动性的作品。不过我精力很低，又爱拖延，所以没有做成过任何一个。
+                以后如果做出来什么，可能会放到 Gallery 里面吧。
+            </p>
+
+            <p>
+                这个博客是完全静态的。将来也不打算有留言功能，没有钱弄。所以，请以邮件联系我。
+                我的地址应该在右下角的那个信封 Logo 里。
+            </p>
+
         </div>
 
-        <div class="flex flex-row-l flex-center">
-            <section>
-                <span class="material-symbols-outlined" style="font-size: 120px;">
-                    sprint
-                </span>
-                <h3>
-                    Jogging
-                </h3>
-                <div class="mb-3"></div>
-                <p>
-                    About 5'30" per km.
-                </p>
-            </section>
-            <section>
-                <span class="material-symbols-outlined" style="font-size: 120px;">
-                    ink_pen
-                </span>
-                <h3>
-                    Writing
-                </h3>
-                <p>
-                <div class="mb-3"></div>
-                <p>
-                    I write essay / doujinshi.
-                </p>
-            </section>
-            <section style="max-width: 25%;">
-                <span class="material-symbols-outlined" style="font-size: 120px;">
-                    headphones
-                </span>
-                <h3>
-                    Music
-                </h3>
-                <p>
-                <div class="mb-3"></div>
-                <p>
-                    Satie, Dylan & others
-                </p>
-            </section>
-            <section>
-                <span class="material-symbols-outlined" style="font-size: 120px;">
-                    domino_mask
-                </span>
-                <h3>
-                    Musical
-                </h3>
-                <p>
-                <div class="mb-3"></div>
-                <p>
-                    my fav: Elizabeth
-                </p>
-            </section>
-    </section>
 
 </div>
